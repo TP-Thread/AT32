@@ -1,0 +1,15 @@
+"D:\EIDE\IAR\arm\bin\armPROC.dll" 
+
+"D:\EIDE\IAR\arm\bin\armJET.dll" 
+
+"E:\MCU\TP-Thread\target\at\at32f421k8\project\IAR_V9.3\at32f421k8\Exe\at32f421k8.out" 
+
+--plugin="D:\EIDE\IAR\arm\bin\armbat.dll" 
+
+--device_macro="D:\EIDE\IAR\arm/config/debugger/ArteryTek/AT32F421xx.dmac" 
+
+--flash_loader="D:\EIDE\IAR\arm/config/flashloader/ArteryTek/AT32F421/AT32F421K8U7/FlashAT32F421K8U7.board" 
+
+
+
+

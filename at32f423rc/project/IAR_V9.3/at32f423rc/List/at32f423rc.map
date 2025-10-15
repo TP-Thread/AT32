@@ -1,0 +1,705 @@
+###############################################################################
+#
+# IAR ELF Linker V9.30.1.335/W64 for ARM                  11/Oct/2025  14:51:03
+# Copyright 2007-2022 IAR Systems AB.
+#
+#    Output file  =
+#        E:\MCU\TP-Thread\target\at\at32f423rc\project\IAR_V9.3\at32f423rc\Exe\at32f423rc.out
+#    Map file     =
+#        E:\MCU\TP-Thread\target\at\at32f423rc\project\IAR_V9.3\at32f423rc\List\at32f423rc.map
+#    Command line =
+#        -f
+#        E:\MCU\TP-Thread\target\at\at32f423rc\project\IAR_V9.3\at32f423rc\Exe\at32f423rc.out.rsp
+#        (E:\MCU\TP-Thread\target\at\at32f423rc\project\IAR_V9.3\at32f423rc\Obj\firmware\at32f423_crm.o
+#        E:\MCU\TP-Thread\target\at\at32f423rc\project\IAR_V9.3\at32f423rc\Obj\firmware\at32f423_debug.o
+#        E:\MCU\TP-Thread\target\at\at32f423rc\project\IAR_V9.3\at32f423rc\Obj\firmware\at32f423_flash.o
+#        E:\MCU\TP-Thread\target\at\at32f423rc\project\IAR_V9.3\at32f423rc\Obj\firmware\at32f423_gpio.o
+#        E:\MCU\TP-Thread\target\at\at32f423rc\project\IAR_V9.3\at32f423rc\Obj\user\at32f423_int.o
+#        E:\MCU\TP-Thread\target\at\at32f423rc\project\IAR_V9.3\at32f423rc\Obj\firmware\at32f423_misc.o
+#        E:\MCU\TP-Thread\target\at\at32f423rc\project\IAR_V9.3\at32f423rc\Obj\firmware\at32f423_pwc.o
+#        E:\MCU\TP-Thread\target\at\at32f423rc\project\IAR_V9.3\at32f423rc\Obj\user\at32f423_wk_config.o
+#        E:\MCU\TP-Thread\target\at\at32f423rc\project\IAR_V9.3\at32f423rc\Obj\middlewares\freertos\croutine.o
+#        E:\MCU\TP-Thread\target\at\at32f423rc\project\IAR_V9.3\at32f423rc\Obj\middlewares\freertos\event_groups.o
+#        E:\MCU\TP-Thread\target\at\at32f423rc\project\IAR_V9.3\at32f423rc\Obj\user\freertos_app.o
+#        E:\MCU\TP-Thread\target\at\at32f423rc\project\IAR_V9.3\at32f423rc\Obj\middlewares\freertos\heap_4.o
+#        E:\MCU\TP-Thread\target\at\at32f423rc\project\IAR_V9.3\at32f423rc\Obj\middlewares\freertos\list.o
+#        E:\MCU\TP-Thread\target\at\at32f423rc\project\IAR_V9.3\at32f423rc\Obj\user\main.o
+#        E:\MCU\TP-Thread\target\at\at32f423rc\project\IAR_V9.3\at32f423rc\Obj\middlewares\freertos\port.o
+#        E:\MCU\TP-Thread\target\at\at32f423rc\project\IAR_V9.3\at32f423rc\Obj\middlewares\freertos\portasm.o
+#        E:\MCU\TP-Thread\target\at\at32f423rc\project\IAR_V9.3\at32f423rc\Obj\middlewares\freertos\queue.o
+#        E:\MCU\TP-Thread\target\at\at32f423rc\project\IAR_V9.3\at32f423rc\Obj\cmsis\startup_at32f423.o
+#        E:\MCU\TP-Thread\target\at\at32f423rc\project\IAR_V9.3\at32f423rc\Obj\middlewares\freertos\stream_buffer.o
+#        E:\MCU\TP-Thread\target\at\at32f423rc\project\IAR_V9.3\at32f423rc\Obj\cmsis\system_at32f423.o
+#        E:\MCU\TP-Thread\target\at\at32f423rc\project\IAR_V9.3\at32f423rc\Obj\middlewares\freertos\tasks.o
+#        E:\MCU\TP-Thread\target\at\at32f423rc\project\IAR_V9.3\at32f423rc\Obj\middlewares\freertos\timers.o
+#        --no_out_extension -o
+#        E:\MCU\TP-Thread\target\at\at32f423rc\project\IAR_V9.3\at32f423rc\Exe\at32f423rc.out
+#        --map
+#        E:\MCU\TP-Thread\target\at\at32f423rc\project\IAR_V9.3\at32f423rc\List\at32f423rc.map
+#        --config
+#        E:\MCU\TP-Thread\target\at\at32f423rc\project\IAR_V9.3\AT32F423xC.icf
+#        --semihosting --entry __iar_program_start --vfe --text_out locale
+#        --cpu=Cortex-M4 --fpu=VFPv4_sp)
+#
+###############################################################################
+
+*******************************************************************************
+*** RUNTIME MODEL ATTRIBUTES
+***
+
+CppFlavor       = *
+__CPP_Runtime   = 1
+__SystemLibrary = DLib
+__dlib_version  = 6
+
+
+*******************************************************************************
+*** HEAP SELECTION
+***
+
+The basic heap was selected because --advanced_heap
+was not specified and the application did not appear to
+be primarily optimized for speed.
+
+
+*******************************************************************************
+*** PLACEMENT SUMMARY
+***
+
+"A0":  place at address 0x800'0000 { ro section .intvec };
+"P1":  place in [from 0x800'0000 to 0x803'ffff] { ro };
+define block CSTACK with size = 1K, alignment = 8 { };
+define block HEAP with size = 512, alignment = 8 { };
+"P2":  place in [from 0x2000'0000 to 0x2000'bfff] {
+          rw, block CSTACK, block HEAP };
+initialize by copy { rw };
+
+  Section            Kind         Address    Size  Object
+  -------            ----         -------    ----  ------
+"A0":                                       0x1e0
+  .intvec            ro code   0x800'0000   0x1e0  startup_at32f423.o [1]
+                             - 0x800'01e0   0x1e0
+
+"P1":                                      0x2800
+  .text              ro code   0x800'01e0   0x9e8  tasks.o [3]
+  .text              ro code   0x800'0bc8   0x294  heap_4.o [3]
+  .text              ro code   0x800'0e5c    0x66  ABImemset.o [7]
+  .text              ro code   0x800'0ec2    0x98  list.o [3]
+  .text              ro code   0x800'0f5a    0x2a  copy_init3.o [7]
+  .text              ro code   0x800'0f84   0x224  port.o [3]
+  .text              ro code   0x800'11a8    0x6e  freertos_app.o [4]
+  .text              ro code   0x800'1218   0x46c  timers.o [3]
+  .text              ro code   0x800'1684    0x34  port.o [3]
+  CODE               ro code   0x800'16b8    0xb0  portasm.o [3]
+  .text              ro code   0x800'1768   0x716  queue.o [3]
+  .text              ro code   0x800'1e80    0xa6  ABImemcpy.o [7]
+  .text              ro code   0x800'1f28   0x234  at32f423_crm.o [2]
+  .text              ro code   0x800'215c   0x230  I64DivMod.o [7]
+  .text              ro code   0x800'238c     0x2  I64DivZer.o [7]
+  .text              ro code   0x800'2390   0x1c2  at32f423_wk_config.o [4]
+  .text              ro code   0x800'2554   0x18c  system_at32f423.o [1]
+  .text              ro code   0x800'26e0    0x2c  at32f423_misc.o [2]
+  .text              ro code   0x800'270c    0x38  main.o [4]
+  .text              ro code   0x800'2744    0x38  zero_init3.o [7]
+  .text              ro code   0x800'277c    0x28  data_init.o [7]
+  .text              ro code   0x800'27a4    0x22  fpinit_M.o [6]
+  .iar.init_table    const     0x800'27c8    0x24  - Linker created -
+  .text              ro code   0x800'27ec    0x1e  cmain.o [7]
+  .text              ro code   0x800'280a     0x4  low_level_init.o [5]
+  .text              ro code   0x800'280e     0x4  exit.o [5]
+  .text              ro code   0x800'2814     0xa  cexit.o [7]
+  .text              ro code   0x800'2820    0x14  exit.o [8]
+  .text              ro code   0x800'2834    0x1c  cstartup_M.o [7]
+  .text              ro code   0x800'2850    0x14  at32f423_int.o [4]
+  .rodata            const     0x800'2864    0x10  system_at32f423.o [1]
+  .text              ro code   0x800'2874    0x10  startup_at32f423.o [1]
+  .rodata            const     0x800'2884     0xc  freertos_app.o [4]
+  Initializer bytes  const     0x800'2890     0xc  <for P2-1>
+  .rodata            const     0x800'289c     0x8  system_at32f423.o [1]
+  .rodata            const     0x800'28a4     0x8  tasks.o [3]
+  .rodata            const     0x800'28ac     0x8  timers.o [3]
+  .rodata            const     0x800'28b4     0x8  timers.o [3]
+  .rodata            const     0x800'28bc     0x4  heap_4.o [3]
+  .rodata            const     0x800'28c0     0x4  port.o [3]
+  .text              ro code   0x800'28c4     0x4  startup_at32f423.o [1]
+  .text              ro code   0x800'28c8     0x4  startup_at32f423.o [1]
+  .text              ro code   0x800'28cc     0x4  startup_at32f423.o [1]
+  .text              ro code   0x800'28d0     0x4  startup_at32f423.o [1]
+  .text              ro code   0x800'28d4     0x4  startup_at32f423.o [1]
+  .text              ro code   0x800'28d8     0x4  startup_at32f423.o [1]
+  .text              ro code   0x800'28dc     0x4  startup_at32f423.o [1]
+  .text              ro code   0x800'28e0     0x4  startup_at32f423.o [1]
+  .text              ro code   0x800'28e4     0x4  startup_at32f423.o [1]
+  .text              ro code   0x800'28e8     0x4  startup_at32f423.o [1]
+  .text              ro code   0x800'28ec     0x4  startup_at32f423.o [1]
+  .text              ro code   0x800'28f0     0x4  startup_at32f423.o [1]
+  .text              ro code   0x800'28f4     0x4  startup_at32f423.o [1]
+  .text              ro code   0x800'28f8     0x4  startup_at32f423.o [1]
+  .text              ro code   0x800'28fc     0x4  startup_at32f423.o [1]
+  .text              ro code   0x800'2900     0x4  startup_at32f423.o [1]
+  .text              ro code   0x800'2904     0x4  startup_at32f423.o [1]
+  .text              ro code   0x800'2908     0x4  startup_at32f423.o [1]
+  .text              ro code   0x800'290c     0x4  startup_at32f423.o [1]
+  .text              ro code   0x800'2910     0x4  startup_at32f423.o [1]
+  .text              ro code   0x800'2914     0x4  startup_at32f423.o [1]
+  .text              ro code   0x800'2918     0x4  startup_at32f423.o [1]
+  .text              ro code   0x800'291c     0x4  startup_at32f423.o [1]
+  .text              ro code   0x800'2920     0x4  startup_at32f423.o [1]
+  .text              ro code   0x800'2924     0x4  startup_at32f423.o [1]
+  .text              ro code   0x800'2928     0x4  startup_at32f423.o [1]
+  .text              ro code   0x800'292c     0x4  startup_at32f423.o [1]
+  .text              ro code   0x800'2930     0x4  startup_at32f423.o [1]
+  .text              ro code   0x800'2934     0x4  startup_at32f423.o [1]
+  .text              ro code   0x800'2938     0x4  startup_at32f423.o [1]
+  .text              ro code   0x800'293c     0x4  startup_at32f423.o [1]
+  .text              ro code   0x800'2940     0x4  startup_at32f423.o [1]
+  .text              ro code   0x800'2944     0x4  startup_at32f423.o [1]
+  .text              ro code   0x800'2948     0x4  startup_at32f423.o [1]
+  .text              ro code   0x800'294c     0x4  startup_at32f423.o [1]
+  .text              ro code   0x800'2950     0x4  startup_at32f423.o [1]
+  .text              ro code   0x800'2954     0x4  startup_at32f423.o [1]
+  .text              ro code   0x800'2958     0x4  startup_at32f423.o [1]
+  .text              ro code   0x800'295c     0x4  startup_at32f423.o [1]
+  .text              ro code   0x800'2960     0x4  startup_at32f423.o [1]
+  .text              ro code   0x800'2964     0x4  startup_at32f423.o [1]
+  .text              ro code   0x800'2968     0x4  startup_at32f423.o [1]
+  .text              ro code   0x800'296c     0x4  startup_at32f423.o [1]
+  .text              ro code   0x800'2970     0x4  startup_at32f423.o [1]
+  .text              ro code   0x800'2974     0x4  startup_at32f423.o [1]
+  .text              ro code   0x800'2978     0x4  startup_at32f423.o [1]
+  .text              ro code   0x800'297c     0x4  startup_at32f423.o [1]
+  .text              ro code   0x800'2980     0x4  startup_at32f423.o [1]
+  .text              ro code   0x800'2984     0x4  startup_at32f423.o [1]
+  .text              ro code   0x800'2988     0x4  startup_at32f423.o [1]
+  .text              ro code   0x800'298c     0x4  startup_at32f423.o [1]
+  .text              ro code   0x800'2990     0x4  startup_at32f423.o [1]
+  .text              ro code   0x800'2994     0x4  startup_at32f423.o [1]
+  .text              ro code   0x800'2998     0x4  startup_at32f423.o [1]
+  .text              ro code   0x800'299c     0x4  startup_at32f423.o [1]
+  .text              ro code   0x800'29a0     0x4  startup_at32f423.o [1]
+  .text              ro code   0x800'29a4     0x4  startup_at32f423.o [1]
+  .text              ro code   0x800'29a8     0x4  startup_at32f423.o [1]
+  .text              ro code   0x800'29ac     0x4  startup_at32f423.o [1]
+  .text              ro code   0x800'29b0     0x4  startup_at32f423.o [1]
+  .text              ro code   0x800'29b4     0x4  startup_at32f423.o [1]
+  .text              ro code   0x800'29b8     0x4  startup_at32f423.o [1]
+  .text              ro code   0x800'29bc     0x4  startup_at32f423.o [1]
+  .text              ro code   0x800'29c0     0x4  startup_at32f423.o [1]
+  .text              ro code   0x800'29c4     0x4  startup_at32f423.o [1]
+  .text              ro code   0x800'29c8     0x4  startup_at32f423.o [1]
+  .text              ro code   0x800'29cc     0x4  startup_at32f423.o [1]
+  .text              ro code   0x800'29d0     0x4  startup_at32f423.o [1]
+  .text              ro code   0x800'29d4     0x4  startup_at32f423.o [1]
+  .text              ro code   0x800'29d8     0x4  startup_at32f423.o [1]
+  .text              ro code   0x800'29dc     0x4  startup_at32f423.o [1]
+  .rodata            const     0x800'29e0     0x0  zero_init3.o [7]
+  .rodata            const     0x800'29e0     0x0  copy_init3.o [7]
+                             - 0x800'29e0  0x2800
+
+"P2", part 1 of 3:                            0xc
+  P2-1                        0x2000'0000     0xc  <Init block>
+    .data            inited   0x2000'0000     0x4  port.o [3]
+    .data            inited   0x2000'0004     0x4  system_at32f423.o [1]
+    .data            inited   0x2000'0008     0x4  tasks.o [3]
+                            - 0x2000'000c     0xc
+
+"P2", part 2 of 3:                         0x3230
+  .bss               zero     0x2000'000c  0x2800  heap_4.o [3]
+  .bss               zero     0x2000'280c   0x400  freertos_app.o [4]
+  .bss               zero     0x2000'2c0c   0x200  freertos_app.o [4]
+  .bss               zero     0x2000'2e0c   0x140  tasks.o [3]
+  .bss               zero     0x2000'2f4c    0xa0  timers.o [3]
+  .bss               zero     0x2000'2fec    0x5c  freertos_app.o [4]
+  .bss               zero     0x2000'3048    0x5c  freertos_app.o [4]
+  .bss               zero     0x2000'30a4    0x50  timers.o [3]
+  .bss               zero     0x2000'30f4    0x40  queue.o [3]
+  .bss               zero     0x2000'3134    0x14  tasks.o [3]
+  .bss               zero     0x2000'3148    0x14  tasks.o [3]
+  .bss               zero     0x2000'315c    0x14  tasks.o [3]
+  .bss               zero     0x2000'3170    0x14  tasks.o [3]
+  .bss               zero     0x2000'3184    0x14  tasks.o [3]
+  .bss               zero     0x2000'3198    0x14  timers.o [3]
+  .bss               zero     0x2000'31ac    0x14  timers.o [3]
+  .bss               zero     0x2000'31c0     0x8  heap_4.o [3]
+  .bss               zero     0x2000'31c8     0x4  freertos_app.o [4]
+  .bss               zero     0x2000'31cc     0x4  heap_4.o [3]
+  .bss               zero     0x2000'31d0     0x4  heap_4.o [3]
+  .bss               zero     0x2000'31d4     0x4  heap_4.o [3]
+  .bss               zero     0x2000'31d8     0x4  heap_4.o [3]
+  .bss               zero     0x2000'31dc     0x4  heap_4.o [3]
+  .bss               zero     0x2000'31e0     0x4  heap_4.o [3]
+  .bss               zero     0x2000'31e4     0x4  port.o [3]
+  .bss               zero     0x2000'31e8     0x4  tasks.o [3]
+  .bss               zero     0x2000'31ec     0x4  tasks.o [3]
+  .bss               zero     0x2000'31f0     0x4  tasks.o [3]
+  .bss               zero     0x2000'31f4     0x4  tasks.o [3]
+  .bss               zero     0x2000'31f8     0x4  tasks.o [3]
+  .bss               zero     0x2000'31fc     0x4  tasks.o [3]
+  .bss               zero     0x2000'3200     0x4  tasks.o [3]
+  .bss               zero     0x2000'3204     0x4  tasks.o [3]
+  .bss               zero     0x2000'3208     0x4  tasks.o [3]
+  .bss               zero     0x2000'320c     0x4  tasks.o [3]
+  .bss               zero     0x2000'3210     0x4  tasks.o [3]
+  .bss               zero     0x2000'3214     0x4  tasks.o [3]
+  .bss               zero     0x2000'3218     0x4  tasks.o [3]
+  .bss               zero     0x2000'321c     0x4  tasks.o [3]
+  .bss               zero     0x2000'3220     0x4  tasks.o [3]
+  .bss               zero     0x2000'3224     0x4  timers.o [3]
+  .bss               zero     0x2000'3228     0x4  timers.o [3]
+  .bss               zero     0x2000'322c     0x4  timers.o [3]
+  .bss               zero     0x2000'3230     0x4  timers.o [3]
+  .bss               zero     0x2000'3234     0x4  timers.o [3]
+  .bss               zero     0x2000'3238     0x1  port.o [3]
+                            - 0x2000'3239  0x322d
+
+"P2", part 3 of 3:                          0x400
+  CSTACK                      0x2000'3240   0x400  <Block>
+    CSTACK           uninit   0x2000'3240   0x400  <Block tail>
+                            - 0x2000'3640   0x400
+
+Unused ranges:
+
+         From           To      Size
+         ----           --      ----
+   0x800'29e0   0x803'ffff  0x3'd620
+  0x2000'323c  0x2000'323f       0x4
+  0x2000'3640  0x2000'bfff    0x89c0
+
+
+*******************************************************************************
+*** INIT TABLE
+***
+
+          Address      Size
+          -------      ----
+Zero (__iar_zero_init3)
+    1 destination range, total size 0x322d:
+          0x2000'000c  0x322d
+
+Copy (__iar_copy_init3)
+    1 source range, total size 0xc:
+           0x800'2890     0xc
+    1 destination range, total size 0xc:
+          0x2000'0000     0xc
+
+
+
+*******************************************************************************
+*** MODULE SUMMARY
+***
+
+    Module                ro code  ro data  rw data
+    ------                -------  -------  -------
+command line/config:
+    -----------------------------------------------
+    Total:
+
+E:\MCU\TP-Thread\target\at\at32f423rc\project\IAR_V9.3\at32f423rc\Obj\cmsis: [1]
+    startup_at32f423.o        780
+    system_at32f423.o         396       28        4
+    -----------------------------------------------
+    Total:                  1'176       28        4
+
+E:\MCU\TP-Thread\target\at\at32f423rc\project\IAR_V9.3\at32f423rc\Obj\firmware: [2]
+    at32f423_crm.o            564
+    at32f423_misc.o            44
+    -----------------------------------------------
+    Total:                    608
+
+E:\MCU\TP-Thread\target\at\at32f423rc\project\IAR_V9.3\at32f423rc\Obj\middlewares\freertos: [3]
+    heap_4.o                  660        4   10'272
+    list.o                    152
+    port.o                    600        8        9
+    portasm.o                 176
+    queue.o                 1'814                64
+    tasks.o                 2'536       12      484
+    timers.o                1'132       16      300
+    -----------------------------------------------
+    Total:                  7'070       40   11'129
+
+E:\MCU\TP-Thread\target\at\at32f423rc\project\IAR_V9.3\at32f423rc\Obj\user: [4]
+    at32f423_int.o             20
+    at32f423_wk_config.o      450
+    freertos_app.o            110       12    1'724
+    main.o                     56
+    -----------------------------------------------
+    Total:                    636       12    1'724
+
+dl7M_tlf.a: [5]
+    exit.o                      4
+    low_level_init.o            4
+    -----------------------------------------------
+    Total:                      8
+
+m7M_tls.a: [6]
+    fpinit_M.o                 34
+    -----------------------------------------------
+    Total:                     34
+
+rt7M_tl.a: [7]
+    ABImemcpy.o               166
+    ABImemset.o               102
+    I64DivMod.o               560
+    I64DivZer.o                 2
+    cexit.o                    10
+    cmain.o                    30
+    copy_init3.o               42
+    cstartup_M.o               28
+    data_init.o                40
+    zero_init3.o               56
+    -----------------------------------------------
+    Total:                  1'036
+
+shb_l.a: [8]
+    exit.o                     20
+    -----------------------------------------------
+    Total:                     20
+
+    Gaps                       14        2
+    Linker created                      36    1'024
+---------------------------------------------------
+    Grand Total:           10'602      118   13'881
+
+
+*******************************************************************************
+*** ENTRY LIST
+***
+
+Entry                       Address    Size  Type      Object
+-----                       -------    ----  ----      ------
+.iar.init_table$$Base    0x800'27c8           --   Gb  - Linker created -
+.iar.init_table$$Limit   0x800'27ec           --   Gb  - Linker created -
+?main                    0x800'27ed          Code  Gb  cmain.o [7]
+ACC_IRQHandler           0x800'29dd          Code  Wk  startup_at32f423.o [1]
+ADC1_IRQHandler          0x800'290d          Code  Wk  startup_at32f423.o [1]
+BusFault_Handler         0x800'2857     0x2  Code  Gb  at32f423_int.o [4]
+CAN1_RX0_IRQHandler      0x800'2915          Code  Wk  startup_at32f423.o [1]
+CAN1_RX1_IRQHandler      0x800'2919          Code  Wk  startup_at32f423.o [1]
+CAN1_SE_IRQHandler       0x800'291d          Code  Wk  startup_at32f423.o [1]
+CAN1_TX_IRQHandler       0x800'2911          Code  Wk  startup_at32f423.o [1]
+CAN2_RX0_IRQHandler      0x800'29a9          Code  Wk  startup_at32f423.o [1]
+CAN2_RX1_IRQHandler      0x800'29ad          Code  Wk  startup_at32f423.o [1]
+CAN2_SE_IRQHandler       0x800'29b1          Code  Wk  startup_at32f423.o [1]
+CAN2_TX_IRQHandler       0x800'29a5          Code  Wk  startup_at32f423.o [1]
+CRM_IRQHandler           0x800'28d9          Code  Wk  startup_at32f423.o [1]
+CSTACK$$Base            0x2000'3240           --   Gb  - Linker created -
+CSTACK$$Limit           0x2000'3640           --   Gb  - Linker created -
+DMA1_Channel1_IRQHandler
+                         0x800'28f1          Code  Wk  startup_at32f423.o [1]
+DMA1_Channel2_IRQHandler
+                         0x800'28f5          Code  Wk  startup_at32f423.o [1]
+DMA1_Channel3_IRQHandler
+                         0x800'28f9          Code  Wk  startup_at32f423.o [1]
+DMA1_Channel4_IRQHandler
+                         0x800'28fd          Code  Wk  startup_at32f423.o [1]
+DMA1_Channel5_IRQHandler
+                         0x800'2901          Code  Wk  startup_at32f423.o [1]
+DMA1_Channel6_IRQHandler
+                         0x800'2905          Code  Wk  startup_at32f423.o [1]
+DMA1_Channel7_IRQHandler
+                         0x800'2909          Code  Wk  startup_at32f423.o [1]
+DMA2_Channel1_IRQHandler
+                         0x800'2991          Code  Wk  startup_at32f423.o [1]
+DMA2_Channel2_IRQHandler
+                         0x800'2995          Code  Wk  startup_at32f423.o [1]
+DMA2_Channel3_IRQHandler
+                         0x800'2999          Code  Wk  startup_at32f423.o [1]
+DMA2_Channel4_IRQHandler
+                         0x800'299d          Code  Wk  startup_at32f423.o [1]
+DMA2_Channel5_IRQHandler
+                         0x800'29a1          Code  Wk  startup_at32f423.o [1]
+DMA2_Channel6_IRQHandler
+                         0x800'29b9          Code  Wk  startup_at32f423.o [1]
+DMA2_Channel7_IRQHandler
+                         0x800'29bd          Code  Wk  startup_at32f423.o [1]
+DMAMUX_IRQHandler        0x800'29d9          Code  Wk  startup_at32f423.o [1]
+DebugMon_Handler         0x800'285b     0x2  Code  Gb  at32f423_int.o [4]
+ERTCAlarm_IRQHandler     0x800'2969          Code  Wk  startup_at32f423.o [1]
+ERTC_WKUP_IRQHandler     0x800'28d1          Code  Wk  startup_at32f423.o [1]
+EXINT0_IRQHandler        0x800'28dd          Code  Wk  startup_at32f423.o [1]
+EXINT15_10_IRQHandler    0x800'2965          Code  Wk  startup_at32f423.o [1]
+EXINT1_IRQHandler        0x800'28e1          Code  Wk  startup_at32f423.o [1]
+EXINT2_IRQHandler        0x800'28e5          Code  Wk  startup_at32f423.o [1]
+EXINT3_IRQHandler        0x800'28e9          Code  Wk  startup_at32f423.o [1]
+EXINT4_IRQHandler        0x800'28ed          Code  Wk  startup_at32f423.o [1]
+EXINT9_5_IRQHandler      0x800'2921          Code  Wk  startup_at32f423.o [1]
+FLASH_IRQHandler         0x800'28d5          Code  Wk  startup_at32f423.o [1]
+FPU_IRQHandler           0x800'29cd          Code  Wk  startup_at32f423.o [1]
+HardFault_Handler        0x800'2853     0x2  Code  Gb  at32f423_int.o [4]
+I2C1_ERR_IRQHandler      0x800'2945          Code  Wk  startup_at32f423.o [1]
+I2C1_EVT_IRQHandler      0x800'2941          Code  Wk  startup_at32f423.o [1]
+I2C2_ERR_IRQHandler      0x800'294d          Code  Wk  startup_at32f423.o [1]
+I2C2_EVT_IRQHandler      0x800'2949          Code  Wk  startup_at32f423.o [1]
+I2C3_ERR_IRQHandler      0x800'29c9          Code  Wk  startup_at32f423.o [1]
+I2C3_EVT_IRQHandler      0x800'29c5          Code  Wk  startup_at32f423.o [1]
+MemManage_Handler        0x800'2855     0x2  Code  Gb  at32f423_int.o [4]
+NMI_Handler              0x800'2851     0x2  Code  Gb  at32f423_int.o [4]
+NVIC_EncodePriority      0x800'23bf    0x3c  Code  Lc  at32f423_wk_config.o [4]
+OTGFS1_IRQHandler        0x800'29b5          Code  Wk  startup_at32f423.o [1]
+OTGFS1_WKUP_IRQHandler   0x800'296d          Code  Wk  startup_at32f423.o [1]
+PVM_IRQHandler           0x800'28c9          Code  Wk  startup_at32f423.o [1]
+PendSV_Handler           0x800'16b9          Code  Gb  portasm.o [3]
+Region$$Table$$Base      0x800'27c8           --   Gb  - Linker created -
+Region$$Table$$Limit     0x800'27ec           --   Gb  - Linker created -
+Reset_Handler            0x800'2875          Code  Wk  startup_at32f423.o [1]
+SPI1_IRQHandler          0x800'2951          Code  Wk  startup_at32f423.o [1]
+SPI2_IRQHandler          0x800'2955          Code  Wk  startup_at32f423.o [1]
+SPI3_IRQHandler          0x800'297d          Code  Wk  startup_at32f423.o [1]
+SVC_Handler              0x800'1711          Code  Gb  portasm.o [3]
+SysTick_Handler          0x800'285d     0x8  Code  Gb  at32f423_int.o [4]
+SystemInit               0x800'2555    0x78  Code  Gb  system_at32f423.o [1]
+TAMP_STAMP_IRQHandler    0x800'28cd          Code  Wk  startup_at32f423.o [1]
+TMR12_GLOBAL_IRQHandler
+                         0x800'2971          Code  Wk  startup_at32f423.o [1]
+TMR13_GLOBAL_IRQHandler
+                         0x800'2975          Code  Wk  startup_at32f423.o [1]
+TMR14_GLOBAL_IRQHandler
+                         0x800'2979          Code  Wk  startup_at32f423.o [1]
+TMR1_BRK_TMR9_IRQHandler
+                         0x800'2925          Code  Wk  startup_at32f423.o [1]
+TMR1_CH_IRQHandler       0x800'2931          Code  Wk  startup_at32f423.o [1]
+TMR1_OVF_TMR10_IRQHandler
+                         0x800'2929          Code  Wk  startup_at32f423.o [1]
+TMR1_TRG_HALL_TMR11_IRQHandler
+                         0x800'292d          Code  Wk  startup_at32f423.o [1]
+TMR2_GLOBAL_IRQHandler   0x800'2935          Code  Wk  startup_at32f423.o [1]
+TMR3_GLOBAL_IRQHandler   0x800'2939          Code  Wk  startup_at32f423.o [1]
+TMR4_GLOBAL_IRQHandler   0x800'293d          Code  Wk  startup_at32f423.o [1]
+TMR6_DAC_GLOBAL_IRQHandler
+                         0x800'2989          Code  Wk  startup_at32f423.o [1]
+TMR7_GLOBAL_IRQHandler   0x800'298d          Code  Wk  startup_at32f423.o [1]
+USART1_IRQHandler        0x800'2959          Code  Wk  startup_at32f423.o [1]
+USART2_IRQHandler        0x800'295d          Code  Wk  startup_at32f423.o [1]
+USART3_IRQHandler        0x800'2961          Code  Wk  startup_at32f423.o [1]
+USART4_IRQHandler        0x800'2981          Code  Wk  startup_at32f423.o [1]
+USART5_IRQHandler        0x800'2985          Code  Wk  startup_at32f423.o [1]
+USART6_IRQHandler        0x800'29c1          Code  Wk  startup_at32f423.o [1]
+USART7_IRQHandler        0x800'29d1          Code  Wk  startup_at32f423.o [1]
+USART8_IRQHandler        0x800'29d5          Code  Wk  startup_at32f423.o [1]
+UsageFault_Handler       0x800'2859     0x2  Code  Gb  at32f423_int.o [4]
+WWDT_IRQHandler          0x800'28c5          Code  Wk  startup_at32f423.o [1]
+__NVIC_GetPriorityGrouping
+                         0x800'2391     0xa  Code  Lc  at32f423_wk_config.o [4]
+__NVIC_SetPriority       0x800'239b    0x24  Code  Lc  at32f423_wk_config.o [4]
+__NVIC_SetPriorityGrouping
+                         0x800'26e1    0x1a  Code  Lc  at32f423_misc.o [2]
+__aeabi_ldiv0            0x800'238d          Code  Gb  I64DivZer.o [7]
+__aeabi_memcpy           0x800'1e81          Code  Gb  ABImemcpy.o [7]
+__aeabi_memcpy4          0x800'1ea1          Code  Gb  ABImemcpy.o [7]
+__aeabi_memcpy8          0x800'1ea1          Code  Gb  ABImemcpy.o [7]
+__aeabi_memset           0x800'0e5d          Code  Gb  ABImemset.o [7]
+__aeabi_uldivmod         0x800'215d          Code  Gb  I64DivMod.o [7]
+__cmain                  0x800'27ed          Code  Gb  cmain.o [7]
+__exit                   0x800'2821    0x14  Code  Gb  exit.o [8]
+__iar_Memset             0x800'0e5d          Code  Gb  ABImemset.o [7]
+__iar_Memset_word        0x800'0e65          Code  Gb  ABImemset.o [7]
+__iar_copy_init3         0x800'0f5b    0x2a  Code  Gb  copy_init3.o [7]
+__iar_data_init3         0x800'277d    0x28  Code  Gb  data_init.o [7]
+__iar_init_vfp           0x800'27a5          Code  Gb  fpinit_M.o [6]
+__iar_program_start      0x800'2835          Code  Gb  cstartup_M.o [7]
+__iar_zero_init3         0x800'2745    0x38  Code  Gb  zero_init3.o [7]
+__low_level_init         0x800'280b     0x4  Code  Gb  low_level_init.o [5]
+__vector_table           0x800'0000          Data  Gb  startup_at32f423.o [1]
+_call_main               0x800'27f9          Code  Gb  cmain.o [7]
+_exit                    0x800'2815          Code  Gb  cexit.o [7]
+crm_ahb_div_set          0x800'2073    0x1e  Code  Gb  at32f423_crm.o [2]
+crm_apb1_div_set         0x800'2091     0xe  Code  Gb  at32f423_crm.o [2]
+crm_apb2_div_set         0x800'209f     0xe  Code  Gb  at32f423_crm.o [2]
+crm_auto_step_mode_enable
+                         0x800'20ad    0x22  Code  Gb  at32f423_crm.o [2]
+crm_clock_source_enable
+                         0x800'200d    0x66  Code  Gb  at32f423_crm.o [2]
+crm_flag_get             0x800'1f9d    0x2e  Code  Gb  at32f423_crm.o [2]
+crm_periph_clock_enable
+                         0x800'1fcb    0x42  Code  Gb  at32f423_crm.o [2]
+crm_pll_config           0x800'20cf    0x3c  Code  Gb  at32f423_crm.o [2]
+crm_reset                0x800'1f29    0x74  Code  Gb  at32f423_crm.o [2]
+crm_sysclk_switch        0x800'210b    0x1c  Code  Gb  at32f423_crm.o [2]
+crm_sysclk_switch_status_get
+                         0x800'2127     0xc  Code  Gb  at32f423_crm.o [2]
+exit                     0x800'280f     0x4  Code  Gb  exit.o [5]
+freertos_task_create     0x800'11c7    0x1a  Code  Gb  freertos_app.o [4]
+idle_task_stack         0x2000'2c0c   0x200  Data  Lc  freertos_app.o [4]
+idle_task_tcb           0x2000'2fec    0x5c  Data  Lc  freertos_app.o [4]
+main                     0x800'272d    0x18  Code  Gb  main.o [4]
+my_task01_func           0x800'120d     0xa  Code  Gb  freertos_app.o [4]
+my_task01_handle        0x2000'31c8     0x4  Data  Gb  freertos_app.o [4]
+nvic_priority_group_config
+                         0x800'26fb     0xa  Code  Gb  at32f423_misc.o [2]
+pcInterruptPriorityRegisters
+                         0x800'28c0     0x4  Data  Lc  port.o [3]
+prvAddCurrentTaskToDelayedList
+                         0x800'0b3d    0x5a  Code  Lc  tasks.o [3]
+prvAddNewTaskToReadyList
+                         0x800'03ab    0x9e  Code  Lc  tasks.o [3]
+prvCheckForValidListAndQueue
+                         0x800'1607    0x4c  Code  Lc  timers.o [3]
+prvCheckForValidListAndQueue{1}{2}{3}{4}::ucStaticTimerQueueStorage
+                        0x2000'2f4c    0xa0  Data  Lc  timers.o [3]
+prvCheckForValidListAndQueue{1}{2}{3}{4}::xStaticTimerQueue
+                        0x2000'30a4    0x50  Data  Lc  timers.o [3]
+prvCheckTasksWaitingTermination
+                         0x800'09bb    0x3c  Code  Lc  tasks.o [3]
+prvCopyDataFromQueue     0x800'1d3b    0x2a  Code  Lc  queue.o [3]
+prvCopyDataToQueue       0x800'1cb5    0x86  Code  Lc  queue.o [3]
+prvDeleteTCB             0x800'09f7    0x42  Code  Lc  tasks.o [3]
+prvGetNextExpireTime     0x800'13df    0x26  Code  Lc  timers.o [3]
+prvHeapInit              0x800'0d7b    0x5e  Code  Lc  heap_4.o [3]
+prvIdleTask              0x800'0939    0x22  Code  Lc  tasks.o [3]
+prvInitialiseNewQueue    0x800'18a3    0x22  Code  Lc  queue.o [3]
+prvInitialiseNewTask     0x800'02d7    0xd4  Code  Lc  tasks.o [3]
+prvInitialiseTaskLists   0x800'0965    0x56  Code  Lc  tasks.o [3]
+prvInsertBlockIntoFreeList
+                         0x800'0dd9    0x5e  Code  Lc  heap_4.o [3]
+prvInsertTimerInActiveList
+                         0x800'142d    0x3e  Code  Lc  timers.o [3]
+prvIsQueueEmpty          0x800'1dd3    0x1c  Code  Lc  queue.o [3]
+prvIsQueueFull           0x800'1def    0x1e  Code  Lc  queue.o [3]
+prvProcessExpiredTimer   0x800'12e7    0x6a  Code  Lc  timers.o [3]
+prvProcessReceivedCommands
+                         0x800'146b   0x128  Code  Lc  timers.o [3]
+prvProcessTimerOrBlockTask
+                         0x800'1369    0x76  Code  Lc  timers.o [3]
+prvResetNextTaskUnblockTime
+                         0x800'0a39    0x22  Code  Lc  tasks.o [3]
+prvSampleTimeNow         0x800'1405    0x28  Code  Lc  timers.o [3]
+prvSampleTimeNow::xLastTime
+                        0x2000'3234     0x4  Data  Lc  timers.o [3]
+prvSwitchTimerLists      0x800'1593    0x74  Code  Lc  timers.o [3]
+prvTaskExitError         0x800'0fad    0x2a  Code  Lc  port.o [3]
+prvTimerTask             0x800'1355    0x14  Code  Lc  timers.o [3]
+prvUnlockQueue           0x800'1d65    0x6e  Code  Lc  queue.o [3]
+pvPortMalloc             0x800'0bc9   0x138  Code  Gb  heap_4.o [3]
+pxCurrentTCB            0x2000'31e8     0x4  Data  Gb  tasks.o [3]
+pxCurrentTimerList      0x2000'3224     0x4  Data  Lc  timers.o [3]
+pxDelayedTaskList       0x2000'31ec     0x4  Data  Lc  tasks.o [3]
+pxEnd                   0x2000'31cc     0x4  Data  Lc  heap_4.o [3]
+pxOverflowDelayedTaskList
+                        0x2000'31f0     0x4  Data  Lc  tasks.o [3]
+pxOverflowTimerList     0x2000'3228     0x4  Data  Lc  timers.o [3]
+pxPortInitialiseStack    0x800'0f85    0x28  Code  Gb  port.o [3]
+pxReadyTasksLists       0x2000'2e0c   0x140  Data  Lc  tasks.o [3]
+system_core_clock       0x2000'0004     0x4  Data  Gb  system_at32f423.o [1]
+system_core_clock_update
+                         0x800'25cd    0xd6  Code  Gb  system_at32f423.o [1]
+system_core_clock_update::pll_fr_table
+                         0x800'289c     0x8  Data  Lc  system_at32f423.o [1]
+system_core_clock_update::sys_ahb_div_table
+                         0x800'2864    0x10  Data  Lc  system_at32f423.o [1]
+timer_task_stack        0x2000'280c   0x400  Data  Lc  freertos_app.o [4]
+timer_task_tcb          0x2000'3048    0x5c  Data  Lc  freertos_app.o [4]
+ucHeap                  0x2000'000c  0x2800  Data  Lc  heap_4.o [3]
+ucMaxSysCallPriority    0x2000'3238     0x1  Data  Lc  port.o [3]
+ulMaxPRIGROUPValue      0x2000'31e4     0x4  Data  Lc  port.o [3]
+uxCriticalNesting       0x2000'0000     0x4  Data  Lc  port.o [3]
+uxCurrentNumberOfTasks  0x2000'31f8     0x4  Data  Lc  tasks.o [3]
+uxDeletedTasksWaitingCleanUp
+                        0x2000'31f4     0x4  Data  Lc  tasks.o [3]
+uxListRemove             0x800'0f35    0x26  Code  Gb  list.o [3]
+uxSchedulerSuspended    0x2000'3220     0x4  Data  Lc  tasks.o [3]
+uxTaskNumber            0x2000'3214     0x4  Data  Lc  tasks.o [3]
+uxTopReadyPriority      0x2000'3200     0x4  Data  Lc  tasks.o [3]
+uxTopUsedPriority       0x2000'0008     0x4  Data  Gb  tasks.o [3]
+vApplicationGetIdleTaskMemory
+                         0x800'11a9     0xe  Code  Gb  freertos_app.o [4]
+vApplicationGetTimerTaskMemory
+                         0x800'11b7    0x10  Code  Gb  freertos_app.o [4]
+vListInitialise          0x800'0ec3    0x1e  Code  Gb  list.o [3]
+vListInitialiseItem      0x800'0ee1     0x6  Code  Gb  list.o [3]
+vListInsert              0x800'0eff    0x36  Code  Gb  list.o [3]
+vListInsertEnd           0x800'0ee7    0x18  Code  Gb  list.o [3]
+vPortEnableVFP           0x800'174d          Code  Gb  portasm.o [3]
+vPortEnterCritical       0x800'10a5    0x34  Code  Gb  port.o [3]
+vPortExitCritical        0x800'10d9    0x2c  Code  Gb  port.o [3]
+vPortFree                0x800'0d01    0x7a  Code  Gb  heap_4.o [3]
+vPortSetupTimerInterrupt
+                         0x800'1685    0x34  Code  Wk  port.o [3]
+vPortStartFirstTask      0x800'172d          Code  Gb  portasm.o [3]
+vPortValidateInterruptPriority
+                         0x800'112d    0x4a  Code  Gb  port.o [3]
+vQueueAddToRegistry      0x800'1e0d    0x24  Code  Gb  queue.o [3]
+vQueueWaitForMessageRestricted
+                         0x800'1e35    0x4a  Code  Gb  queue.o [3]
+vTaskDelay               0x800'0449    0x4c  Code  Gb  tasks.o [3]
+vTaskInternalSetTimeOutState
+                         0x800'088d    0x12  Code  Gb  tasks.o [3]
+vTaskMissedYield         0x800'092f     0xa  Code  Gb  tasks.o [3]
+vTaskPlaceOnEventList    0x800'078b    0x2e  Code  Gb  tasks.o [3]
+vTaskPlaceOnEventListRestricted
+                         0x800'07c1    0x38  Code  Gb  tasks.o [3]
+vTaskStartScheduler      0x800'0495    0x9c  Code  Gb  tasks.o [3]
+vTaskSuspendAll          0x800'0531     0xc  Code  Gb  tasks.o [3]
+vTaskSwitchContext       0x800'0719    0x72  Code  Gb  tasks.o [3]
+wk_freertos_init         0x800'11f9    0x14  Code  Gb  freertos_app.o [4]
+wk_nvic_config           0x800'24af    0xa4  Code  Gb  at32f423_wk_config.o [4]
+wk_periph_clock_config   0x800'24a1     0xe  Code  Gb  at32f423_wk_config.o [4]
+wk_system_clock_config   0x800'23fb    0x8a  Code  Gb  at32f423_wk_config.o [4]
+wk_wait_for_power_stable
+                         0x800'270d    0x20  Code  Lc  main.o [4]
+xActiveTimerList1       0x2000'3198    0x14  Data  Lc  timers.o [3]
+xActiveTimerList2       0x2000'31ac    0x14  Data  Lc  timers.o [3]
+xBlockAllocatedBit      0x2000'31e0     0x4  Data  Lc  heap_4.o [3]
+xDelayedTaskList1       0x2000'3134    0x14  Data  Lc  tasks.o [3]
+xDelayedTaskList2       0x2000'3148    0x14  Data  Lc  tasks.o [3]
+xFreeBytesRemaining     0x2000'31d0     0x4  Data  Lc  heap_4.o [3]
+xHeapStructSize          0x800'28bc     0x4  Data  Lc  heap_4.o [3]
+xIdleTaskHandle         0x2000'321c     0x4  Data  Lc  tasks.o [3]
+xMinimumEverFreeBytesRemaining
+                        0x2000'31d4     0x4  Data  Lc  heap_4.o [3]
+xNextTaskUnblockTime    0x2000'3218     0x4  Data  Lc  tasks.o [3]
+xNumOfOverflows         0x2000'3210     0x4  Data  Lc  tasks.o [3]
+xNumberOfSuccessfulAllocations
+                        0x2000'31d8     0x4  Data  Lc  heap_4.o [3]
+xNumberOfSuccessfulFrees
+                        0x2000'31dc     0x4  Data  Lc  heap_4.o [3]
+xPendedTicks            0x2000'3208     0x4  Data  Lc  tasks.o [3]
+xPendingReadyList       0x2000'315c    0x14  Data  Lc  tasks.o [3]
+xPortStartScheduler      0x800'0fd7    0xce  Code  Gb  port.o [3]
+xPortSysTickHandler      0x800'1105    0x28  Code  Gb  port.o [3]
+xQueueGenericCreateStatic
+                         0x800'17fb    0xa8  Code  Gb  queue.o [3]
+xQueueGenericReset       0x800'1769    0x92  Code  Gb  queue.o [3]
+xQueueGenericSend        0x800'18c5   0x196  Code  Gb  queue.o [3]
+xQueueGenericSendFromISR
+                         0x800'1a5b    0xf8  Code  Gb  queue.o [3]
+xQueueReceive            0x800'1b53   0x15c  Code  Gb  queue.o [3]
+xQueueRegistry          0x2000'30f4    0x40  Data  Gb  queue.o [3]
+xSchedulerRunning       0x2000'3204     0x4  Data  Lc  tasks.o [3]
+xStart                  0x2000'31c0     0x8  Data  Lc  heap_4.o [3]
+xSuspendedTaskList      0x2000'3184    0x14  Data  Lc  tasks.o [3]
+xTaskCheckForTimeOut     0x800'08a9    0x86  Code  Gb  tasks.o [3]
+xTaskCreate              0x800'0265    0x72  Code  Gb  tasks.o [3]
+xTaskCreateStatic        0x800'01e1    0x84  Code  Gb  tasks.o [3]
+xTaskGetSchedulerState   0x800'0a61    0x20  Code  Gb  tasks.o [3]
+xTaskGetTickCount        0x800'0621     0x8  Code  Gb  tasks.o [3]
+xTaskIncrementTick       0x800'0629    0xf0  Code  Gb  tasks.o [3]
+xTaskPriorityDisinherit
+                         0x800'0a81    0x8a  Code  Gb  tasks.o [3]
+xTaskRemoveFromEventList
+                         0x800'0809    0x80  Code  Gb  tasks.o [3]
+xTaskResumeAll           0x800'053d    0xe4  Code  Gb  tasks.o [3]
+xTasksWaitingTermination
+                        0x2000'3170    0x14  Data  Lc  tasks.o [3]
+xTickCount              0x2000'31fc     0x4  Data  Lc  tasks.o [3]
+xTimerCreateTimerTask    0x800'1219    0x6a  Code  Gb  timers.o [3]
+xTimerGenericCommand     0x800'1283    0x64  Code  Gb  timers.o [3]
+xTimerQueue             0x2000'322c     0x4  Data  Lc  timers.o [3]
+xTimerTaskHandle        0x2000'3230     0x4  Data  Lc  timers.o [3]
+xYieldPending           0x2000'320c     0x4  Data  Lc  tasks.o [3]
+
+
+[1] = E:\MCU\TP-Thread\target\at\at32f423rc\project\IAR_V9.3\at32f423rc\Obj\cmsis
+[2] = E:\MCU\TP-Thread\target\at\at32f423rc\project\IAR_V9.3\at32f423rc\Obj\firmware
+[3] = E:\MCU\TP-Thread\target\at\at32f423rc\project\IAR_V9.3\at32f423rc\Obj\middlewares\freertos
+[4] = E:\MCU\TP-Thread\target\at\at32f423rc\project\IAR_V9.3\at32f423rc\Obj\user
+[5] = dl7M_tlf.a
+[6] = m7M_tls.a
+[7] = rt7M_tl.a
+[8] = shb_l.a
+
+  10'602 bytes of readonly  code memory
+     118 bytes of readonly  data memory
+  13'881 bytes of readwrite data memory
+
+Errors: none
+Warnings: none

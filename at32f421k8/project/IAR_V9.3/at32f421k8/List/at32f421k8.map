@@ -1,0 +1,421 @@
+###############################################################################
+#
+# IAR ELF Linker V9.30.1.335/W64 for ARM                  13/Oct/2025  11:41:15
+# Copyright 2007-2022 IAR Systems AB.
+#
+#    Output file  =
+#        E:\MCU\TP-Thread\target\at\at32f421k8\project\IAR_V9.3\at32f421k8\Exe\at32f421k8.out
+#    Map file     =
+#        E:\MCU\TP-Thread\target\at\at32f421k8\project\IAR_V9.3\at32f421k8\List\at32f421k8.map
+#    Command line =
+#        -f
+#        E:\MCU\TP-Thread\target\at\at32f421k8\project\IAR_V9.3\at32f421k8\Exe\at32f421k8.out.rsp
+#        (E:\MCU\TP-Thread\target\at\at32f421k8\project\IAR_V9.3\at32f421k8\Obj\firmware\at32f421_adc.o
+#        E:\MCU\TP-Thread\target\at\at32f421k8\project\IAR_V9.3\at32f421k8\Obj\firmware\at32f421_crm.o
+#        E:\MCU\TP-Thread\target\at\at32f421k8\project\IAR_V9.3\at32f421k8\Obj\firmware\at32f421_debug.o
+#        E:\MCU\TP-Thread\target\at\at32f421k8\project\IAR_V9.3\at32f421k8\Obj\firmware\at32f421_dma.o
+#        E:\MCU\TP-Thread\target\at\at32f421k8\project\IAR_V9.3\at32f421k8\Obj\firmware\at32f421_flash.o
+#        E:\MCU\TP-Thread\target\at\at32f421k8\project\IAR_V9.3\at32f421k8\Obj\firmware\at32f421_gpio.o
+#        E:\MCU\TP-Thread\target\at\at32f421k8\project\IAR_V9.3\at32f421k8\Obj\user\at32f421_int.o
+#        E:\MCU\TP-Thread\target\at\at32f421k8\project\IAR_V9.3\at32f421k8\Obj\firmware\at32f421_misc.o
+#        E:\MCU\TP-Thread\target\at\at32f421k8\project\IAR_V9.3\at32f421k8\Obj\firmware\at32f421_pwc.o
+#        E:\MCU\TP-Thread\target\at\at32f421k8\project\IAR_V9.3\at32f421k8\Obj\firmware\at32f421_scfg.o
+#        E:\MCU\TP-Thread\target\at\at32f421k8\project\IAR_V9.3\at32f421k8\Obj\firmware\at32f421_usart.o
+#        E:\MCU\TP-Thread\target\at\at32f421k8\project\IAR_V9.3\at32f421k8\Obj\user\at32f421_wk_config.o
+#        E:\MCU\TP-Thread\target\at\at32f421k8\project\IAR_V9.3\at32f421k8\Obj\user\main.o
+#        E:\MCU\TP-Thread\target\at\at32f421k8\project\IAR_V9.3\at32f421k8\Obj\cmsis\startup_at32f421.o
+#        E:\MCU\TP-Thread\target\at\at32f421k8\project\IAR_V9.3\at32f421k8\Obj\cmsis\system_at32f421.o
+#        E:\MCU\TP-Thread\target\at\at32f421k8\project\IAR_V9.3\at32f421k8\Obj\user\wk_system.o
+#        --no_out_extension -o
+#        E:\MCU\TP-Thread\target\at\at32f421k8\project\IAR_V9.3\at32f421k8\Exe\at32f421k8.out
+#        --map
+#        E:\MCU\TP-Thread\target\at\at32f421k8\project\IAR_V9.3\at32f421k8\List\at32f421k8.map
+#        --config
+#        E:\MCU\TP-Thread\target\at\at32f421k8\project\IAR_V9.3\AT32F421x8.icf
+#        --semihosting --entry __iar_program_start --vfe --text_out locale
+#        --cpu=Cortex-M4 --fpu=None)
+#
+###############################################################################
+
+*******************************************************************************
+*** RUNTIME MODEL ATTRIBUTES
+***
+
+CppFlavor       = *
+__CPP_Runtime   = 1
+__SystemLibrary = DLib
+__dlib_version  = 6
+
+
+*******************************************************************************
+*** HEAP SELECTION
+***
+
+The basic heap was selected because --advanced_heap
+was not specified and the application did not appear to
+be primarily optimized for speed.
+
+
+*******************************************************************************
+*** PLACEMENT SUMMARY
+***
+
+"A0":  place at address 0x800'0000 { ro section .intvec };
+"P1":  place in [from 0x800'0000 to 0x800'ffff] { ro };
+define block CSTACK with size = 1K, alignment = 8 { };
+define block HEAP with size = 512, alignment = 8 { };
+"P2":  place in [from 0x2000'0000 to 0x2000'3fff] {
+          rw, block CSTACK, block HEAP };
+initialize by copy { rw };
+
+  Section            Kind         Address    Size  Object
+  -------            ----         -------    ----  ------
+"A0":                                        0xcc
+  .intvec            ro code   0x800'0000    0xcc  startup_at32f421.o [1]
+                             - 0x800'00cc    0xcc
+
+"P1":                                      0x17a4
+  .text              ro code   0x800'00cc   0x626  at32f421_wk_config.o [3]
+  .text              ro code   0x800'06f2    0x2a  copy_init3.o [5]
+  .text              ro code   0x800'071c   0x488  at32f421_crm.o [2]
+  .text              ro code   0x800'0ba4   0x1a4  system_at32f421.o [1]
+  .text              ro code   0x800'0d48   0x10c  at32f421_misc.o [2]
+  .text              ro code   0x800'0e54    0xee  at32f421_gpio.o [2]
+  .text              ro code   0x800'0f44   0x1d8  at32f421_adc.o [2]
+  .text              ro code   0x800'111c   0x196  at32f421_usart.o [2]
+  .text              ro code   0x800'12b4    0xe4  at32f421_dma.o [2]
+  .text              ro code   0x800'1398   0x230  I64DivMod.o [5]
+  .text              ro code   0x800'15c8     0x2  I64DivZer.o [5]
+  .text              ro code   0x800'15cc    0xb8  main.o [3]
+  .text              ro code   0x800'1684    0x44  wk_system.o [3]
+  .text              ro code   0x800'16c8    0x32  at32f421_int.o [3]
+  .text              ro code   0x800'16fa     0x8  wk_system.o [3]
+  .text              ro code   0x800'1704    0x10  wk_system.o [3]
+  .text              ro code   0x800'1714    0x28  data_init.o [5]
+  .iar.init_table    const     0x800'173c    0x14  - Linker created -
+  .text              ro code   0x800'1750    0x1e  cmain.o [5]
+  .text              ro code   0x800'176e     0x4  low_level_init.o [4]
+  .text              ro code   0x800'1772     0x4  exit.o [4]
+  .text              ro code   0x800'1778     0xa  cexit.o [5]
+  .text              ro code   0x800'1784    0x14  exit.o [6]
+  .text              ro code   0x800'1798    0x1c  cstartup_M.o [5]
+  .rodata            const     0x800'17b4    0x10  at32f421_crm.o [2]
+  .rodata            const     0x800'17c4    0x10  system_at32f421.o [1]
+  .text              ro code   0x800'17d4    0x10  startup_at32f421.o [1]
+  Initializer bytes  const     0x800'17e4    0x10  <for P2-1>
+  .rodata            const     0x800'17f4     0x8  at32f421_crm.o [2]
+  .rodata            const     0x800'17fc     0x8  at32f421_crm.o [2]
+  .rodata            const     0x800'1804     0x8  at32f421_crm.o [2]
+  .text              ro code   0x800'180c     0x4  startup_at32f421.o [1]
+  .text              ro code   0x800'1810     0x4  startup_at32f421.o [1]
+  .text              ro code   0x800'1814     0x4  startup_at32f421.o [1]
+  .text              ro code   0x800'1818     0x4  startup_at32f421.o [1]
+  .text              ro code   0x800'181c     0x4  startup_at32f421.o [1]
+  .text              ro code   0x800'1820     0x4  startup_at32f421.o [1]
+  .text              ro code   0x800'1824     0x4  startup_at32f421.o [1]
+  .text              ro code   0x800'1828     0x4  startup_at32f421.o [1]
+  .text              ro code   0x800'182c     0x4  startup_at32f421.o [1]
+  .text              ro code   0x800'1830     0x4  startup_at32f421.o [1]
+  .text              ro code   0x800'1834     0x4  startup_at32f421.o [1]
+  .text              ro code   0x800'1838     0x4  startup_at32f421.o [1]
+  .text              ro code   0x800'183c     0x4  startup_at32f421.o [1]
+  .text              ro code   0x800'1840     0x4  startup_at32f421.o [1]
+  .text              ro code   0x800'1844     0x4  startup_at32f421.o [1]
+  .text              ro code   0x800'1848     0x4  startup_at32f421.o [1]
+  .text              ro code   0x800'184c     0x4  startup_at32f421.o [1]
+  .text              ro code   0x800'1850     0x4  startup_at32f421.o [1]
+  .text              ro code   0x800'1854     0x4  startup_at32f421.o [1]
+  .text              ro code   0x800'1858     0x4  startup_at32f421.o [1]
+  .text              ro code   0x800'185c     0x4  startup_at32f421.o [1]
+  .text              ro code   0x800'1860     0x4  startup_at32f421.o [1]
+  .text              ro code   0x800'1864     0x4  startup_at32f421.o [1]
+  .text              ro code   0x800'1868     0x4  startup_at32f421.o [1]
+  .text              ro code   0x800'186c     0x4  startup_at32f421.o [1]
+  .rodata            const     0x800'1870     0x0  copy_init3.o [5]
+                             - 0x800'1870  0x17a4
+
+"P2", part 1 of 2:                           0x10
+  P2-1                        0x2000'0000    0x10  <Init block>
+    .bss             inited   0x2000'0000     0x8  wk_system.o [3]
+    .data            inited   0x2000'0008     0x4  system_at32f421.o [1]
+    .bss             inited   0x2000'000c     0x4  wk_system.o [3]
+                            - 0x2000'0010    0x10
+
+"P2", part 2 of 2:                          0x400
+  CSTACK                      0x2000'0010   0x400  <Block>
+    CSTACK           uninit   0x2000'0010   0x400  <Block tail>
+                            - 0x2000'0410   0x400
+
+Unused ranges:
+
+         From           To    Size
+         ----           --    ----
+   0x800'1870   0x800'ffff  0xe790
+  0x2000'0410  0x2000'3fff  0x3bf0
+
+
+*******************************************************************************
+*** INIT TABLE
+***
+
+          Address      Size
+          -------      ----
+Copy (__iar_copy_init3)
+    1 source range, total size 0x10:
+           0x800'17e4  0x10
+    1 destination range, total size 0x10:
+          0x2000'0000  0x10
+
+
+
+*******************************************************************************
+*** MODULE SUMMARY
+***
+
+    Module                ro code  ro data  rw data
+    ------                -------  -------  -------
+command line/config:
+    -----------------------------------------------
+    Total:
+
+E:\MCU\TP-Thread\target\at\at32f421k8\project\IAR_V9.3\at32f421k8\Obj\cmsis: [1]
+    startup_at32f421.o        320
+    system_at32f421.o         420       20        4
+    -----------------------------------------------
+    Total:                    740       20        4
+
+E:\MCU\TP-Thread\target\at\at32f421k8\project\IAR_V9.3\at32f421k8\Obj\firmware: [2]
+    at32f421_adc.o            472
+    at32f421_crm.o          1'160       40
+    at32f421_dma.o            228
+    at32f421_gpio.o           238
+    at32f421_misc.o           268
+    at32f421_usart.o          406
+    -----------------------------------------------
+    Total:                  2'772       40
+
+E:\MCU\TP-Thread\target\at\at32f421k8\project\IAR_V9.3\at32f421k8\Obj\user: [3]
+    at32f421_int.o             50
+    at32f421_wk_config.o    1'574
+    main.o                    184
+    wk_system.o                92       12       12
+    -----------------------------------------------
+    Total:                  1'900       12       12
+
+dl7M_tlf.a: [4]
+    exit.o                      4
+    low_level_init.o            4
+    -----------------------------------------------
+    Total:                      8
+
+rt7M_tl.a: [5]
+    I64DivMod.o               560
+    I64DivZer.o                 2
+    cexit.o                    10
+    cmain.o                    30
+    copy_init3.o               42
+    cstartup_M.o               28
+    data_init.o                40
+    -----------------------------------------------
+    Total:                    712
+
+shb_l.a: [6]
+    exit.o                     20
+    -----------------------------------------------
+    Total:                     20
+
+    Gaps                       12
+    Linker created                      20    1'024
+---------------------------------------------------
+    Grand Total:            6'164       92    1'040
+
+
+*******************************************************************************
+*** ENTRY LIST
+***
+
+Entry                       Address   Size  Type      Object
+-----                       -------   ----  ----      ------
+.iar.init_table$$Base    0x800'173c          --   Gb  - Linker created -
+.iar.init_table$$Limit   0x800'1750          --   Gb  - Linker created -
+?main                    0x800'1751         Code  Gb  cmain.o [5]
+ADC1_CMP_IRQHandler      0x800'1835         Code  Wk  startup_at32f421.o [1]
+BusFault_Handler         0x800'16cf    0x2  Code  Gb  at32f421_int.o [3]
+CRM_IRQHandler           0x800'181d         Code  Wk  startup_at32f421.o [1]
+CSTACK$$Base            0x2000'0010          --   Gb  - Linker created -
+CSTACK$$Limit           0x2000'0410          --   Gb  - Linker created -
+DMA1_Channel1_IRQHandler
+                         0x800'182d         Code  Wk  startup_at32f421.o [1]
+DMA1_Channel3_2_IRQHandler
+                         0x800'16f5    0x2  Code  Gb  at32f421_int.o [3]
+DMA1_Channel5_4_IRQHandler
+                         0x800'1831         Code  Wk  startup_at32f421.o [1]
+DebugMon_Handler         0x800'16d5    0x2  Code  Gb  at32f421_int.o [3]
+ERTC_IRQHandler          0x800'1815         Code  Wk  startup_at32f421.o [1]
+EXINT15_4_IRQHandler     0x800'1829         Code  Wk  startup_at32f421.o [1]
+EXINT1_0_IRQHandler      0x800'1821         Code  Wk  startup_at32f421.o [1]
+EXINT3_2_IRQHandler      0x800'1825         Code  Wk  startup_at32f421.o [1]
+FLASH_IRQHandler         0x800'1819         Code  Wk  startup_at32f421.o [1]
+HardFault_Handler        0x800'16cb    0x2  Code  Gb  at32f421_int.o [3]
+I2C1_ERR_IRQHandler      0x800'1869         Code  Wk  startup_at32f421.o [1]
+I2C1_EVT_IRQHandler      0x800'1859         Code  Wk  startup_at32f421.o [1]
+I2C2_ERR_IRQHandler      0x800'186d         Code  Wk  startup_at32f421.o [1]
+I2C2_EVT_IRQHandler      0x800'185d         Code  Wk  startup_at32f421.o [1]
+MemManage_Handler        0x800'16cd    0x2  Code  Gb  at32f421_int.o [3]
+NMI_Handler              0x800'16c9    0x2  Code  Gb  at32f421_int.o [3]
+NVIC_EncodePriority      0x800'0dad   0x3c  Code  Lc  at32f421_misc.o [2]
+NVIC_EncodePriority      0x800'0101   0x3c  Code  Lc  at32f421_wk_config.o [3]
+PVM_IRQHandler           0x800'1811         Code  Wk  startup_at32f421.o [1]
+PendSV_Handler           0x800'16d7    0x2  Code  Gb  at32f421_int.o [3]
+Region$$Table$$Base      0x800'173c          --   Gb  - Linker created -
+Region$$Table$$Limit     0x800'1750          --   Gb  - Linker created -
+Reset_Handler            0x800'17d5         Code  Wk  startup_at32f421.o [1]
+SPI1_IRQHandler          0x800'1861         Code  Wk  startup_at32f421.o [1]
+SPI2_IRQHandler          0x800'1865         Code  Wk  startup_at32f421.o [1]
+SVC_Handler              0x800'16d3    0x2  Code  Gb  at32f421_int.o [3]
+SysTick_Handler          0x800'16d9   0x18  Code  Gb  at32f421_int.o [3]
+SystemInit               0x800'0ba5   0x56  Code  Gb  system_at32f421.o [1]
+TMR14_GLOBAL_IRQHandler
+                         0x800'1849         Code  Wk  startup_at32f421.o [1]
+TMR15_GLOBAL_IRQHandler
+                         0x800'184d         Code  Wk  startup_at32f421.o [1]
+TMR16_GLOBAL_IRQHandler
+                         0x800'1851         Code  Wk  startup_at32f421.o [1]
+TMR17_GLOBAL_IRQHandler
+                         0x800'1855         Code  Wk  startup_at32f421.o [1]
+TMR1_BRK_OVF_TRG_HALL_IRQHandler
+                         0x800'1839         Code  Wk  startup_at32f421.o [1]
+TMR1_CH_IRQHandler       0x800'183d         Code  Wk  startup_at32f421.o [1]
+TMR3_GLOBAL_IRQHandler   0x800'1841         Code  Wk  startup_at32f421.o [1]
+TMR6_GLOBAL_IRQHandler   0x800'1845         Code  Wk  startup_at32f421.o [1]
+USART1_IRQHandler        0x800'16f7    0x2  Code  Gb  at32f421_int.o [3]
+USART2_IRQHandler        0x800'16f9    0x2  Code  Gb  at32f421_int.o [3]
+UsageFault_Handler       0x800'16d1    0x2  Code  Gb  at32f421_int.o [3]
+WWDT_IRQHandler          0x800'180d         Code  Wk  startup_at32f421.o [1]
+__NVIC_EnableIRQ         0x800'0d6d   0x1c  Code  Lc  at32f421_misc.o [2]
+__NVIC_GetPriorityGrouping
+                         0x800'0d63    0xa  Code  Lc  at32f421_misc.o [2]
+__NVIC_GetPriorityGrouping
+                         0x800'00cd    0xc  Code  Lc  at32f421_wk_config.o [3]
+__NVIC_SetPriority       0x800'0d89   0x24  Code  Lc  at32f421_misc.o [2]
+__NVIC_SetPriority       0x800'00d9   0x28  Code  Lc  at32f421_wk_config.o [3]
+__NVIC_SetPriorityGrouping
+                         0x800'0d49   0x1a  Code  Lc  at32f421_misc.o [2]
+__aeabi_ldiv0            0x800'15c9         Code  Gb  I64DivZer.o [5]
+__aeabi_uldivmod         0x800'1399         Code  Gb  I64DivMod.o [5]
+__cmain                  0x800'1751         Code  Gb  cmain.o [5]
+__exit                   0x800'1785   0x14  Code  Gb  exit.o [6]
+__iar_copy_init3         0x800'06f3   0x2a  Code  Gb  copy_init3.o [5]
+__iar_data_init3         0x800'1715   0x28  Code  Gb  data_init.o [5]
+__iar_program_start      0x800'1799         Code  Gb  cstartup_M.o [5]
+__low_level_init         0x800'176f    0x4  Code  Gb  low_level_init.o [4]
+__vector_table           0x800'0000         Data  Gb  startup_at32f421.o [1]
+_call_main               0x800'175d         Code  Gb  cmain.o [5]
+_exit                    0x800'1779         Code  Gb  cexit.o [5]
+adc_base_config          0x800'0f85   0x3c  Code  Gb  at32f421_adc.o [2]
+adc_base_default_para_init
+                         0x800'0f73   0x12  Code  Gb  at32f421_adc.o [2]
+adc_calibration_init     0x800'0fcf    0xc  Code  Gb  at32f421_adc.o [2]
+adc_calibration_init_status_get
+                         0x800'0fdb   0x12  Code  Gb  at32f421_adc.o [2]
+adc_calibration_start    0x800'0fed    0xc  Code  Gb  at32f421_adc.o [2]
+adc_calibration_status_get
+                         0x800'0ff9   0x12  Code  Gb  at32f421_adc.o [2]
+adc_dma_mode_enable      0x800'0fc1    0xe  Code  Gb  at32f421_adc.o [2]
+adc_enable               0x800'0f65    0xe  Code  Gb  at32f421_adc.o [2]
+adc_ordinary_channel_set
+                         0x800'100b   0xc6  Code  Gb  at32f421_adc.o [2]
+adc_ordinary_conversion_trigger_set
+                         0x800'10d1   0x34  Code  Gb  at32f421_adc.o [2]
+adc_ordinary_part_mode_enable
+                         0x800'1105    0xe  Code  Gb  at32f421_adc.o [2]
+adc_reset                0x800'0f45   0x20  Code  Gb  at32f421_adc.o [2]
+crm_adc_clock_div_set    0x800'08b9   0x20  Code  Gb  at32f421_crm.o [2]
+crm_ahb_div_set          0x800'088f    0xe  Code  Gb  at32f421_crm.o [2]
+crm_apb1_div_set         0x800'089d    0xe  Code  Gb  at32f421_crm.o [2]
+crm_apb2_div_set         0x800'08ab    0xe  Code  Gb  at32f421_crm.o [2]
+crm_clock_source_enable
+                         0x800'0829   0x66  Code  Gb  at32f421_crm.o [2]
+crm_clocks_freq_get      0x800'09ef  0x146  Code  Gb  at32f421_crm.o [2]
+crm_clocks_freq_get::adc_div_table
+                         0x800'1804    0x8  Data  Lc  at32f421_crm.o [2]
+crm_clocks_freq_get::ahb_apb1_div_table
+                         0x800'17f4    0x8  Data  Lc  at32f421_crm.o [2]
+crm_clocks_freq_get::ahb_apb2_div_table
+                         0x800'17fc    0x8  Data  Lc  at32f421_crm.o [2]
+crm_clocks_freq_get::sclk_ahb_div_table
+                         0x800'17b4   0x10  Data  Lc  at32f421_crm.o [2]
+crm_flag_get             0x800'0777   0x2e  Code  Gb  at32f421_crm.o [2]
+crm_periph_clock_enable
+                         0x800'07a5   0x42  Code  Gb  at32f421_crm.o [2]
+crm_periph_reset         0x800'07e7   0x42  Code  Gb  at32f421_crm.o [2]
+crm_pll_config           0x800'08d9   0xd6  Code  Gb  at32f421_crm.o [2]
+crm_reset                0x800'071d   0x5a  Code  Gb  at32f421_crm.o [2]
+crm_sysclk_switch        0x800'09af   0x34  Code  Gb  at32f421_crm.o [2]
+crm_sysclk_switch_status_get
+                         0x800'09e3    0xc  Code  Gb  at32f421_crm.o [2]
+dma_channel_enable       0x800'12f1    0xc  Code  Gb  at32f421_dma.o [2]
+dma_default_para_init    0x800'1301   0x2a  Code  Gb  at32f421_dma.o [2]
+dma_init                 0x800'132b   0x6e  Code  Gb  at32f421_dma.o [2]
+dma_reset                0x800'12b5   0x3c  Code  Gb  at32f421_dma.o [2]
+exit                     0x800'1773    0x4  Code  Gb  exit.o [4]
+g_system_runTime        0x2000'0000    0x8  Data  Gb  wk_system.o [3]
+gpio_bits_reset          0x800'0ee9    0x6  Code  Gb  at32f421_gpio.o [2]
+gpio_default_para_init   0x800'0ed1   0x18  Code  Gb  at32f421_gpio.o [2]
+gpio_init                0x800'0e55   0x7c  Code  Gb  at32f421_gpio.o [2]
+gpio_pin_mux_config      0x800'0eef   0x54  Code  Gb  at32f421_gpio.o [2]
+main                     0x800'15cd   0xb8  Code  Gb  main.o [3]
+nvic_irq_enable          0x800'0de9   0x2a  Code  Gb  at32f421_misc.o [2]
+nvic_priority_group_config
+                         0x800'0e13    0xa  Code  Gb  at32f421_misc.o [2]
+system_core_clock       0x2000'0008    0x4  Data  Gb  system_at32f421.o [1]
+system_core_clock_update
+                         0x800'0bfb  0x11a  Code  Gb  system_at32f421.o [1]
+system_core_clock_update::sys_ahb_div_table
+                         0x800'17c4   0x10  Data  Lc  system_at32f421.o [1]
+systick_clock_source_config
+                         0x800'0e1d   0x1e  Code  Gb  at32f421_misc.o [2]
+timebase_ticks          0x2000'000c    0x4  Data  Gb  wk_system.o [3]
+usart_dma_receiver_enable
+                         0x800'1227    0xe  Code  Gb  at32f421_usart.o [2]
+usart_dma_transmitter_enable
+                         0x800'1219    0xe  Code  Gb  at32f421_usart.o [2]
+usart_enable             0x800'11ef    0xe  Code  Gb  at32f421_usart.o [2]
+usart_hardware_flow_control_set
+                         0x800'1235   0x7e  Code  Gb  at32f421_usart.o [2]
+usart_init               0x800'111d   0x6e  Code  Gb  at32f421_usart.o [2]
+usart_parity_selection_config
+                         0x800'1191   0x5e  Code  Gb  at32f421_usart.o [2]
+usart_receiver_enable    0x800'120b    0xe  Code  Gb  at32f421_usart.o [2]
+usart_transmitter_enable
+                         0x800'11fd    0xe  Code  Gb  at32f421_usart.o [2]
+wk_adc1_init             0x800'02f9  0x120  Code  Gb  at32f421_wk_config.o [3]
+wk_dma1_channel1_init    0x800'0581   0x48  Code  Gb  at32f421_wk_config.o [3]
+wk_dma1_channel2_init    0x800'05c9   0x48  Code  Gb  at32f421_wk_config.o [3]
+wk_dma1_channel3_init    0x800'0611   0x48  Code  Gb  at32f421_wk_config.o [3]
+wk_dma1_channel5_init    0x800'0659   0x48  Code  Gb  at32f421_wk_config.o [3]
+wk_dma_channel_config    0x800'06e9    0xa  Code  Gb  at32f421_wk_config.o [3]
+wk_gpio_config           0x800'02bf   0x3a  Code  Gb  at32f421_wk_config.o [3]
+wk_nvic_config           0x800'01fd   0xc2  Code  Gb  at32f421_wk_config.o [3]
+wk_periph_clock_config   0x800'01b3   0x4a  Code  Gb  at32f421_wk_config.o [3]
+wk_system_clock_config   0x800'013d   0x76  Code  Gb  at32f421_wk_config.o [3]
+wk_timebase_handler      0x800'16fb    0x8  Code  Wk  wk_system.o [3]
+wk_timebase_increase     0x800'1705   0x10  Code  Wk  wk_system.o [3]
+wk_timebase_init         0x800'1685   0x44  Code  Wk  wk_system.o [3]
+wk_usart1_init           0x800'0419   0xba  Code  Gb  at32f421_wk_config.o [3]
+wk_usart2_init           0x800'04d3   0xae  Code  Gb  at32f421_wk_config.o [3]
+
+
+[1] = E:\MCU\TP-Thread\target\at\at32f421k8\project\IAR_V9.3\at32f421k8\Obj\cmsis
+[2] = E:\MCU\TP-Thread\target\at\at32f421k8\project\IAR_V9.3\at32f421k8\Obj\firmware
+[3] = E:\MCU\TP-Thread\target\at\at32f421k8\project\IAR_V9.3\at32f421k8\Obj\user
+[4] = dl7M_tlf.a
+[5] = rt7M_tl.a
+[6] = shb_l.a
+
+  6'164 bytes of readonly  code memory
+     92 bytes of readonly  data memory
+  1'040 bytes of readwrite data memory
+
+Errors: none
+Warnings: none

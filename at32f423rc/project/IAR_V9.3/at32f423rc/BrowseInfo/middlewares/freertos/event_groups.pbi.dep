@@ -1,0 +1,25 @@
+E:\MCU\TP-Thread\target\at\at32f423rc\project\IAR_V9.3\at32f423rc\BrowseInfo\middlewares/freertos\event_groups.pbi: \
+  E:\MCU\TP-Thread\target\at\at32f423rc\middlewares\freertos\source\event_groups.c \
+  D:\EIDE\IAR\arm\inc\c\stdlib.h D:\EIDE\IAR\arm\inc\c\ycheck.h \
+  D:\EIDE\IAR\arm\inc\c\yvals.h D:\EIDE\IAR\arm\inc\c\DLib_Defaults.h \
+  D:\EIDE\IAR\arm\inc\c\DLib_Config_Full.h \
+  D:\EIDE\IAR\arm\inc\c\DLib_Product.h D:\EIDE\IAR\arm\inc\c\ysizet.h \
+  D:\EIDE\IAR\arm\inc\c\DLib_Product_stdlib.h \
+  E:\MCU\TP-Thread\target\at\at32f423rc\project\IAR_V9.3\..\..\middlewares\freertos\source\include\FreeRTOS.h \
+  D:\EIDE\IAR\arm\inc\c\stddef.h D:\EIDE\IAR\arm\inc\c\stdint.h \
+  E:\MCU\TP-Thread\target\at\at32f423rc\project\IAR_V9.3\..\inc\FreeRTOSConfig.h \
+  E:\MCU\TP-Thread\target\at\at32f423rc\project\IAR_V9.3\..\..\libraries\cmsis\cm4\device_support\system_at32f423.h \
+  E:\MCU\TP-Thread\target\at\at32f423rc\project\IAR_V9.3\..\..\middlewares\freertos\source\include\projdefs.h \
+  E:\MCU\TP-Thread\target\at\at32f423rc\project\IAR_V9.3\..\..\middlewares\freertos\source\include\portable.h \
+  E:\MCU\TP-Thread\target\at\at32f423rc\project\IAR_V9.3\..\..\middlewares\freertos\source\include\deprecated_definitions.h \
+  E:\MCU\TP-Thread\target\at\at32f423rc\project\IAR_V9.3\..\..\middlewares\freertos\source\portable\IAR\ARM_CM4F\portmacro.h \
+  D:\EIDE\IAR\arm\inc\c\aarch32\intrinsics.h \
+  D:\EIDE\IAR\arm\inc\c\aarch32\iccarm_builtin.h \
+  D:\EIDE\IAR\arm\inc\c\aarch32\iar_intrinsics_common.h \
+  E:\MCU\TP-Thread\target\at\at32f423rc\project\IAR_V9.3\..\..\middlewares\freertos\source\include\mpu_wrappers.h \
+  E:\MCU\TP-Thread\target\at\at32f423rc\project\IAR_V9.3\..\..\middlewares\freertos\source\include\task.h \
+  E:\MCU\TP-Thread\target\at\at32f423rc\project\IAR_V9.3\..\..\middlewares\freertos\source\include\list.h \
+  E:\MCU\TP-Thread\target\at\at32f423rc\project\IAR_V9.3\..\..\middlewares\freertos\source\include\timers.h \
+  E:\MCU\TP-Thread\target\at\at32f423rc\project\IAR_V9.3\..\..\middlewares\freertos\source\include\task.h \
+  E:\MCU\TP-Thread\target\at\at32f423rc\project\IAR_V9.3\..\..\middlewares\freertos\source\include\event_groups.h \
+  E:\MCU\TP-Thread\target\at\at32f423rc\project\IAR_V9.3\..\..\middlewares\freertos\source\include\timers.h

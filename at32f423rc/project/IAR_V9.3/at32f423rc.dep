@@ -1,0 +1,462 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+    <fileVersion>5</fileVersion>
+    <fileChecksum>854858702</fileChecksum>
+    <configuration>
+        <name>at32f423rc</name>
+        <outputs>
+            <file>$PROJ_DIR$\at32f423rc\Obj\middlewares\freertos\list.o</file>
+            <file>$PROJ_DIR$\..\src\at32f423_int.c</file>
+            <file>$PROJ_DIR$\..\src\main.c</file>
+            <file>$PROJ_DIR$\..\..\libraries\cmsis\cm4\device_support\system_at32f423.c</file>
+            <file>$PROJ_DIR$\..\src\freertos_app.c</file>
+            <file>$PROJ_DIR$\..\..\libraries\drivers\src\at32f423_gpio.c</file>
+            <file>$PROJ_DIR$\..\..\libraries\drivers\src\at32f423_pwc.c</file>
+            <file>$PROJ_DIR$\..\..\libraries\drivers\src\at32f423_debug.c</file>
+            <file>$PROJ_DIR$\..\src\at32f423_wk_config.c</file>
+            <file>$PROJ_DIR$\..\..\libraries\drivers\src\at32f423_flash.c</file>
+            <file>$PROJ_DIR$\..\..\libraries\drivers\src\at32f423_misc.c</file>
+            <file>$PROJ_DIR$\startup_at32f423.s</file>
+            <file>$PROJ_DIR$\..\..\libraries\drivers\src\at32f423_crm.c</file>
+            <file>$PROJ_DIR$\..\inc\freertos_app.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\string.h</file>
+            <file>$TOOLKIT_DIR$\lib\dl7M_tlf.a</file>
+            <file>$PROJ_DIR$\..\..\libraries\cmsis\cm4\core_support\cmsis_compiler.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\aarch32\intrinsics.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\aarch32\iar_intrinsics_common.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\aarch32\iccarm_builtin.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\DLib_Product_stdlib.h</file>
+            <file>$PROJ_DIR$\..\..\middlewares\freertos\source\include\stream_buffer.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\ysizet.h</file>
+            <file>$PROJ_DIR$\..\..\middlewares\freertos\source\include\semphr.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\DLib_Config_Full.h</file>
+            <file>$PROJ_DIR$\..\..\middlewares\freertos\source\include\deprecated_definitions.h</file>
+            <file>$PROJ_DIR$\..\..\middlewares\freertos\source\include\croutine.h</file>
+            <file>$PROJ_DIR$\..\..\middlewares\freertos\source\portable\IAR\ARM_CM4F\portmacro.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\stddef.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\DLib_Product_string.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\DLib_Product.h</file>
+            <file>$PROJ_DIR$\..\..\libraries\cmsis\cm4\core_support\cmsis_iccarm.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\stdlib.h</file>
+            <file>$PROJ_DIR$\AT32F423xC.icf</file>
+            <file>$PROJ_DIR$\..\..\middlewares\freertos\source\include\projdefs.h</file>
+            <file>$PROJ_DIR$\..\..\middlewares\freertos\source\include\task.h</file>
+            <file>$PROJ_DIR$\..\..\middlewares\freertos\source\include\FreeRTOS.h</file>
+            <file>$PROJ_DIR$\..\..\middlewares\freertos\source\include\portable.h</file>
+            <file>$PROJ_DIR$\..\..\libraries\drivers\inc\at32f423_misc.h</file>
+            <file>$PROJ_DIR$\..\inc\at32f423_int.h</file>
+            <file>$PROJ_DIR$\..\..\libraries\cmsis\cm4\core_support\mpu_armv7.h</file>
+            <file>$PROJ_DIR$\..\inc\at32f423_conf.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\stdio.h</file>
+            <file>$PROJ_DIR$\..\..\libraries\cmsis\cm4\device_support\system_at32f423.h</file>
+            <file>$PROJ_DIR$\..\..\middlewares\freertos\source\include\mpu_wrappers.h</file>
+            <file>$TOOLKIT_DIR$\lib\shb_l.a</file>
+            <file>$TOOLKIT_DIR$\lib\rt7M_tl.a</file>
+            <file>$PROJ_DIR$\..\..\middlewares\freertos\source\include\event_groups.h</file>
+            <file>$PROJ_DIR$\..\..\middlewares\freertos\source\include\stack_macros.h</file>
+            <file>$PROJ_DIR$\at32f423rc\List\at32f423rc.map</file>
+            <file>$PROJ_DIR$\..\inc\at32f423_wk_config.h</file>
+            <file>$TOOLKIT_DIR$\lib\m7M_tls.a</file>
+            <file>$PROJ_DIR$\..\..\middlewares\freertos\source\include\timers.h</file>
+            <file>$PROJ_DIR$\..\..\libraries\drivers\inc\at32f423_flash.h</file>
+            <file>$PROJ_DIR$\..\..\middlewares\freertos\source\include\list.h</file>
+            <file>$PROJ_DIR$\..\..\middlewares\freertos\source\include\queue.h</file>
+            <file>$PROJ_DIR$\..\..\libraries\drivers\inc\at32f423_def.h</file>
+            <file>$PROJ_DIR$\..\..\libraries\drivers\inc\at32f423_debug.h</file>
+            <file>$PROJ_DIR$\..\..\libraries\drivers\inc\at32f423_pwc.h</file>
+            <file>$PROJ_DIR$\..\..\libraries\drivers\inc\at32f423_gpio.h</file>
+            <file>$PROJ_DIR$\..\..\libraries\cmsis\cm4\core_support\cmsis_version.h</file>
+            <file>$PROJ_DIR$\..\..\libraries\drivers\inc\at32f423_crm.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\DLib_Defaults.h</file>
+            <file>$PROJ_DIR$\at32f423rc\Obj\middlewares\freertos\tasks.o</file>
+            <file>$TOOLKIT_DIR$\inc\c\yvals.h</file>
+            <file>$PROJ_DIR$\at32f423rc\Obj\user\freertos_app.o</file>
+            <file>$PROJ_DIR$\..\..\libraries\cmsis\cm4\device_support\at32f423.h</file>
+            <file>$PROJ_DIR$\at32f423rc\Obj\middlewares\freertos\croutine.o</file>
+            <file>$PROJ_DIR$\..\..\middlewares\freertos\source\event_groups.c</file>
+            <file>$PROJ_DIR$\..\..\middlewares\freertos\source\portable\IAR\ARM_CM4F\port.c</file>
+            <file>$PROJ_DIR$\..\..\middlewares\freertos\source\portable\memmang\heap_4.c</file>
+            <file>$PROJ_DIR$\at32f423rc\Obj\middlewares\freertos\event_groups.o</file>
+            <file>$PROJ_DIR$\at32f423rc\Obj\middlewares\freertos\heap_4.o</file>
+            <file>$PROJ_DIR$\..\..\middlewares\freertos\source\stream_buffer.c</file>
+            <file>$PROJ_DIR$\..\..\middlewares\freertos\source\queue.c</file>
+            <file>$PROJ_DIR$\at32f423rc\Obj\firmware\at32f423_misc.o</file>
+            <file>$PROJ_DIR$\at32f423rc\Obj\firmware\at32f423_debug.o</file>
+            <file>$PROJ_DIR$\at32f423rc\Obj\firmware\at32f423_crm.o</file>
+            <file>$PROJ_DIR$\at32f423rc\Obj\middlewares\freertos\port.o</file>
+            <file>$PROJ_DIR$\..\..\middlewares\freertos\source\portable\IAR\ARM_CM4F\portasm.s</file>
+            <file>$PROJ_DIR$\at32f423rc\Obj\middlewares\freertos\queue.o</file>
+            <file>$PROJ_DIR$\at32f423rc\Obj\middlewares\freertos\stream_buffer.o</file>
+            <file>$PROJ_DIR$\at32f423rc\Obj\middlewares\freertos\timers.o</file>
+            <file>$PROJ_DIR$\..\..\middlewares\freertos\source\timers.c</file>
+            <file>$PROJ_DIR$\at32f423rc\Obj\firmware\at32f423_gpio.o</file>
+            <file>$PROJ_DIR$\at32f423rc\Obj\cmsis\system_at32f423.o</file>
+            <file>$PROJ_DIR$\at32f423rc\Obj\user\at32f423_int.o</file>
+            <file>$PROJ_DIR$\at32f423rc\Obj\firmware\at32f423_pwc.o</file>
+            <file>$PROJ_DIR$\..\inc\FreeRTOSConfig.h</file>
+            <file>$PROJ_DIR$\..\..\libraries\cmsis\cm4\core_support\core_cm4.h</file>
+            <file>$PROJ_DIR$\..\..\middlewares\freertos\source\croutine.c</file>
+            <file>$PROJ_DIR$\at32f423rc\Obj\user\main.o</file>
+            <file>$PROJ_DIR$\..\..\middlewares\freertos\source\tasks.c</file>
+            <file>$PROJ_DIR$\at32f423rc\Obj\user\at32f423_wk_config.o</file>
+            <file>$PROJ_DIR$\at32f423rc\Obj\firmware\at32f423_flash.o</file>
+            <file>$TOOLKIT_DIR$\inc\c\ycheck.h</file>
+            <file>$PROJ_DIR$\at32f423rc\Exe\at32f423rc.out</file>
+            <file>$TOOLKIT_DIR$\inc\c\stdint.h</file>
+            <file>$PROJ_DIR$\..\..\middlewares\freertos\source\list.c</file>
+            <file>$PROJ_DIR$\at32f423rc\Obj\cmsis\startup_at32f423.o</file>
+            <file>$PROJ_DIR$\at32f423rc\Obj\middlewares\freertos\portasm.o</file>
+        </outputs>
+        <file>
+            <name>$PROJ_DIR$\..\src\at32f423_int.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 86</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 39 66 89 97 95 64 62 24 30 60 16 31 19 40 43 56 41 61 59 58 57 53 38</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\src\main.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 91</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 50 42 95 64 62 24 30 22 66 89 97 60 16 31 19 40 43 56 41 61 59 58 57 53 38 13 36 28 88 34 37 25 27 17 18 44 35 54 23 55 52 47</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\libraries\cmsis\cm4\device_support\system_at32f423.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 85</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 66 89 97 95 64 62 24 30 60 16 31 19 40 43 56 41 61 59 58 57 53 38</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\src\freertos_app.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 65</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 13 36 28 95 64 62 24 30 22 97 88 43 34 37 25 27 17 19 18 44 35 54 23 55 52 47</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\libraries\drivers\src\at32f423_gpio.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 84</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 41 61 66 89 97 95 64 62 24 30 60 16 31 19 40 43 56 59 58 57 53 38</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\libraries\drivers\src\at32f423_pwc.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 87</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 41 61 66 89 97 95 64 62 24 30 60 16 31 19 40 43 56 59 58 57 53 38</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\libraries\drivers\src\at32f423_debug.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 76</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 41 61 66 89 97 95 64 62 24 30 60 16 31 19 40 43 56 59 58 57 53 38</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\src\at32f423_wk_config.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 93</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 50 42 95 64 62 24 30 22 66 89 97 60 16 31 19 40 43 56 41 61 59 58 57 53 38</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\libraries\drivers\src\at32f423_flash.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 94</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 41 61 66 89 97 95 64 62 24 30 60 16 31 19 40 43 56 59 58 57 53 38</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\libraries\drivers\src\at32f423_misc.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 75</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 41 61 66 89 97 95 64 62 24 30 60 16 31 19 40 43 56 59 58 57 53 38</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\startup_at32f423.s</name>
+            <outputs>
+                <tool>
+                    <name>AARM</name>
+                    <file> 99</file>
+                </tool>
+            </outputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\libraries\drivers\src\at32f423_crm.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 77</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 41 61 66 89 97 95 64 62 24 30 60 16 31 19 40 43 56 59 58 57 53 38</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>[ROOT_NODE]</name>
+            <outputs>
+                <tool>
+                    <name>ILINK</name>
+                    <file> 96 49</file>
+                </tool>
+            </outputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\middlewares\freertos\source\event_groups.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 71</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 32 95 64 62 24 30 22 20 36 28 97 88 43 34 37 25 27 17 19 18 44 35 54 52 47</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\middlewares\freertos\source\portable\IAR\ARM_CM4F\port.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 78</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 17 19 64 62 24 30 18 36 28 95 22 97 88 43 34 37 25 27 44 35 54</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\middlewares\freertos\source\portable\memmang\heap_4.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 72</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 32 95 64 62 24 30 22 20 36 28 97 88 43 34 37 25 27 17 19 18 44 35 54</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\middlewares\freertos\source\stream_buffer.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 81</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 97 95 64 62 24 30 14 22 29 36 28 88 43 34 37 25 27 17 19 18 44 35 54 21</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\middlewares\freertos\source\queue.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 80</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 32 95 64 62 24 30 22 20 14 29 36 28 97 88 43 34 37 25 27 17 19 18 44 35 54 55</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\middlewares\freertos\source\portable\IAR\ARM_CM4F\portasm.s</name>
+            <outputs>
+                <tool>
+                    <name>AARM</name>
+                    <file> 100</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>AARM</name>
+                    <file> 88</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\middlewares\freertos\source\timers.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 82</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 32 95 64 62 24 30 22 20 36 28 97 88 43 34 37 25 27 17 19 18 44 35 54 55 52</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\middlewares\freertos\source\croutine.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 67</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 36 28 95 64 62 24 30 22 97 88 43 34 37 25 27 17 19 18 44 35 54 26</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\middlewares\freertos\source\tasks.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 63</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 32 95 64 62 24 30 22 20 14 29 36 28 97 88 43 34 37 25 27 17 19 18 44 35 54 52 48</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\at32f423rc\Exe\at32f423rc.out</name>
+            <outputs>
+                <tool>
+                    <name>ILINK</name>
+                    <file> 49</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ILINK</name>
+                    <file> 33 77 76 94 84 86 75 87 93 67 71 65 72 0 91 78 100 80 99 81 85 63 82 45 46 51 15</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\middlewares\freertos\source\list.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 0</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 32 95 64 62 24 30 22 20 36 28 97 88 43 34 37 25 27 17 19 18 44 54</file>
+                </tool>
+            </inputs>
+        </file>
+        <forcedrebuild>
+            <name>[REBUILD_ALL]</name>
+        </forcedrebuild>
+    </configuration>
+</project>
