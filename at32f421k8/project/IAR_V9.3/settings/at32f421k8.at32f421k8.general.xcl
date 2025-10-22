@@ -1,8 +1,8 @@
 "D:\EIDE\IAR\arm\bin\armPROC.dll" 
 
-"D:\EIDE\IAR\arm\bin\armJET.dll" 
+"D:\EIDE\IAR\arm\bin\armJLINK.dll" 
 
-"E:\MCU\TP-Thread\target\at\at32f421k8\project\IAR_V9.3\at32f421k8\Exe\at32f421k8.out" 
+"E:\MCU\AT32\at32f421k8\project\IAR_V9.3\at32f421k8\Exe\at32f421k8.out" 
 
 --plugin="D:\EIDE\IAR\arm\bin\armbat.dll" 
 

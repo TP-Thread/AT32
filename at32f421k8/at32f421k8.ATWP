@@ -49,6 +49,42 @@
             <ParametersSub name="Delay_Mode" value="Interrupt"/>
         </Parameters>
     </SYSTEM>
+    <TMR1>
+        <Mode>
+            <ModeSub name="Channel1 mode" value="Output_without_pin"/>
+            <ModeSub name="Channel2 mode" value="Output_without_pin"/>
+            <ModeSub name="Channel3 mode" value="Output_without_pin"/>
+            <ModeSub name="Clock selection" value="Internal"/>
+            <ModeSub name="Activated" value="TRUE"/>
+        </Mode>
+        <Parameters>
+            <ParametersSub name="DividerValue" value="7199"/>
+            <ParametersSub name="Period" value="499"/>
+            <ParametersSub name="Primary_TMR_output" value="TMR_PRIMARY_SEL_OVERFLOW"/>
+            <ParametersSub name="ChannelData_1" value="10"/>
+            <ParametersSub name="ChannelData_2" value="20"/>
+            <ParametersSub name="ChannelData_3" value="40"/>
+        </Parameters>
+    </TMR1>
+    <TMR3>
+        <Mode>
+            <ModeSub name="Clock selection" value="Internal"/>
+            <ModeSub name="Activated" value="TRUE"/>
+        </Mode>
+        <Parameters>
+            <ParametersSub name="DividerValue" value="7199"/>
+            <ParametersSub name="Period" value="199"/>
+        </Parameters>
+    </TMR3>
+    <TMR6>
+        <Mode>
+            <ModeSub name="Activated" value="TRUE"/>
+        </Mode>
+        <Parameters>
+            <ParametersSub name="DividerValue" value="7199"/>
+            <ParametersSub name="Period" value="9999"/>
+        </Parameters>
+    </TMR6>
     <TMR14>
         <Mode>
             <ModeSub name="Channel1 mode" value="Output_CH1"/>
@@ -56,8 +92,9 @@
         </Mode>
         <Parameters>
             <ParametersSub name="Period" value="3599"/>
-            <ParametersSub name="Overflow_Event" value="FALSE"/>
             <ParametersSub name="OCMode_1" value="TMR_OUTPUT_CONTROL_PWM_MODE_A"/>
+            <ParametersSub name="OC1Buffer" value="TRUE"/>
+            <ParametersSub name="OC1ImmediatelyMode_PWM" value="TRUE"/>
         </Parameters>
     </TMR14>
     <USART1>
@@ -103,12 +140,19 @@
         <DMA1_Channel3_2_IRQHandler>1;3;2;0;0</DMA1_Channel3_2_IRQHandler>
         <DMA1_Channel5_4_IRQHandler>0;0;0;0;0</DMA1_Channel5_4_IRQHandler>
         <ADC1_CMP_IRQHandler>0;0;0;0;0</ADC1_CMP_IRQHandler>
+        <TMR1_BRK_OVF_TRG_HALL_IRQHandler>1;3;2;0;0</TMR1_BRK_OVF_TRG_HALL_IRQHandler>
+        <TMR1_CH_IRQHandler>1;3;2;0;0</TMR1_CH_IRQHandler>
+        <TMR3_GLOBAL_IRQHandler>1;3;2;0;0</TMR3_GLOBAL_IRQHandler>
+        <TMR6_GLOBAL_IRQHandler>1;0;0;0;0</TMR6_GLOBAL_IRQHandler>
         <TMR14_GLOBAL_IRQHandler>0;0;0;0;0</TMR14_GLOBAL_IRQHandler>
         <USART1_IRQHandler>1;2;2;0;0</USART1_IRQHandler>
         <USART2_IRQHandler>1;2;2;0;0</USART2_IRQHandler>
     </NVIC>
     <GPIO>
         <Signal SignalName="USART2_TX" PinName="PA2">
+            <Parameters name="GPIO_PullType_Set" value="GPIO_PULL_UP"/>
+        </Signal>
+        <Signal SignalName="USART2_RX" PinName="PA3">
             <Parameters name="GPIO_PullType_Set" value="GPIO_PULL_UP"/>
         </Signal>
         <Signal SignalName="GPIO_Output" PinName="PB0">
@@ -157,14 +201,16 @@
         <PinSub pinname="PB1" signalname="TMR14_CH1" signaltype="3"/>
         <PinSub pinname="PA9" signalname="USART1_TX" signaltype="3"/>
         <PinSub pinname="PA10" signalname="USART1_RX" signaltype="3"/>
+        <PinSub pinname="PA11" signalname="GPIO_Output" signaltype="3"/>
         <PinSub pinname="PA12" signalname="EXINT12" signaltype="3"/>
         <PinSub pinname="PA13" signalname="DEBUG_SWDIO" signaltype="2"/>
         <PinSub pinname="PA14" signalname="DEBUG_SWCLK" signaltype="2"/>
         <PinSub pinname="PB3" signalname="GPIO_Output" signaltype="3"/>
+        <PinSub pinname="PB5" signalname="GPIO_Output" signaltype="3"/>
     </PINInfo>
     <ProjectInfomation>
         <ProjectName>at32f421k8</ProjectName>
-        <ProjectLocation>E:/MCU/TP-Thread/target/at</ProjectLocation>
+        <ProjectLocation>E:/MCU/AT32</ProjectLocation>
         <ToolchainIDE>IAR_V9.3</ToolchainIDE>
         <ARMCompiler>0</ARMCompiler>
         <KeepUserCode>true</KeepUserCode>

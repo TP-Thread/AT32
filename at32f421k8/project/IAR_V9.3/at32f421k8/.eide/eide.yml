@@ -1,0 +1,121 @@
+version: "4.1"
+name: at32f421k8
+type: ARM
+deviceName: null
+packDir: null
+srcDirs: []
+virtualFolder:
+  name: <virtual_root>
+  files: []
+  folders:
+    - name: cmsis
+      files:
+        - path: ${PROJ_DIR}/startup_at32f421.s
+        - path: ${PROJ_DIR}/../../libraries/cmsis/cm4/device_support/system_at32f421.c
+      folders: []
+    - name: firmware
+      files:
+        - path: ${PROJ_DIR}/../../libraries/drivers/src/at32f421_crm.c
+        - path: ${PROJ_DIR}/../../libraries/drivers/src/at32f421_tmr.c
+        - path: ${PROJ_DIR}/../../libraries/drivers/src/at32f421_gpio.c
+        - path: ${PROJ_DIR}/../../libraries/drivers/src/at32f421_usart.c
+        - path: ${PROJ_DIR}/../../libraries/drivers/src/at32f421_pwc.c
+        - path: ${PROJ_DIR}/../../libraries/drivers/src/at32f421_adc.c
+        - path: ${PROJ_DIR}/../../libraries/drivers/src/at32f421_dma.c
+        - path: ${PROJ_DIR}/../../libraries/drivers/src/at32f421_debug.c
+        - path: ${PROJ_DIR}/../../libraries/drivers/src/at32f421_flash.c
+        - path: ${PROJ_DIR}/../../libraries/drivers/src/at32f421_exint.c
+        - path: ${PROJ_DIR}/../../libraries/drivers/src/at32f421_misc.c
+        - path: ${PROJ_DIR}/../../libraries/drivers/src/at32f421_scfg.c
+      folders: []
+    - name: user
+      files:
+        - path: ${PROJ_DIR}/../src/at32f421_int.c
+        - path: ${PROJ_DIR}/../src/at32f421_wk_config.c
+        - path: ${PROJ_DIR}/../src/main.c
+        - path: ${PROJ_DIR}/../src/wk_system.c
+      folders: []
+    - name: bsp
+      files:
+        - path: ../../../bsp/src/ar_tim.c
+      folders: []
+dependenceList: []
+outDir: build
+miscInfo:
+  uid: bb7ac2e391b17ad62d31ba01d09df1b3
+targets:
+  at32f421k8:
+    cppPreprocessAttrs:
+      defineList:
+        - AT32F421K8U7
+        - USE_STDPERIPH_DRIVER
+        - AT_START_F421_V1
+      incList:
+        - ${PROJ_DIR}/../../libraries/drivers/inc
+        - ${PROJ_DIR}/../../libraries/cmsis/cm4/core_support
+        - ${PROJ_DIR}/../../libraries/cmsis/cm4/device_support
+        - ${PROJ_DIR}/../inc
+        - ${PROJ_DIR}/../../bsp/inc
+      libList: []
+    excludeList: []
+    toolchain: IAR_ARM
+    toolchainConfigMap:
+      GCC:
+        archExtensions: ""
+        cpuType: Cortex-M3
+        floatingPointHardware: none
+        options: ""
+        scatterFilePath: <YOUR_LINKER_SCRIPT>.lds
+        storageLayout:
+          RAM: []
+          ROM: []
+        useCustomScatterFile: true
+      IAR_ARM:
+        archExtensions: ""
+        cpuType: Cortex-M4
+        floatingPointHardware: none
+        options:
+          version: 1
+          afterBuildTasks: []
+          asm-compiler:
+            case-sensitive-user-symbols: true
+            defines: []
+          beforeBuildTasks: []
+          c/cpp-compiler:
+            destroy-cpp-static-object: true
+            floating-point-semantics: strict
+            language-c: c99
+            language-conformance: IAR-extensions
+            misc-controls: ""
+            optimization: low
+          global:
+            endian-mode: little
+            output-debug-info: enable
+            printf-formatter: auto
+            runtime-lib: full
+            scanf-formatter: auto
+          linker:
+            $outputTaskExcludes:
+              - .bin
+            LIB_FLAGS: []
+            auto-search-runtime-lib: true
+            config-defines: []
+            misc-controls: ""
+            output-format: elf
+            perform-cpp-virtual-func-elimination: enable
+        scatterFilePath: ${PROJ_DIR}/AT32F421x8.icf
+        storageLayout:
+          RAM: []
+          ROM: []
+        useCustomScatterFile: true
+    uploadConfigMap:
+      JLink:
+        baseAddr: ""
+        bin: ""
+        cpuInfo:
+          cpuName: AT32F421K8U7
+          vendor: ArteryTek
+        otherCmds: ""
+        proType: 1
+        speed: 8000
+    uploader: JLink

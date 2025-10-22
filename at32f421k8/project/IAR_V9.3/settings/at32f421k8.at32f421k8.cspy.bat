@@ -25,7 +25,7 @@ if not "%~1" == "" goto debugFile
 
 @echo on 
 
-"D:\EIDE\IAR\common\bin\cspybat" -f "E:\MCU\TP-Thread\target\at\at32f421k8\project\IAR_V9.3\settings\at32f421k8.at32f421k8.general.xcl" --backend -f "E:\MCU\TP-Thread\target\at\at32f421k8\project\IAR_V9.3\settings\at32f421k8.at32f421k8.driver.xcl" 
+"D:\EIDE\IAR\common\bin\cspybat" -f "E:\MCU\AT32\at32f421k8\project\IAR_V9.3\settings\at32f421k8.at32f421k8.general.xcl" --backend -f "E:\MCU\AT32\at32f421k8\project\IAR_V9.3\settings\at32f421k8.at32f421k8.driver.xcl" 
 
 @echo off 
 goto end 
@@ -34,7 +34,7 @@ goto end
 
 @echo on 
 
-"D:\EIDE\IAR\common\bin\cspybat" -f "E:\MCU\TP-Thread\target\at\at32f421k8\project\IAR_V9.3\settings\at32f421k8.at32f421k8.general.xcl" "--debug_file=%~1" --backend -f "E:\MCU\TP-Thread\target\at\at32f421k8\project\IAR_V9.3\settings\at32f421k8.at32f421k8.driver.xcl" 
+"D:\EIDE\IAR\common\bin\cspybat" -f "E:\MCU\AT32\at32f421k8\project\IAR_V9.3\settings\at32f421k8.at32f421k8.general.xcl" "--debug_file=%~1" --backend -f "E:\MCU\AT32\at32f421k8\project\IAR_V9.3\settings\at32f421k8.at32f421k8.driver.xcl" 
 
 @echo off 
 :end

@@ -1,28 +1,28 @@
-E:\MCU\TP-Thread\target\at\at32f421k8\project\IAR_V9.3\at32f421k8\BrowseInfo\firmware\at32f421_usart.pbi: \
-  E:\MCU\TP-Thread\target\at\at32f421k8\libraries\drivers\src\at32f421_usart.c \
-  E:\MCU\TP-Thread\target\at\at32f421k8\project\IAR_V9.3\..\inc\at32f421_conf.h \
-  E:\MCU\TP-Thread\target\at\at32f421k8\project\IAR_V9.3\..\..\libraries\drivers\inc\at32f421_crm.h \
-  E:\MCU\TP-Thread\target\at\at32f421k8\project\IAR_V9.3\..\..\libraries\cmsis\cm4\device_support\at32f421.h \
-  E:\MCU\TP-Thread\target\at\at32f421k8\project\IAR_V9.3\..\..\libraries\cmsis\cm4\core_support\core_cm4.h \
+E:\MCU\AT32\at32f421k8\project\IAR_V9.3\at32f421k8\BrowseInfo\firmware\at32f421_usart.pbi: \
+  E:\MCU\AT32\at32f421k8\libraries\drivers\src\at32f421_usart.c \
+  E:\MCU\AT32\at32f421k8\project\IAR_V9.3\..\inc\at32f421_conf.h \
+  E:\MCU\AT32\at32f421k8\project\IAR_V9.3\..\..\libraries\drivers\inc\at32f421_crm.h \
+  E:\MCU\AT32\at32f421k8\project\IAR_V9.3\..\..\libraries\cmsis\cm4\device_support\at32f421.h \
+  E:\MCU\AT32\at32f421k8\project\IAR_V9.3\..\..\libraries\cmsis\cm4\core_support\core_cm4.h \
   D:\EIDE\IAR\arm\inc\c\stdint.h D:\EIDE\IAR\arm\inc\c\ycheck.h \
   D:\EIDE\IAR\arm\inc\c\yvals.h D:\EIDE\IAR\arm\inc\c\DLib_Defaults.h \
   D:\EIDE\IAR\arm\inc\c\DLib_Config_Full.h \
   D:\EIDE\IAR\arm\inc\c\DLib_Product.h \
-  E:\MCU\TP-Thread\target\at\at32f421k8\project\IAR_V9.3\..\..\libraries\cmsis\cm4\core_support\cmsis_version.h \
-  E:\MCU\TP-Thread\target\at\at32f421k8\project\IAR_V9.3\..\..\libraries\cmsis\cm4\core_support\cmsis_compiler.h \
-  E:\MCU\TP-Thread\target\at\at32f421k8\project\IAR_V9.3\..\..\libraries\cmsis\cm4\core_support\cmsis_iccarm.h \
+  E:\MCU\AT32\at32f421k8\project\IAR_V9.3\..\..\libraries\cmsis\cm4\core_support\cmsis_version.h \
+  E:\MCU\AT32\at32f421k8\project\IAR_V9.3\..\..\libraries\cmsis\cm4\core_support\cmsis_compiler.h \
+  E:\MCU\AT32\at32f421k8\project\IAR_V9.3\..\..\libraries\cmsis\cm4\core_support\cmsis_iccarm.h \
   D:\EIDE\IAR\arm\inc\c\aarch32\iccarm_builtin.h \
-  E:\MCU\TP-Thread\target\at\at32f421k8\project\IAR_V9.3\..\..\libraries\cmsis\cm4\core_support\mpu_armv7.h \
-  E:\MCU\TP-Thread\target\at\at32f421k8\project\IAR_V9.3\..\..\libraries\cmsis\cm4\device_support\system_at32f421.h \
-  E:\MCU\TP-Thread\target\at\at32f421k8\project\IAR_V9.3\..\..\libraries\drivers\inc\at32f421_def.h \
-  E:\MCU\TP-Thread\target\at\at32f421k8\project\IAR_V9.3\..\..\libraries\drivers\inc\at32f421_tmr.h \
-  E:\MCU\TP-Thread\target\at\at32f421k8\project\IAR_V9.3\..\..\libraries\drivers\inc\at32f421_gpio.h \
-  E:\MCU\TP-Thread\target\at\at32f421k8\project\IAR_V9.3\..\..\libraries\drivers\inc\at32f421_usart.h \
-  E:\MCU\TP-Thread\target\at\at32f421k8\project\IAR_V9.3\..\..\libraries\drivers\inc\at32f421_pwc.h \
-  E:\MCU\TP-Thread\target\at\at32f421k8\project\IAR_V9.3\..\..\libraries\drivers\inc\at32f421_adc.h \
-  E:\MCU\TP-Thread\target\at\at32f421k8\project\IAR_V9.3\..\..\libraries\drivers\inc\at32f421_dma.h \
-  E:\MCU\TP-Thread\target\at\at32f421k8\project\IAR_V9.3\..\..\libraries\drivers\inc\at32f421_debug.h \
-  E:\MCU\TP-Thread\target\at\at32f421k8\project\IAR_V9.3\..\..\libraries\drivers\inc\at32f421_flash.h \
-  E:\MCU\TP-Thread\target\at\at32f421k8\project\IAR_V9.3\..\..\libraries\drivers\inc\at32f421_exint.h \
-  E:\MCU\TP-Thread\target\at\at32f421k8\project\IAR_V9.3\..\..\libraries\drivers\inc\at32f421_misc.h \
-  E:\MCU\TP-Thread\target\at\at32f421k8\project\IAR_V9.3\..\..\libraries\drivers\inc\at32f421_scfg.h
+  E:\MCU\AT32\at32f421k8\project\IAR_V9.3\..\..\libraries\cmsis\cm4\core_support\mpu_armv7.h \
+  E:\MCU\AT32\at32f421k8\project\IAR_V9.3\..\..\libraries\cmsis\cm4\device_support\system_at32f421.h \
+  E:\MCU\AT32\at32f421k8\project\IAR_V9.3\..\..\libraries\drivers\inc\at32f421_def.h \
+  E:\MCU\AT32\at32f421k8\project\IAR_V9.3\..\..\libraries\drivers\inc\at32f421_tmr.h \
+  E:\MCU\AT32\at32f421k8\project\IAR_V9.3\..\..\libraries\drivers\inc\at32f421_gpio.h \
+  E:\MCU\AT32\at32f421k8\project\IAR_V9.3\..\..\libraries\drivers\inc\at32f421_usart.h \
+  E:\MCU\AT32\at32f421k8\project\IAR_V9.3\..\..\libraries\drivers\inc\at32f421_pwc.h \
+  E:\MCU\AT32\at32f421k8\project\IAR_V9.3\..\..\libraries\drivers\inc\at32f421_adc.h \
+  E:\MCU\AT32\at32f421k8\project\IAR_V9.3\..\..\libraries\drivers\inc\at32f421_dma.h \
+  E:\MCU\AT32\at32f421k8\project\IAR_V9.3\..\..\libraries\drivers\inc\at32f421_debug.h \
+  E:\MCU\AT32\at32f421k8\project\IAR_V9.3\..\..\libraries\drivers\inc\at32f421_flash.h \
+  E:\MCU\AT32\at32f421k8\project\IAR_V9.3\..\..\libraries\drivers\inc\at32f421_exint.h \
+  E:\MCU\AT32\at32f421k8\project\IAR_V9.3\..\..\libraries\drivers\inc\at32f421_misc.h \
+  E:\MCU\AT32\at32f421k8\project\IAR_V9.3\..\..\libraries\drivers\inc\at32f421_scfg.h

@@ -1424,6 +1424,12 @@
         </settings>
     </configuration>
     <group>
+        <name>bsp</name>
+        <file>
+            <name>$PROJ_DIR$\..\..\bsp\src\ar_tim.c</name>
+        </file>
+    </group>
+    <group>
         <name>cmsis</name>
         <file>
             <name>$PROJ_DIR$\startup_at32f421.s</name>
@@ -1438,12 +1444,6 @@
             <name>$PROJ_DIR$\..\..\libraries\drivers\src\at32f421_adc.c</name>
         </file>
         <file>
-            <name>$PROJ_DIR$\..\..\libraries\drivers\src\at32f421_cmp.c</name>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\..\libraries\drivers\src\at32f421_crc.c</name>
-        </file>
-        <file>
             <name>$PROJ_DIR$\..\..\libraries\drivers\src\at32f421_crm.c</name>
         </file>
         <file>
@@ -1451,9 +1451,6 @@
         </file>
         <file>
             <name>$PROJ_DIR$\..\..\libraries\drivers\src\at32f421_dma.c</name>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\..\libraries\drivers\src\at32f421_ertc.c</name>
         </file>
         <file>
             <name>$PROJ_DIR$\..\..\libraries\drivers\src\at32f421_exint.c</name>
@@ -1465,9 +1462,6 @@
             <name>$PROJ_DIR$\..\..\libraries\drivers\src\at32f421_gpio.c</name>
         </file>
         <file>
-            <name>$PROJ_DIR$\..\..\libraries\drivers\src\at32f421_i2c.c</name>
-        </file>
-        <file>
             <name>$PROJ_DIR$\..\..\libraries\drivers\src\at32f421_misc.c</name>
         </file>
         <file>
@@ -1477,19 +1471,10 @@
             <name>$PROJ_DIR$\..\..\libraries\drivers\src\at32f421_scfg.c</name>
         </file>
         <file>
-            <name>$PROJ_DIR$\..\..\libraries\drivers\src\at32f421_spi.c</name>
-        </file>
-        <file>
             <name>$PROJ_DIR$\..\..\libraries\drivers\src\at32f421_tmr.c</name>
         </file>
         <file>
             <name>$PROJ_DIR$\..\..\libraries\drivers\src\at32f421_usart.c</name>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\..\libraries\drivers\src\at32f421_wdt.c</name>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\..\libraries\drivers\src\at32f421_wwdt.c</name>
         </file>
     </group>
     <group>
@@ -1502,6 +1487,9 @@
         </file>
         <file>
             <name>$PROJ_DIR$\..\src\main.c</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\src\wk_system.c</name>
         </file>
     </group>
 </project>

@@ -1,0 +1,18 @@
+{
+  "workspace": {
+    "path": "${workspaceFolder}\\at32f421k8\\project\\IAR_V9.3\\at32f421k8.eww"
+  },
+  "workspaces": {
+    "${workspaceFolder}\\at32f421k8\\project\\IAR_V9.3\\at32f421k8.eww": {
+      "configs": {
+        "${workspaceFolder}\\at32f421k8\\project\\IAR_V9.3\\at32f421k8.ewp": "at32f421k8"
+      },
+      "selected": {
+        "path": "${workspaceFolder}\\at32f421k8\\project\\IAR_V9.3\\at32f421k8.ewp"
+      }
+    }
+  },
+  "workbench": {
+    "path": "D:\\EIDE\\IAR"
+  }
+}

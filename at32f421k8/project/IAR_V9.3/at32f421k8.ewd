@@ -84,7 +84,7 @@
                 </option>
                 <option>
                     <name>OCDynDriverList</name>
-                    <state>CMSISDAP_ID</state>
+                    <state>JLINK_ID</state>
                 </option>
                 <option>
                     <name>OCLastSavedByProductVersion</name>
@@ -112,7 +112,7 @@
                 </option>
                 <option>
                     <name>FlashLoadersV3</name>
-                    <state>$TOOLKIT_DIR$\config\flashloader\ArteryTek\AT32F421\AT32F421K8U7\FlashAT32F421K8U7.board</state>
+                    <state>$TOOLKIT_DIR$/config/flashloader/ArteryTek/AT32F421/AT32F421K8U7/FlashAT32F421K8U7.board</state>
                 </option>
                 <option>
                     <name>OCImagesSuppressCheck1</name>
@@ -887,7 +887,7 @@
                 <option>
                     <name>CCJLinkResetList</name>
                     <version>6</version>
-                    <state>5</state>
+                    <state>7</state>
                 </option>
                 <option>
                     <name>CCJLinkInterfaceCmdLine</name>
@@ -952,7 +952,7 @@
                 </option>
                 <option>
                     <name>CCCpuClockEdit</name>
-                    <state/>
+                    <state>200.0</state>
                 </option>
                 <option>
                     <name>CCSwoClockAuto</name>
