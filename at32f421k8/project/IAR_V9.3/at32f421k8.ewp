@@ -1082,6 +1082,9 @@
         <file>
             <name>$PROJ_DIR$\..\..\bsp\src\ar_tim.c</name>
         </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\bsp\src\ar_water_det.c</name>
+        </file>
     </group>
     <group>
         <name>cmsis</name>

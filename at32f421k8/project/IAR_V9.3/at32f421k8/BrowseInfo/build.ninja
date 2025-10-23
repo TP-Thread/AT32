@@ -29,6 +29,11 @@ build E$:\MCU\AT32\at32f421k8\project\IAR_V9.3\at32f421k8\BrowseInfo\bsp\ar_tim.
   flags = E$:\MCU\AT32\at32f421k8\bsp\src\ar_tim.c -D AT32F421K8U7 -D USE_STDPERIPH_DRIVER -D AT_START_F421_V1 -o E$:\MCU\AT32\at32f421k8\project\IAR_V9.3\at32f421k8\Obj\bsp --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=None --dlib_config D$:\EIDE\IAR\arm\inc\c\DLib_Config_Full.h -I E$:\MCU\AT32\at32f421k8\project\IAR_V9.3\..\..\libraries\drivers\inc\ -I E$:\MCU\AT32\at32f421k8\project\IAR_V9.3\..\..\libraries\cmsis\cm4\core_support\ -I E$:\MCU\AT32\at32f421k8\project\IAR_V9.3\..\..\libraries\cmsis\cm4\device_support\ -I E$:\MCU\AT32\at32f421k8\project\IAR_V9.3\..\inc\ -I E$:\MCU\AT32\at32f421k8\project\IAR_V9.3\..\..\bsp\inc\ -Ol --predef_macros E$:\MCU\AT32\at32f421k8\project\IAR_V9.3\at32f421k8\BrowseInfo\bsp\ar_tim.tmp
   rspfile_name = E$:\MCU\AT32\at32f421k8\project\IAR_V9.3\at32f421k8\BrowseInfo\bsp\ar_tim.xcl.rsp
 
+build E$:\MCU\AT32\at32f421k8\project\IAR_V9.3\at32f421k8\BrowseInfo\bsp\ar_water_det.xcl : COMPILER_XCL 
+  xclcommand = -source_file E$:\MCU\AT32\at32f421k8\bsp\src\ar_water_det.c -xcl_file E$:\MCU\AT32\at32f421k8\project\IAR_V9.3\at32f421k8\BrowseInfo\bsp\ar_water_det.xcl -macro_file E$:\MCU\AT32\at32f421k8\project\IAR_V9.3\at32f421k8\BrowseInfo\bsp\ar_water_det.tmp -icc_path D$:\EIDE\IAR\arm\bin\iccarm.exe
+  flags = E$:\MCU\AT32\at32f421k8\bsp\src\ar_water_det.c -D AT32F421K8U7 -D USE_STDPERIPH_DRIVER -D AT_START_F421_V1 -o E$:\MCU\AT32\at32f421k8\project\IAR_V9.3\at32f421k8\Obj\bsp --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=None --dlib_config D$:\EIDE\IAR\arm\inc\c\DLib_Config_Full.h -I E$:\MCU\AT32\at32f421k8\project\IAR_V9.3\..\..\libraries\drivers\inc\ -I E$:\MCU\AT32\at32f421k8\project\IAR_V9.3\..\..\libraries\cmsis\cm4\core_support\ -I E$:\MCU\AT32\at32f421k8\project\IAR_V9.3\..\..\libraries\cmsis\cm4\device_support\ -I E$:\MCU\AT32\at32f421k8\project\IAR_V9.3\..\inc\ -I E$:\MCU\AT32\at32f421k8\project\IAR_V9.3\..\..\bsp\inc\ -Ol --predef_macros E$:\MCU\AT32\at32f421k8\project\IAR_V9.3\at32f421k8\BrowseInfo\bsp\ar_water_det.tmp
+  rspfile_name = E$:\MCU\AT32\at32f421k8\project\IAR_V9.3\at32f421k8\BrowseInfo\bsp\ar_water_det.xcl.rsp
+
 build E$:\MCU\AT32\at32f421k8\project\IAR_V9.3\at32f421k8\BrowseInfo\cmsis\system_at32f421.xcl : COMPILER_XCL 
   xclcommand = -source_file E$:\MCU\AT32\at32f421k8\libraries\cmsis\cm4\device_support\system_at32f421.c -xcl_file E$:\MCU\AT32\at32f421k8\project\IAR_V9.3\at32f421k8\BrowseInfo\cmsis\system_at32f421.xcl -macro_file E$:\MCU\AT32\at32f421k8\project\IAR_V9.3\at32f421k8\BrowseInfo\cmsis\system_at32f421.tmp -icc_path D$:\EIDE\IAR\arm\bin\iccarm.exe
   flags = E$:\MCU\AT32\at32f421k8\libraries\cmsis\cm4\device_support\system_at32f421.c -D AT32F421K8U7 -D USE_STDPERIPH_DRIVER -D AT_START_F421_V1 -o E$:\MCU\AT32\at32f421k8\project\IAR_V9.3\at32f421k8\Obj\cmsis --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=None --dlib_config D$:\EIDE\IAR\arm\inc\c\DLib_Config_Full.h -I E$:\MCU\AT32\at32f421k8\project\IAR_V9.3\..\..\libraries\drivers\inc\ -I E$:\MCU\AT32\at32f421k8\project\IAR_V9.3\..\..\libraries\cmsis\cm4\core_support\ -I E$:\MCU\AT32\at32f421k8\project\IAR_V9.3\..\..\libraries\cmsis\cm4\device_support\ -I E$:\MCU\AT32\at32f421k8\project\IAR_V9.3\..\inc\ -I E$:\MCU\AT32\at32f421k8\project\IAR_V9.3\..\..\bsp\inc\ -Ol --predef_macros E$:\MCU\AT32\at32f421k8\project\IAR_V9.3\at32f421k8\BrowseInfo\cmsis\system_at32f421.tmp
@@ -118,6 +123,10 @@ build E$:\MCU\AT32\at32f421k8\project\IAR_V9.3\at32f421k8\BrowseInfo\bsp\ar_tim.
 E$:\MCU\AT32\at32f421k8\bsp\src\ar_tim.c
   flags = -out=E$:\MCU\AT32\at32f421k8\project\IAR_V9.3\at32f421k8\BrowseInfo\bsp\ar_tim.pbi -f E$:\MCU\AT32\at32f421k8\project\IAR_V9.3\at32f421k8\BrowseInfo\bsp\ar_tim.xcl
 
+build E$:\MCU\AT32\at32f421k8\project\IAR_V9.3\at32f421k8\BrowseInfo\bsp\ar_water_det.pbi : INDEXER E$:\MCU\AT32\at32f421k8\project\IAR_V9.3\at32f421k8\BrowseInfo\bsp\ar_water_det.xcl |  $
+E$:\MCU\AT32\at32f421k8\bsp\src\ar_water_det.c
+  flags = -out=E$:\MCU\AT32\at32f421k8\project\IAR_V9.3\at32f421k8\BrowseInfo\bsp\ar_water_det.pbi -f E$:\MCU\AT32\at32f421k8\project\IAR_V9.3\at32f421k8\BrowseInfo\bsp\ar_water_det.xcl
+
 build E$:\MCU\AT32\at32f421k8\project\IAR_V9.3\at32f421k8\BrowseInfo\cmsis\system_at32f421.pbi : INDEXER E$:\MCU\AT32\at32f421k8\project\IAR_V9.3\at32f421k8\BrowseInfo\cmsis\system_at32f421.xcl |  $
 E$:\MCU\AT32\at32f421k8\libraries\cmsis\cm4\device_support\system_at32f421.c
   flags = -out=E$:\MCU\AT32\at32f421k8\project\IAR_V9.3\at32f421k8\BrowseInfo\cmsis\system_at32f421.pbi -f E$:\MCU\AT32\at32f421k8\project\IAR_V9.3\at32f421k8\BrowseInfo\cmsis\system_at32f421.xcl
@@ -190,32 +199,33 @@ build E$:\MCU\AT32\at32f421k8\project\IAR_V9.3\at32f421k8\BrowseInfo\at32f421k8.
   flags = E$:\MCU\AT32\at32f421k8\project\IAR_V9.3\at32f421k8\BrowseInfo\at32f421k8.pbd -output E$:\MCU\AT32\at32f421k8\project\IAR_V9.3\at32f421k8\BrowseInfo\at32f421k8.pbw
 
 build E$:\MCU\AT32\at32f421k8\project\IAR_V9.3\at32f421k8\BrowseInfo\at32f421k8_part0.pbi : PDBLINK E$:\MCU\AT32\at32f421k8\project\IAR_V9.3\at32f421k8\BrowseInfo\bsp\ar_tim.pbi |  $
+E$:\MCU\AT32\at32f421k8\project\IAR_V9.3\at32f421k8\BrowseInfo\bsp\ar_water_det.pbi $
 E$:\MCU\AT32\at32f421k8\project\IAR_V9.3\at32f421k8\BrowseInfo\cmsis\system_at32f421.pbi $
-E$:\MCU\AT32\at32f421k8\project\IAR_V9.3\at32f421k8\BrowseInfo\firmware\at32f421_adc.pbi $
-E$:\MCU\AT32\at32f421k8\project\IAR_V9.3\at32f421k8\BrowseInfo\firmware\at32f421_crm.pbi
-  flags = -M E$:\MCU\AT32\at32f421k8\project\IAR_V9.3\at32f421k8\BrowseInfo\at32f421k8_part0.pbi E$:\MCU\AT32\at32f421k8\project\IAR_V9.3\at32f421k8\BrowseInfo\bsp\ar_tim.pbi E$:\MCU\AT32\at32f421k8\project\IAR_V9.3\at32f421k8\BrowseInfo\cmsis\system_at32f421.pbi E$:\MCU\AT32\at32f421k8\project\IAR_V9.3\at32f421k8\BrowseInfo\firmware\at32f421_adc.pbi E$:\MCU\AT32\at32f421k8\project\IAR_V9.3\at32f421k8\BrowseInfo\firmware\at32f421_crm.pbi
+E$:\MCU\AT32\at32f421k8\project\IAR_V9.3\at32f421k8\BrowseInfo\firmware\at32f421_adc.pbi
+  flags = -M E$:\MCU\AT32\at32f421k8\project\IAR_V9.3\at32f421k8\BrowseInfo\at32f421k8_part0.pbi E$:\MCU\AT32\at32f421k8\project\IAR_V9.3\at32f421k8\BrowseInfo\bsp\ar_tim.pbi E$:\MCU\AT32\at32f421k8\project\IAR_V9.3\at32f421k8\BrowseInfo\bsp\ar_water_det.pbi E$:\MCU\AT32\at32f421k8\project\IAR_V9.3\at32f421k8\BrowseInfo\cmsis\system_at32f421.pbi E$:\MCU\AT32\at32f421k8\project\IAR_V9.3\at32f421k8\BrowseInfo\firmware\at32f421_adc.pbi
 
-build E$:\MCU\AT32\at32f421k8\project\IAR_V9.3\at32f421k8\BrowseInfo\at32f421k8_part1.pbi : PDBLINK E$:\MCU\AT32\at32f421k8\project\IAR_V9.3\at32f421k8\BrowseInfo\firmware\at32f421_debug.pbi |  $
+build E$:\MCU\AT32\at32f421k8\project\IAR_V9.3\at32f421k8\BrowseInfo\at32f421k8_part1.pbi : PDBLINK E$:\MCU\AT32\at32f421k8\project\IAR_V9.3\at32f421k8\BrowseInfo\firmware\at32f421_crm.pbi |  $
+E$:\MCU\AT32\at32f421k8\project\IAR_V9.3\at32f421k8\BrowseInfo\firmware\at32f421_debug.pbi $
 E$:\MCU\AT32\at32f421k8\project\IAR_V9.3\at32f421k8\BrowseInfo\firmware\at32f421_dma.pbi $
-E$:\MCU\AT32\at32f421k8\project\IAR_V9.3\at32f421k8\BrowseInfo\firmware\at32f421_exint.pbi $
-E$:\MCU\AT32\at32f421k8\project\IAR_V9.3\at32f421k8\BrowseInfo\firmware\at32f421_flash.pbi
-  flags = -M E$:\MCU\AT32\at32f421k8\project\IAR_V9.3\at32f421k8\BrowseInfo\at32f421k8_part1.pbi E$:\MCU\AT32\at32f421k8\project\IAR_V9.3\at32f421k8\BrowseInfo\firmware\at32f421_debug.pbi E$:\MCU\AT32\at32f421k8\project\IAR_V9.3\at32f421k8\BrowseInfo\firmware\at32f421_dma.pbi E$:\MCU\AT32\at32f421k8\project\IAR_V9.3\at32f421k8\BrowseInfo\firmware\at32f421_exint.pbi E$:\MCU\AT32\at32f421k8\project\IAR_V9.3\at32f421k8\BrowseInfo\firmware\at32f421_flash.pbi
+E$:\MCU\AT32\at32f421k8\project\IAR_V9.3\at32f421k8\BrowseInfo\firmware\at32f421_exint.pbi
+  flags = -M E$:\MCU\AT32\at32f421k8\project\IAR_V9.3\at32f421k8\BrowseInfo\at32f421k8_part1.pbi E$:\MCU\AT32\at32f421k8\project\IAR_V9.3\at32f421k8\BrowseInfo\firmware\at32f421_crm.pbi E$:\MCU\AT32\at32f421k8\project\IAR_V9.3\at32f421k8\BrowseInfo\firmware\at32f421_debug.pbi E$:\MCU\AT32\at32f421k8\project\IAR_V9.3\at32f421k8\BrowseInfo\firmware\at32f421_dma.pbi E$:\MCU\AT32\at32f421k8\project\IAR_V9.3\at32f421k8\BrowseInfo\firmware\at32f421_exint.pbi
 
-build E$:\MCU\AT32\at32f421k8\project\IAR_V9.3\at32f421k8\BrowseInfo\at32f421k8_part2.pbi : PDBLINK E$:\MCU\AT32\at32f421k8\project\IAR_V9.3\at32f421k8\BrowseInfo\firmware\at32f421_gpio.pbi |  $
+build E$:\MCU\AT32\at32f421k8\project\IAR_V9.3\at32f421k8\BrowseInfo\at32f421k8_part2.pbi : PDBLINK E$:\MCU\AT32\at32f421k8\project\IAR_V9.3\at32f421k8\BrowseInfo\firmware\at32f421_flash.pbi |  $
+E$:\MCU\AT32\at32f421k8\project\IAR_V9.3\at32f421k8\BrowseInfo\firmware\at32f421_gpio.pbi $
 E$:\MCU\AT32\at32f421k8\project\IAR_V9.3\at32f421k8\BrowseInfo\firmware\at32f421_misc.pbi $
-E$:\MCU\AT32\at32f421k8\project\IAR_V9.3\at32f421k8\BrowseInfo\firmware\at32f421_pwc.pbi $
-E$:\MCU\AT32\at32f421k8\project\IAR_V9.3\at32f421k8\BrowseInfo\firmware\at32f421_scfg.pbi
-  flags = -M E$:\MCU\AT32\at32f421k8\project\IAR_V9.3\at32f421k8\BrowseInfo\at32f421k8_part2.pbi E$:\MCU\AT32\at32f421k8\project\IAR_V9.3\at32f421k8\BrowseInfo\firmware\at32f421_gpio.pbi E$:\MCU\AT32\at32f421k8\project\IAR_V9.3\at32f421k8\BrowseInfo\firmware\at32f421_misc.pbi E$:\MCU\AT32\at32f421k8\project\IAR_V9.3\at32f421k8\BrowseInfo\firmware\at32f421_pwc.pbi E$:\MCU\AT32\at32f421k8\project\IAR_V9.3\at32f421k8\BrowseInfo\firmware\at32f421_scfg.pbi
+E$:\MCU\AT32\at32f421k8\project\IAR_V9.3\at32f421k8\BrowseInfo\firmware\at32f421_pwc.pbi
+  flags = -M E$:\MCU\AT32\at32f421k8\project\IAR_V9.3\at32f421k8\BrowseInfo\at32f421k8_part2.pbi E$:\MCU\AT32\at32f421k8\project\IAR_V9.3\at32f421k8\BrowseInfo\firmware\at32f421_flash.pbi E$:\MCU\AT32\at32f421k8\project\IAR_V9.3\at32f421k8\BrowseInfo\firmware\at32f421_gpio.pbi E$:\MCU\AT32\at32f421k8\project\IAR_V9.3\at32f421k8\BrowseInfo\firmware\at32f421_misc.pbi E$:\MCU\AT32\at32f421k8\project\IAR_V9.3\at32f421k8\BrowseInfo\firmware\at32f421_pwc.pbi
 
-build E$:\MCU\AT32\at32f421k8\project\IAR_V9.3\at32f421k8\BrowseInfo\at32f421k8_part3.pbi : PDBLINK E$:\MCU\AT32\at32f421k8\project\IAR_V9.3\at32f421k8\BrowseInfo\firmware\at32f421_tmr.pbi |  $
+build E$:\MCU\AT32\at32f421k8\project\IAR_V9.3\at32f421k8\BrowseInfo\at32f421k8_part3.pbi : PDBLINK E$:\MCU\AT32\at32f421k8\project\IAR_V9.3\at32f421k8\BrowseInfo\firmware\at32f421_scfg.pbi |  $
+E$:\MCU\AT32\at32f421k8\project\IAR_V9.3\at32f421k8\BrowseInfo\firmware\at32f421_tmr.pbi $
 E$:\MCU\AT32\at32f421k8\project\IAR_V9.3\at32f421k8\BrowseInfo\firmware\at32f421_usart.pbi $
-E$:\MCU\AT32\at32f421k8\project\IAR_V9.3\at32f421k8\BrowseInfo\user\at32f421_int.pbi $
-E$:\MCU\AT32\at32f421k8\project\IAR_V9.3\at32f421k8\BrowseInfo\user\at32f421_wk_config.pbi
-  flags = -M E$:\MCU\AT32\at32f421k8\project\IAR_V9.3\at32f421k8\BrowseInfo\at32f421k8_part3.pbi E$:\MCU\AT32\at32f421k8\project\IAR_V9.3\at32f421k8\BrowseInfo\firmware\at32f421_tmr.pbi E$:\MCU\AT32\at32f421k8\project\IAR_V9.3\at32f421k8\BrowseInfo\firmware\at32f421_usart.pbi E$:\MCU\AT32\at32f421k8\project\IAR_V9.3\at32f421k8\BrowseInfo\user\at32f421_int.pbi E$:\MCU\AT32\at32f421k8\project\IAR_V9.3\at32f421k8\BrowseInfo\user\at32f421_wk_config.pbi
+E$:\MCU\AT32\at32f421k8\project\IAR_V9.3\at32f421k8\BrowseInfo\user\at32f421_int.pbi
+  flags = -M E$:\MCU\AT32\at32f421k8\project\IAR_V9.3\at32f421k8\BrowseInfo\at32f421k8_part3.pbi E$:\MCU\AT32\at32f421k8\project\IAR_V9.3\at32f421k8\BrowseInfo\firmware\at32f421_scfg.pbi E$:\MCU\AT32\at32f421k8\project\IAR_V9.3\at32f421k8\BrowseInfo\firmware\at32f421_tmr.pbi E$:\MCU\AT32\at32f421k8\project\IAR_V9.3\at32f421k8\BrowseInfo\firmware\at32f421_usart.pbi E$:\MCU\AT32\at32f421k8\project\IAR_V9.3\at32f421k8\BrowseInfo\user\at32f421_int.pbi
 
-build E$:\MCU\AT32\at32f421k8\project\IAR_V9.3\at32f421k8\BrowseInfo\at32f421k8_part4.pbi : PDBLINK E$:\MCU\AT32\at32f421k8\project\IAR_V9.3\at32f421k8\BrowseInfo\user\main.pbi |  $
+build E$:\MCU\AT32\at32f421k8\project\IAR_V9.3\at32f421k8\BrowseInfo\at32f421k8_part4.pbi : PDBLINK E$:\MCU\AT32\at32f421k8\project\IAR_V9.3\at32f421k8\BrowseInfo\user\at32f421_wk_config.pbi |  $
+E$:\MCU\AT32\at32f421k8\project\IAR_V9.3\at32f421k8\BrowseInfo\user\main.pbi $
 E$:\MCU\AT32\at32f421k8\project\IAR_V9.3\at32f421k8\BrowseInfo\user\wk_system.pbi
-  flags = -M E$:\MCU\AT32\at32f421k8\project\IAR_V9.3\at32f421k8\BrowseInfo\at32f421k8_part4.pbi E$:\MCU\AT32\at32f421k8\project\IAR_V9.3\at32f421k8\BrowseInfo\user\main.pbi E$:\MCU\AT32\at32f421k8\project\IAR_V9.3\at32f421k8\BrowseInfo\user\wk_system.pbi
+  flags = -M E$:\MCU\AT32\at32f421k8\project\IAR_V9.3\at32f421k8\BrowseInfo\at32f421k8_part4.pbi E$:\MCU\AT32\at32f421k8\project\IAR_V9.3\at32f421k8\BrowseInfo\user\at32f421_wk_config.pbi E$:\MCU\AT32\at32f421k8\project\IAR_V9.3\at32f421k8\BrowseInfo\user\main.pbi E$:\MCU\AT32\at32f421k8\project\IAR_V9.3\at32f421k8\BrowseInfo\user\wk_system.pbi
 
 build E$:\MCU\AT32\at32f421k8\project\IAR_V9.3\at32f421k8\BrowseInfo\at32f421k8.pbd : PDBLINK E$:\MCU\AT32\at32f421k8\project\IAR_V9.3\at32f421k8\BrowseInfo\at32f421k8_part0.pbi |  $
 E$:\MCU\AT32\at32f421k8\project\IAR_V9.3\at32f421k8\BrowseInfo\at32f421k8_part1.pbi $

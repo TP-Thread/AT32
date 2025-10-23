@@ -30,6 +30,7 @@
 
 /* private includes ----------------------------------------------------------*/
 /* add user code begin private includes */
+#include "ar_water_det.h"
 
 /* add user code end private includes */
 
@@ -252,6 +253,9 @@ void TMR1_BRK_OVF_TRG_HALL_IRQHandler(void)
     {
         // printf("TMR1 update interrupt occurred.\r\n");
         tmr_flag_clear(TMR1, TMR_OVF_FLAG);
+
+        set_water_pwm_p_high();
+        set_water_pwm_n_low();
     }
     /* add user code end TMR1_BRK_OVF_TRG_HALL_IRQ 0 */
 
@@ -272,16 +276,23 @@ void TMR1_CH_IRQHandler(void)
     {
         // printf("11111111111111111111111111\r\n");
         tmr_flag_clear(TMR1, TMR_C1_FLAG);
+
+        water_det_value_update(water_det_voltage_mv_get());
     }
     if (tmr_interrupt_flag_get(TMR1, TMR_C2_FLAG))
     {
         // printf("22222222222222222222222222\r\n");
         tmr_flag_clear(TMR1, TMR_C2_FLAG);
+
+        set_water_pwm_p_low();
+        set_water_pwm_n_high();
     }
     if (tmr_interrupt_flag_get(TMR1, TMR_C3_FLAG))
     {
         // printf("33333333333333333333333333\r\n");
         tmr_flag_clear(TMR1, TMR_C3_FLAG);
+
+        set_water_pwm_n_low();
     }
     /* add user code end TMR1_CH_IRQ 0 */
     /* add user code begin TMR1_CH_IRQ 1 */

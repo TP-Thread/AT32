@@ -27,4 +27,7 @@ E:\MCU\AT32\at32f421k8\project\IAR_V9.3\at32f421k8\BrowseInfo\user\at32f421_int.
   E:\MCU\AT32\at32f421k8\project\IAR_V9.3\..\..\libraries\drivers\inc\at32f421_exint.h \
   E:\MCU\AT32\at32f421k8\project\IAR_V9.3\..\..\libraries\drivers\inc\at32f421_misc.h \
   E:\MCU\AT32\at32f421k8\project\IAR_V9.3\..\..\libraries\drivers\inc\at32f421_scfg.h \
-  E:\MCU\AT32\at32f421k8\project\IAR_V9.3\..\inc\wk_system.h
+  E:\MCU\AT32\at32f421k8\project\IAR_V9.3\..\inc\wk_system.h \
+  E:\MCU\AT32\at32f421k8\project\IAR_V9.3\..\..\bsp\inc\ar_water_det.h \
+  E:\MCU\AT32\at32f421k8\project\IAR_V9.3\..\inc\at32f421_wk_config.h \
+  D:\EIDE\IAR\arm\inc\c\stdio.h D:\EIDE\IAR\arm\inc\c\ysizet.h

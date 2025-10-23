@@ -1,5 +1,6 @@
-E:\MCU\AT32\at32f421k8\project\IAR_V9.3\at32f421k8\BrowseInfo\user\main.pbi: \
-  E:\MCU\AT32\at32f421k8\project\src\main.c \
+E:\MCU\AT32\at32f421k8\project\IAR_V9.3\at32f421k8\BrowseInfo\bsp\ar_water_det.pbi: \
+  E:\MCU\AT32\at32f421k8\bsp\src\ar_water_det.c \
+  E:\MCU\AT32\at32f421k8\project\IAR_V9.3\..\..\bsp\inc\ar_water_det.h \
   E:\MCU\AT32\at32f421k8\project\IAR_V9.3\..\inc\at32f421_wk_config.h \
   D:\EIDE\IAR\arm\inc\c\stdio.h D:\EIDE\IAR\arm\inc\c\ycheck.h \
   D:\EIDE\IAR\arm\inc\c\yvals.h D:\EIDE\IAR\arm\inc\c\DLib_Defaults.h \
@@ -27,7 +28,4 @@ E:\MCU\AT32\at32f421k8\project\IAR_V9.3\at32f421k8\BrowseInfo\user\main.pbi: \
   E:\MCU\AT32\at32f421k8\project\IAR_V9.3\..\..\libraries\drivers\inc\at32f421_flash.h \
   E:\MCU\AT32\at32f421k8\project\IAR_V9.3\..\..\libraries\drivers\inc\at32f421_exint.h \
   E:\MCU\AT32\at32f421k8\project\IAR_V9.3\..\..\libraries\drivers\inc\at32f421_misc.h \
-  E:\MCU\AT32\at32f421k8\project\IAR_V9.3\..\..\libraries\drivers\inc\at32f421_scfg.h \
-  E:\MCU\AT32\at32f421k8\project\IAR_V9.3\..\inc\wk_system.h \
-  E:\MCU\AT32\at32f421k8\project\IAR_V9.3\..\..\bsp\inc\ar_tim.h \
-  E:\MCU\AT32\at32f421k8\project\IAR_V9.3\..\..\bsp\inc\ar_water_det.h
+  E:\MCU\AT32\at32f421k8\project\IAR_V9.3\..\..\libraries\drivers\inc\at32f421_scfg.h

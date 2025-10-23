@@ -31,6 +31,7 @@
 /* private includes ----------------------------------------------------------*/
 /* add user code begin private includes */
 #include "ar_tim.h"
+#include "ar_water_det.h"
 
 /* add user code end private includes */
 
@@ -52,7 +53,7 @@
 /* private variables ---------------------------------------------------------*/
 /* add user code begin private variables */
 extern uint64_t g_system_runTime;
-
+extern uint16_t g_u16VoltageValue;
 /* add user code end private variables */
 
 /* private function prototypes --------------------------------------------*/
@@ -100,8 +101,8 @@ int main(void)
     /* user need to modify define values DMAx_CHANNELy_XXX_BASE_ADDR and DMAx_CHANNELy_BUFFER_SIZE in at32xxx_wk_config.h */
     wk_dma_channel_config(DMA1_CHANNEL1,
                           (uint32_t)&ADC1->odt,
-                          DMA1_CHANNEL1_MEMORY_BASE_ADDR,
-                          DMA1_CHANNEL1_BUFFER_SIZE);
+                          (uint32_t)g_au16ADCVal,
+                          5);
     dma_channel_enable(DMA1_CHANNEL1, TRUE);
 
     /* init dma1 channel2 */
@@ -164,6 +165,8 @@ int main(void)
     while (1)
     {
         /* add user code begin 3 */
+        rr_water_det();
+        wk_delay_ms(1000);
 
         /* add user code end 3 */
     }

@@ -38,6 +38,7 @@ virtualFolder:
     - name: bsp
       files:
         - path: ../../../bsp/src/ar_tim.c
+        - path: ../../../bsp/src/ar_water_det.c
       folders: []
 dependenceList: []
 outDir: build

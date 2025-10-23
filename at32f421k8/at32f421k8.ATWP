@@ -20,15 +20,20 @@
             <ParametersSub name="RepeatMode" value="TRUE"/>
             <ParametersSub name="NbrOfOrdinarySequence" value="5"/>
             <ParametersSub name="Channel_OrdinarySequence_1" value="ADC_CHANNEL_5"/>
-            <ParametersSub name="SamplingRate_OrdinarySequence_1" value="1.286"/>
+            <ParametersSub name="SamplingTime_OrdinarySequence_1" value="ADC_SAMPLETIME_55_5"/>
+            <ParametersSub name="SamplingRate_OrdinarySequence_1" value="0.265"/>
             <ParametersSub name="Channel_OrdinarySequence_2" value="ADC_CHANNEL_7"/>
-            <ParametersSub name="SamplingRate_OrdinarySequence_2" value="1.286"/>
+            <ParametersSub name="SamplingTime_OrdinarySequence_2" value="ADC_SAMPLETIME_55_5"/>
+            <ParametersSub name="SamplingRate_OrdinarySequence_2" value="0.265"/>
             <ParametersSub name="Channel_OrdinarySequence_3" value="ADC_CHANNEL_4"/>
-            <ParametersSub name="SamplingRate_OrdinarySequence_3" value="1.286"/>
+            <ParametersSub name="SamplingTime_OrdinarySequence_3" value="ADC_SAMPLETIME_55_5"/>
+            <ParametersSub name="SamplingRate_OrdinarySequence_3" value="0.265"/>
             <ParametersSub name="Channel_OrdinarySequence_4" value="ADC_CHANNEL_1"/>
-            <ParametersSub name="SamplingRate_OrdinarySequence_4" value="1.286"/>
+            <ParametersSub name="SamplingTime_OrdinarySequence_4" value="ADC_SAMPLETIME_55_5"/>
+            <ParametersSub name="SamplingRate_OrdinarySequence_4" value="0.265"/>
             <ParametersSub name="Channel_OrdinarySequence_5" value="ADC_CHANNEL_6"/>
-            <ParametersSub name="SamplingRate_OrdinarySequence_5" value="1.286"/>
+            <ParametersSub name="SamplingTime_OrdinarySequence_5" value="ADC_SAMPLETIME_55_5"/>
+            <ParametersSub name="SamplingRate_OrdinarySequence_5" value="0.265"/>
         </Parameters>
     </ADC1>
     <DEBUG>
@@ -161,7 +166,13 @@
         <Signal SignalName="USART1_TX" PinName="PA9">
             <Parameters name="GPIO_PullType_Set" value="GPIO_PULL_UP"/>
         </Signal>
+        <Signal SignalName="GPIO_Output" PinName="PA11">
+            <Parameters name="GPIO_DriverCapability" value="GPIO_DRIVE_STRENGTH_STRONGER"/>
+        </Signal>
         <Signal SignalName="GPIO_Output" PinName="PB3">
+            <Parameters name="GPIO_DriverCapability" value="GPIO_DRIVE_STRENGTH_STRONGER"/>
+        </Signal>
+        <Signal SignalName="GPIO_Output" PinName="PB5">
             <Parameters name="GPIO_DriverCapability" value="GPIO_DRIVE_STRENGTH_STRONGER"/>
         </Signal>
     </GPIO>
