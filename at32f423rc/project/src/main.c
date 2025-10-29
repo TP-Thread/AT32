@@ -26,6 +26,8 @@
 
 /* Includes ------------------------------------------------------------------*/
 #include "at32f423_wk_config.h"
+#include "wk_adc.h"
+#include "wk_exint.h"
 #include "freertos_app.h"
 
 /* private includes ----------------------------------------------------------*/
@@ -99,6 +101,12 @@ int main(void)
 
   /* nvic config. */
   wk_nvic_config();
+
+  /* init adc1 function. */
+  wk_adc1_init();
+
+  /* init exint function. */
+  wk_exint_config();
 
   /* init freertos function. */
   wk_freertos_init();

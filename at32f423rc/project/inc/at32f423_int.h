@@ -64,6 +64,9 @@ void UsageFault_Handler(void);
 void DebugMon_Handler(void);
 void SysTick_Handler(void);
 
+void EXINT0_IRQHandler(void);
+void EXINT9_5_IRQHandler(void);
+void EXINT15_10_IRQHandler(void);
 /* add user code begin exported functions */
 
 /* add user code end exported functions */

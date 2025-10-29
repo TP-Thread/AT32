@@ -23,9 +23,9 @@
 
 if ($debugfile -eq "")
 {
-& "D:\EIDE\IAR\common\bin\cspybat" -f "E:\MCU\TP-Thread\target\at\at32f423rc\project\IAR_V9.3\settings\at32f423rc.at32f423rc.general.xcl" --backend -f "E:\MCU\TP-Thread\target\at\at32f423rc\project\IAR_V9.3\settings\at32f423rc.at32f423rc.driver.xcl" 
+& "D:\EIDE\IAR\common\bin\cspybat" -f "E:\RTOS\AT32\at32f423rc\project\IAR_V9.3\settings\at32f423rc.at32f423rc.general.xcl" --backend -f "E:\RTOS\AT32\at32f423rc\project\IAR_V9.3\settings\at32f423rc.at32f423rc.driver.xcl" 
 }
 else
 {
-& "D:\EIDE\IAR\common\bin\cspybat" -f "E:\MCU\TP-Thread\target\at\at32f423rc\project\IAR_V9.3\settings\at32f423rc.at32f423rc.general.xcl" --debug_file=$debugfile --backend -f "E:\MCU\TP-Thread\target\at\at32f423rc\project\IAR_V9.3\settings\at32f423rc.at32f423rc.driver.xcl" 
+& "D:\EIDE\IAR\common\bin\cspybat" -f "E:\RTOS\AT32\at32f423rc\project\IAR_V9.3\settings\at32f423rc.at32f423rc.general.xcl" --debug_file=$debugfile --backend -f "E:\RTOS\AT32\at32f423rc\project\IAR_V9.3\settings\at32f423rc.at32f423rc.driver.xcl" 
 }

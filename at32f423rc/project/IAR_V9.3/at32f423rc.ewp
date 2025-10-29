@@ -1100,13 +1100,22 @@
             <name>$PROJ_DIR$\..\..\libraries\drivers\src\at32f423_pwc.c</name>
         </file>
         <file>
+            <name>$PROJ_DIR$\..\..\libraries\drivers\src\at32f423_adc.c</name>
+        </file>
+        <file>
             <name>$PROJ_DIR$\..\..\libraries\drivers\src\at32f423_debug.c</name>
         </file>
         <file>
             <name>$PROJ_DIR$\..\..\libraries\drivers\src\at32f423_flash.c</name>
         </file>
         <file>
+            <name>$PROJ_DIR$\..\..\libraries\drivers\src\at32f423_exint.c</name>
+        </file>
+        <file>
             <name>$PROJ_DIR$\..\..\libraries\drivers\src\at32f423_misc.c</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\libraries\drivers\src\at32f423_scfg.c</name>
         </file>
     </group>
     <group>
@@ -1123,11 +1132,20 @@
         <file>
             <name>$PROJ_DIR$\../src/freertos_app.c</name>
         </file>
+        <file>
+            <name>$PROJ_DIR$\..\src\wk_adc.c</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\src\wk_exint.c</name>
+        </file>
     </group>
     <group>
         <name>middlewares/freertos</name>
         <file>
             <name>$PROJ_DIR$\../src/freertos_app.c</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\src\wk_adc.c</name>
         </file>
         <file>
             <name>$PROJ_DIR$\../../middlewares/freertos/source/croutine.c</name>
@@ -1158,6 +1176,9 @@
         </file>
         <file>
             <name>$PROJ_DIR$\../../middlewares/freertos/source/stream_buffer.c</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\src\wk_exint.c</name>
         </file>
     </group>
 </project>

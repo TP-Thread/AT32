@@ -21,6 +21,21 @@
 
 /* private define ------------------------------------------------------------*/
 /* add user code begin private define */
+typedef struct
+{
+    const char* const Name;
+    TaskHandle_t Handle;
+    TaskFunction_t Function;
+    const uint16_t uStackDepth;
+    UBaseType_t uPriority;
+} OSTask_st;
+
+static OSTask_st g_OSTaskList[] = {
+    {"TASK_UARTCOM",      NULL, task_uartCom,      512, 3},
+    {"TASK_DRIVER",       NULL, task_driver,       256, 2},
+    {"TASK_STATEMACHINE", NULL, task_stateMachine, 512, 2},
+    {"TASK_AUDIO",        NULL, task_audio,        512, 4},
+};
 
 /* add user code end private define */
 
@@ -126,7 +141,16 @@ void wk_freertos_init(void)
 void my_task01_func(void *pvParameters)
 {
   /* add user code begin my_task01_func 0 */
-
+    for(int i = 0; i < sizeof(g_OSTaskList) / sizeof(*g_OSTaskList); i++)
+    {
+        xTaskCreate(g_OSTaskList[i].Function,
+                    g_OSTaskList[i].Name,
+                    g_OSTaskList[i].uStackDepth,
+                    NULL,
+                    g_OSTaskList[i].uPriority,
+                    &g_OSTaskList[i].Handle);
+    }
+	
   /* add user code end my_task01_func 0 */
 
   /* add user code begin my_task01_func 2 */
@@ -138,7 +162,7 @@ void my_task01_func(void *pvParameters)
   {
   /* add user code begin my_task01_func 1 */
 
-     vTaskDelay(1);
+     vTaskDelay(1000);
 
   /* add user code end my_task01_func 1 */
   }
@@ -146,6 +170,62 @@ void my_task01_func(void *pvParameters)
 
 
 /* add user code begin 2 */
+void task_uartCom(void *pvParameters)
+{
+
+  /* Infinite loop */
+  while(1)
+  {
+  /* add user code begin my_task01_func 1 */
+
+     vTaskDelay(1000);
+
+  /* add user code end my_task01_func 1 */
+  }
+}
+
+void task_driver(void *pvParameters)
+{
+
+  /* Infinite loop */
+  while(1)
+  {
+  /* add user code begin my_task01_func 1 */
+
+     vTaskDelay(1000);
+
+  /* add user code end my_task01_func 1 */
+  }
+}
+
+void task_stateMachine(void *pvParameters)
+{
+
+  /* Infinite loop */
+  while(1)
+  {
+  /* add user code begin my_task01_func 1 */
+
+     vTaskDelay(1000);
+
+  /* add user code end my_task01_func 1 */
+  }
+}
+
+void task_audio(void *pvParameters)
+{
+
+  /* Infinite loop */
+  while(1)
+  {
+  /* add user code begin my_task01_func 1 */
+
+     vTaskDelay(1000);
+
+  /* add user code end my_task01_func 1 */
+  }
+}
+
 
 /* add user code end 2 */
 

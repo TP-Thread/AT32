@@ -2,7 +2,7 @@
 
 "D:\EIDE\IAR\arm\bin\armJET.dll" 
 
-"E:\MCU\TP-Thread\target\at\at32f423rc\project\IAR_V9.3\at32f423rc\Exe\at32f423rc.out" 
+"E:\RTOS\AT32\at32f423rc\project\IAR_V9.3\at32f423rc\Exe\at32f423rc.out" 
 
 --plugin="D:\EIDE\IAR\arm\bin\armbat.dll" 
 

@@ -165,8 +165,8 @@ int main(void)
     while (1)
     {
         /* add user code begin 3 */
-        rr_water_det();
-        wk_delay_ms(1000);
+        // rr_water_det();
+        // wk_delay_ms(1000);
 
         /* add user code end 3 */
     }

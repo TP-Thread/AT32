@@ -8,11 +8,34 @@
         <MCUName>AT32F423RCT7</MCUName>
         <MCUPackage>LQFP64</MCUPackage>
     </MCUInfo>
+    <ADC1>
+        <Mode>
+            <ModeSub name="IN9" value="TRUE"/>
+        </Mode>
+        <Parameters>
+            <ParametersSub name="Clock" value="32000000"/>
+            <ParametersSub name="Channel_OrdinarySequence_1" value="ADC_CHANNEL_9"/>
+            <ParametersSub name="SamplingTime_OrdinarySequence_1" value="ADC_SAMPLETIME_6_5"/>
+            <ParametersSub name="SamplingRate_OrdinarySequence_1" value="1.684"/>
+        </Parameters>
+    </ADC1>
     <DEBUG>
         <Mode>
             <ModeSub name="Debug interface" value="SWD"/>
         </Mode>
     </DEBUG>
+    <EXINT>
+        <Mode>
+            <ModeSub name="EXINT0" value="TRUE"/>
+            <ModeSub name="EXINT8" value="TRUE"/>
+            <ModeSub name="EXINT15" value="TRUE"/>
+        </Mode>
+        <Parameters>
+            <ParametersSub name="TriggerPolarity_0" value="EXINT_TRIGGER_BOTH_EDGE"/>
+            <ParametersSub name="TriggerPolarity_8" value="EXINT_TRIGGER_BOTH_EDGE"/>
+            <ParametersSub name="TriggerPolarity_15" value="EXINT_TRIGGER_BOTH_EDGE"/>
+        </Parameters>
+    </EXINT>
     <SYSTEM>
         <Mode>
             <ModeSub name="Time_Base" value=""/>
@@ -46,6 +69,10 @@
         <SysTick_Handler>1;15;0;1;0</SysTick_Handler>
         <FLASH_IRQHandler>0;5;0;1;0</FLASH_IRQHandler>
         <CRM_IRQHandler>0;5;0;1;0</CRM_IRQHandler>
+        <EXINT0_IRQHandler>1;14;0;1;0</EXINT0_IRQHandler>
+        <ADC1_IRQHandler>0;5;0;1;0</ADC1_IRQHandler>
+        <EXINT9_5_IRQHandler>1;14;0;1;0</EXINT9_5_IRQHandler>
+        <EXINT15_10_IRQHandler>1;14;0;1;0</EXINT15_10_IRQHandler>
         <FPU_IRQHandler>0;5;0;1;0</FPU_IRQHandler>
     </NVIC>
     <ClockConfiguration>
@@ -77,12 +104,16 @@
         <systicsel>1</systicsel>
     </ClockConfiguration>
     <PINInfo>
+        <PinSub pinname="PC15" signalname="EXINT15" signaltype="3"/>
+        <PinSub pinname="PA0" signalname="EXINT0" signaltype="3"/>
+        <PinSub pinname="PB1" signalname="ADC1_IN9" signaltype="3"/>
+        <PinSub pinname="PA8" signalname="EXINT8" signaltype="3"/>
         <PinSub pinname="PA13" signalname="DEBUG_JTMS_SWDIO" signaltype="2"/>
         <PinSub pinname="PA14" signalname="DEBUG_JTCK_SWCLK" signaltype="2"/>
     </PINInfo>
     <ProjectInfomation>
         <ProjectName>at32f423rc</ProjectName>
-        <ProjectLocation>E:/MCU/TP-Thread/target/at</ProjectLocation>
+        <ProjectLocation>E:/RTOS/AT32</ProjectLocation>
         <ToolchainIDE>IAR_V9.3</ToolchainIDE>
         <ARMCompiler>0</ARMCompiler>
         <KeepUserCode>true</KeepUserCode>

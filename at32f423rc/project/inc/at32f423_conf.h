@@ -59,7 +59,7 @@ extern "C" {
 /*#define USART_MODULE_ENABLED--------------------*/
 #define PWC_MODULE_ENABLED
 /*#define CAN_MODULE_ENABLED----------------------*/
-/*#define ADC_MODULE_ENABLED----------------------*/
+#define ADC_MODULE_ENABLED
 /*#define DAC_MODULE_ENABLED----------------------*/
 /*#define SPI_MODULE_ENABLED----------------------*/
 /*#define DMA_MODULE_ENABLED----------------------*/
@@ -68,12 +68,12 @@ extern "C" {
 /*#define CRC_MODULE_ENABLED----------------------*/
 /*#define WWDT_MODULE_ENABLED---------------------*/
 /*#define WDT_MODULE_ENABLED----------------------*/
-/*#define EXINT_MODULE_ENABLED--------------------*/
+#define EXINT_MODULE_ENABLED
 /*#define XMC_MODULE_ENABLED----------------------*/
 /*#define USB_MODULE_ENABLED----------------------*/
 /*#define ACC_MODULE_ENABLED----------------------*/
 #define MISC_MODULE_ENABLED
-/*#define SCFG_MODULE_ENABLED---------------------*/
+#define SCFG_MODULE_ENABLED
 
 /* includes ------------------------------------------------------------------*/
 #ifdef CRM_MODULE_ENABLED

@@ -43,6 +43,10 @@ extern TaskHandle_t my_task01_handle;
 void my_task01_func(void *pvParameters);
 
 /* add user code begin 0 */
+void task_uartCom(void *pvParameters);
+void task_driver(void *pvParameters);
+void task_stateMachine(void *pvParameters);
+void task_audio(void *pvParameters);
 
 /* add user code end 0 */
 

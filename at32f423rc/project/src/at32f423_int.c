@@ -203,6 +203,51 @@ void SysTick_Handler(void)
   /* add user code end SysTick_IRQ 1 */
 }
 
+/**
+  * @brief  this function handles EXINT Line 0 handler.
+  * @param  none
+  * @retval none
+  */
+void EXINT0_IRQHandler(void)
+{
+  /* add user code begin EXINT0_IRQ 0 */
+
+  /* add user code end EXINT0_IRQ 0 */
+  /* add user code begin EXINT0_IRQ 1 */
+
+  /* add user code end EXINT0_IRQ 1 */
+}
+
+/**
+  * @brief  this function handles EXINT Line [9:5] handler.
+  * @param  none
+  * @retval none
+  */
+void EXINT9_5_IRQHandler(void)
+{
+  /* add user code begin EXINT9_5_IRQ 0 */
+
+  /* add user code end EXINT9_5_IRQ 0 */
+  /* add user code begin EXINT9_5_IRQ 1 */
+
+  /* add user code end EXINT9_5_IRQ 1 */
+}
+
+/**
+  * @brief  this function handles EXINT Line [15:10] handler.
+  * @param  none
+  * @retval none
+  */
+void EXINT15_10_IRQHandler(void)
+{
+  /* add user code begin EXINT15_10_IRQ 0 */
+
+  /* add user code end EXINT15_10_IRQ 0 */
+  /* add user code begin EXINT15_10_IRQ 1 */
+
+  /* add user code end EXINT15_10_IRQ 1 */
+}
+
 /* add user code begin 1 */
 
 /* add user code end 1 */
