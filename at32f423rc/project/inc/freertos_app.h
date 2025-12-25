@@ -1,11 +1,11 @@
 /* add user code begin Header */
 /**
-  ******************************************************************************
-  * File Name          : freertos_app.h
-  * Description        : Code for freertos applications
-  */
+ ******************************************************************************
+ * File Name          : freertos_app.h
+ * Description        : Code for freertos applications
+ */
 /* add user code end Header */
-  
+
 #ifndef FREERTOS_APP_H
 #define FREERTOS_APP_H
 
@@ -52,9 +52,6 @@ extern QueueHandle_t QDRIVER_handle;
 extern QueueHandle_t QSTATE_handle;
 
 /* add user code begin 0 */
-void task_uart(void *pvParameters);
-void task_driver(void *pvParameters);
-void task_state(void *pvParameters);
 
 /* add user code end 0 */
 

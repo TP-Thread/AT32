@@ -29,7 +29,8 @@
 #define __AT32F423_WK_CONFIG_H
 
 #ifdef __cplusplus
-extern "C" {
+extern "C"
+{
 #endif
 
 /* includes -----------------------------------------------------------------------*/
@@ -42,22 +43,22 @@ extern "C" {
 
     /* add user code end private includes */
 
-/* exported types -------------------------------------------------------------*/
-/* add user code begin exported types */
+    /* exported types -------------------------------------------------------------*/
+    /* add user code begin exported types */
 
     /* add user code end exported types */
 
-/* exported constants --------------------------------------------------------*/
-/* add user code begin exported constants */
+    /* exported constants --------------------------------------------------------*/
+    /* add user code begin exported constants */
 
     /* add user code end exported constants */
 
-/* exported macro ------------------------------------------------------------*/
-/* add user code begin exported macro */
+    /* exported macro ------------------------------------------------------------*/
+    /* add user code begin exported macro */
 
     /* add user code end exported macro */
 
-/* add user code begin dma define */
+    /* add user code begin dma define */
     /* user can only modify the dma define value */
     // #define DMA1_CHANNEL1_BUFFER_SIZE   0
     // #define DMA1_CHANNEL1_MEMORY_BASE_ADDR   0
@@ -116,41 +117,41 @@ extern "C" {
     // #define DMA2_CHANNEL7_PERIPHERAL_BASE_ADDR   0
     /* add user code end dma define */
 
-/* exported functions ------------------------------------------------------- */
-  /* system clock config. */
-  void wk_system_clock_config(void);
+    /* exported functions ------------------------------------------------------- */
+    /* system clock config. */
+    void wk_system_clock_config(void);
 
-  /* config periph clock. */
-  void wk_periph_clock_config(void);
+    /* config periph clock. */
+    void wk_periph_clock_config(void);
 
-  /* nvic config. */
-  void wk_nvic_config(void);
+    /* nvic config. */
+    void wk_nvic_config(void);
 
-  /* init gpio function. */
-  void wk_gpio_config(void);
+    /* init gpio function. */
+    void wk_gpio_config(void);
 
-  /* init exint function. */
-  void wk_exint_config(void);
+    /* init exint function. */
+    void wk_exint_config(void);
 
-  /* init adc1 function. */
-  void wk_adc1_init(void);
+    /* init adc1 function. */
+    void wk_adc1_init(void);
 
-  /* init i2c1 function. */
-  void wk_i2c1_init(void);
+    /* init i2c1 function. */
+    void wk_i2c1_init(void);
 
-  /* init usart1 function. */
-  void wk_usart1_init(void);
+    /* init usart1 function. */
+    void wk_usart1_init(void);
 
-  /* init usart2 function. */
-  void wk_usart2_init(void);
+    /* init usart2 function. */
+    void wk_usart2_init(void);
 
-  /* init usart3 function. */
-  void wk_usart3_init(void);
+    /* init usart3 function. */
+    void wk_usart3_init(void);
 
-  /* init usart5 function. */
-  void wk_usart5_init(void);
+    /* init usart5 function. */
+    void wk_usart5_init(void);
 
-/* add user code begin exported functions */
+    /* add user code begin exported functions */
 
     /* add user code end exported functions */
 

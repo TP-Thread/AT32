@@ -1,6 +1,6 @@
 /**
  * @file drv_rcc.c
- * @author your name (you@domain.com)
+ * @author A-rtos (A-rtos@outlook.com)
  * @brief RCC reset and clock related.
  * @version 0.1
  * @date 2025-12-25
@@ -12,39 +12,39 @@
 #include "drv_rcc.h"
 
 /**
- * @brief 微秒级延时
+ * @brief Microsecond delay
  *
- * @param Delay_us 延时微秒数（Delay_us < 1000）
+ * @param delay Delay in microseconds (delay < 1000)
  */
-// void HAL_Delay_us(uint16_t Delay_us)
-// {
-//     uint32_t tickwait = Delay_us * 168; // 延时需要等待的tick数
-//     uint32_t tickcnt;                   // 用于记录已经延时的tick数
+void wk_delay_us(uint16_t delay)
+{
+    uint32_t tickwait = delay * 64; // Number of ticks to wait (64MHz / 1MHz = 64 ticks per us)
+    uint32_t tickcnt;               // Used to record the number of ticks delayed
 
-//     uint32_t reload = SysTick->LOAD; // 重装载值168000-1，HAL_SYSTICK_Config()中设置好的    LOAD=168000，1ms=168000tick，1us=168tick
-//     uint32_t tickstart = SysTick->VAL;
+    uint32_t reload = SysTick->LOAD; // Reload value
+    uint32_t tickstart = SysTick->VAL;
 
-//     while (1)
-//     {
-//         uint32_t ticknow = SysTick->VAL;
-//         if (ticknow != tickstart)
-//         {
-//             if (ticknow < tickstart)
-//             {
-//                 tickcnt = tickstart - ticknow;
-//             }
-//             else
-//             {
-//                 tickcnt = reload - ticknow + tickstart;
-//             }
+    while (1)
+    {
+        uint32_t ticknow = SysTick->VAL;
+        if (ticknow != tickstart)
+        {
+            if (ticknow < tickstart)
+            {
+                tickcnt = tickstart - ticknow;
+            }
+            else
+            {
+                tickcnt = reload - ticknow + tickstart;
+            }
 
-//             if (tickcnt >= tickwait)
-//             {
-//                 break;
-//             }
-//         }
-//     }
-// }
+            if (tickcnt >= tickwait)
+            {
+                break;
+            }
+        }
+    }
+}
 
 /**
  * @brief  打印系统复位原因和时钟频率

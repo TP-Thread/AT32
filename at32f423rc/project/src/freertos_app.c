@@ -1,9 +1,9 @@
 /* add user code begin Header */
 /**
-  ******************************************************************************
-  * File Name          : freertos_app.c
-  * Description        : Code for freertos applications
-  */
+ ******************************************************************************
+ * File Name          : freertos_app.c
+ * Description        : Code for freertos applications
+ */
 /* add user code end Header */
 
 /* Includes ------------------------------------------------------------------*/
@@ -62,28 +62,28 @@ static StaticTask_t idle_task_tcb;
 static StaticTask_t timer_task_tcb;
 
 /* External Idle and Timer task static memory allocation functions */
-extern void vApplicationGetIdleTaskMemory( StaticTask_t ** ppxIdleTaskTCBBuffer, StackType_t ** ppxIdleTaskStackBuffer, uint32_t *pulIdleTaskStackSize );
-extern void vApplicationGetTimerTaskMemory( StaticTask_t ** ppxTimerTaskTCBBuffer, StackType_t ** ppxTimerTaskStackBuffer, uint32_t * pulTimerTaskStackSize );
+extern void vApplicationGetIdleTaskMemory(StaticTask_t **ppxIdleTaskTCBBuffer, StackType_t **ppxIdleTaskStackBuffer, uint32_t *pulIdleTaskStackSize);
+extern void vApplicationGetTimerTaskMemory(StaticTask_t **ppxTimerTaskTCBBuffer, StackType_t **ppxTimerTaskStackBuffer, uint32_t *pulTimerTaskStackSize);
 
 /*
   vApplicationGetIdleTaskMemory gets called when configSUPPORT_STATIC_ALLOCATION
   equals to 1 and is required for static memory allocation support.
 */
-void vApplicationGetIdleTaskMemory( StaticTask_t ** ppxIdleTaskTCBBuffer, StackType_t ** ppxIdleTaskStackBuffer, uint32_t *pulIdleTaskStackSize )
+void vApplicationGetIdleTaskMemory(StaticTask_t **ppxIdleTaskTCBBuffer, StackType_t **ppxIdleTaskStackBuffer, uint32_t *pulIdleTaskStackSize)
 {
-  *ppxIdleTaskTCBBuffer = &idle_task_tcb;
-  *ppxIdleTaskStackBuffer = &idle_task_stack[0];
-  *pulIdleTaskStackSize = (uint32_t)configMINIMAL_STACK_SIZE;
+    *ppxIdleTaskTCBBuffer = &idle_task_tcb;
+    *ppxIdleTaskStackBuffer = &idle_task_stack[0];
+    *pulIdleTaskStackSize = (uint32_t)configMINIMAL_STACK_SIZE;
 }
 /*
   vApplicationGetTimerTaskMemory gets called when configSUPPORT_STATIC_ALLOCATION
   equals to 1 and is required for static memory allocation support.
 */
-void vApplicationGetTimerTaskMemory( StaticTask_t ** ppxTimerTaskTCBBuffer, StackType_t ** ppxTimerTaskStackBuffer, uint32_t * pulTimerTaskStackSize )
+void vApplicationGetTimerTaskMemory(StaticTask_t **ppxTimerTaskTCBBuffer, StackType_t **ppxTimerTaskStackBuffer, uint32_t *pulTimerTaskStackSize)
 {
-  *ppxTimerTaskTCBBuffer = &timer_task_tcb;
-  *ppxTimerTaskStackBuffer = &timer_task_stack[0];
-  *pulTimerTaskStackSize = (uint32_t)configTIMER_TASK_STACK_DEPTH;
+    *ppxTimerTaskTCBBuffer = &timer_task_tcb;
+    *ppxTimerTaskStackBuffer = &timer_task_stack[0];
+    *pulTimerTaskStackSize = (uint32_t)configTIMER_TASK_STACK_DEPTH;
 }
 
 /* add user code begin 1 */
@@ -91,161 +91,160 @@ void vApplicationGetTimerTaskMemory( StaticTask_t ** ppxTimerTaskTCBBuffer, Stac
 /* add user code end 1 */
 
 /**
-  * @brief  initializes all task.
-  * @param  none
-  * @retval none
-  */
+ * @brief  initializes all task.
+ * @param  none
+ * @retval none
+ */
 void freertos_task_create(void)
 {
-  /* create TASK_UART task */
-  xTaskCreate(task_uart,
-              "TASK_UART",
-              512,
-              NULL,
-              3,
-              &TASK_UART_handle);
+    /* create TASK_UART task */
+    xTaskCreate(task_uart,
+                "TASK_UART",
+                512,
+                NULL,
+                3,
+                &TASK_UART_handle);
 
-  /* create TASK_DRIVER task */
-  xTaskCreate(task_driver,
-              "TASK_DRIVER",
-              256,
-              NULL,
-              2,
-              &TASK_DRIVER_handle);
+    /* create TASK_DRIVER task */
+    xTaskCreate(task_driver,
+                "TASK_DRIVER",
+                256,
+                NULL,
+                2,
+                &TASK_DRIVER_handle);
 
-  /* create TASK_STATE task */
-  xTaskCreate(task_state,
-              "TASK_STATE",
-              512,
-              NULL,
-              2,
-              &TASK_STATE_handle);
+    /* create TASK_STATE task */
+    xTaskCreate(task_state,
+                "TASK_STATE",
+                512,
+                NULL,
+                2,
+                &TASK_STATE_handle);
 }
 
 /**
-  * @brief  initializes all queue.
-  * @param  none
-  * @retval none
-  */
+ * @brief  initializes all queue.
+ * @param  none
+ * @retval none
+ */
 void freertos_queue_create(void)
 {
-  /* Create the QUART, storing the returned handle in the xQueue variable. */
-  QUART_handle = xQueueCreate(16, sizeof(uint16_t));
+    /* Create the QUART, storing the returned handle in the xQueue variable. */
+    QUART_handle = xQueueCreate(16, sizeof(uint16_t));
 
-  /* Create the QDRIVER, storing the returned handle in the xQueue variable. */
-  QDRIVER_handle = xQueueCreate(32, sizeof(uint16_t));
+    /* Create the QDRIVER, storing the returned handle in the xQueue variable. */
+    QDRIVER_handle = xQueueCreate(32, sizeof(uint16_t));
 
-  /* Create the QSTATE, storing the returned handle in the xQueue variable. */
-  QSTATE_handle = xQueueCreate(32, sizeof(uint16_t));
+    /* Create the QSTATE, storing the returned handle in the xQueue variable. */
+    QSTATE_handle = xQueueCreate(32, sizeof(uint16_t));
 }
 
 /**
-  * @brief  freertos init and begin run.
-  * @param  none
-  * @retval none
-  */
+ * @brief  freertos init and begin run.
+ * @param  none
+ * @retval none
+ */
 void wk_freertos_init(void)
 {
-  /* add user code begin freertos_init 0 */
+    /* add user code begin freertos_init 0 */
 
-  /* add user code end freertos_init 0 */
+    /* add user code end freertos_init 0 */
 
-  /* enter critical */
-  taskENTER_CRITICAL();
+    /* enter critical */
+    taskENTER_CRITICAL();
 
-  freertos_queue_create();
-  freertos_task_create();
-	
-  /* add user code begin freertos_init 1 */
+    freertos_queue_create();
+    freertos_task_create();
 
-  /* add user code end freertos_init 1 */
+    /* add user code begin freertos_init 1 */
 
-  /* exit critical */
-  taskEXIT_CRITICAL();
+    /* add user code end freertos_init 1 */
 
-  /* start scheduler */
-  vTaskStartScheduler();
+    /* exit critical */
+    taskEXIT_CRITICAL();
+
+    /* start scheduler */
+    vTaskStartScheduler();
 }
 
 /**
-  * @brief TASK_UART function.
-  * @param  none
-  * @retval none
-  */
+ * @brief TASK_UART function.
+ * @param  none
+ * @retval none
+ */
 __WEAK void task_uart(void *pvParameters)
 {
-  /* add user code begin task_uart 0 */
+    /* add user code begin task_uart 0 */
 
-  /* add user code end task_uart 0 */
+    /* add user code end task_uart 0 */
 
-  /* add user code begin task_uart 2 */
+    /* add user code begin task_uart 2 */
 
-  /* add user code end task_uart 2 */
+    /* add user code end task_uart 2 */
 
-  /* Infinite loop */
-  while(1)
-  {
-  /* add user code begin task_uart 1 */
+    /* Infinite loop */
+    while (1)
+    {
+        /* add user code begin task_uart 1 */
 
-     vTaskDelay(1);
+        vTaskDelay(1);
 
-  /* add user code end task_uart 1 */
-  }
+        /* add user code end task_uart 1 */
+    }
 }
 
 /**
-  * @brief TASK_DRIVER function.
-  * @param  none
-  * @retval none
-  */
+ * @brief TASK_DRIVER function.
+ * @param  none
+ * @retval none
+ */
 __WEAK void task_driver(void *pvParameters)
 {
-  /* add user code begin task_driver 0 */
+    /* add user code begin task_driver 0 */
 
-  /* add user code end task_driver 0 */
+    /* add user code end task_driver 0 */
 
-  /* add user code begin task_driver 2 */
+    /* add user code begin task_driver 2 */
 
-  /* add user code end task_driver 2 */
+    /* add user code end task_driver 2 */
 
-  /* Infinite loop */
-  while(1)
-  {
-  /* add user code begin task_driver 1 */
+    /* Infinite loop */
+    while (1)
+    {
+        /* add user code begin task_driver 1 */
 
-     vTaskDelay(1);
+        vTaskDelay(1);
 
-  /* add user code end task_driver 1 */
-  }
+        /* add user code end task_driver 1 */
+    }
 }
 
 /**
-  * @brief TASK_STATE function.
-  * @param  none
-  * @retval none
-  */
+ * @brief TASK_STATE function.
+ * @param  none
+ * @retval none
+ */
 __WEAK void task_state(void *pvParameters)
 {
-  /* add user code begin task_state 0 */
+    /* add user code begin task_state 0 */
 
-  /* add user code end task_state 0 */
+    /* add user code end task_state 0 */
 
-  /* add user code begin task_state 2 */
+    /* add user code begin task_state 2 */
 
-  /* add user code end task_state 2 */
+    /* add user code end task_state 2 */
 
-  /* Infinite loop */
-  while(1)
-  {
-  /* add user code begin task_state 1 */
+    /* Infinite loop */
+    while (1)
+    {
+        /* add user code begin task_state 1 */
 
-     vTaskDelay(1);
+        vTaskDelay(1);
 
-  /* add user code end task_state 1 */
-  }
+        /* add user code end task_state 1 */
+    }
 }
 
 /* add user code begin 2 */
 
 /* add user code end 2 */
-
