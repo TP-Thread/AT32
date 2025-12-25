@@ -38,19 +38,28 @@
 /* add user code end exported macro */
 
 /* task handler */
-extern TaskHandle_t my_task01_handle;
+extern TaskHandle_t TASK_UART_handle;
+extern TaskHandle_t TASK_DRIVER_handle;
+extern TaskHandle_t TASK_STATE_handle;
 /* declaration for task function */
-void my_task01_func(void *pvParameters);
+void task_uart(void *pvParameters);
+void task_driver(void *pvParameters);
+void task_state(void *pvParameters);
+
+/* queue handler */
+extern QueueHandle_t QUART_handle;
+extern QueueHandle_t QDRIVER_handle;
+extern QueueHandle_t QSTATE_handle;
 
 /* add user code begin 0 */
-void task_uartCom(void *pvParameters);
+void task_uart(void *pvParameters);
 void task_driver(void *pvParameters);
-void task_stateMachine(void *pvParameters);
-void task_audio(void *pvParameters);
+void task_state(void *pvParameters);
 
 /* add user code end 0 */
 
 void freertos_task_create(void);
+void freertos_queue_create(void);
 void wk_freertos_init(void);
 
 /* add user code begin 1 */

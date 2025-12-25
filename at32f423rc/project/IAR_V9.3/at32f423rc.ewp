@@ -2,7 +2,7 @@
 <project>
     <fileVersion>3</fileVersion>
     <configuration>
-        <name>at32f423rc</name>
+        <name>debug</name>
         <toolchain>
             <name>ARM</name>
         </toolchain>
@@ -16,19 +16,19 @@
                 <debug>1</debug>
                 <option>
                     <name>ExePath</name>
-                    <state>at32f423rc\Exe</state>
+                    <state>debug\Exe</state>
                 </option>
                 <option>
                     <name>ObjPath</name>
-                    <state>at32f423rc\Obj</state>
+                    <state>debug\Obj</state>
                 </option>
                 <option>
                     <name>ListPath</name>
-                    <state>at32f423rc\List</state>
+                    <state>debug\List</state>
                 </option>
                 <option>
                     <name>BrowseInfoPath</name>
-                    <state>at32f423rc\BrowseInfo</state>
+                    <state>debug\BrowseInfo</state>
                 </option>
                 <option>
                     <name>GEndianMode</name>
@@ -172,11 +172,11 @@
                 </option>
                 <option>
                     <name>GenLocaleTags</name>
-                    <state/>
+                    <state></state>
                 </option>
                 <option>
                     <name>GenLocaleDisplayOnly</name>
-                    <state/>
+                    <state></state>
                 </option>
                 <option>
                     <name>DSPExtension</name>
@@ -201,7 +201,7 @@
                 </option>
                 <option>
                     <name>BuildFilesPath</name>
-                    <state>at32f423rc\</state>
+                    <state>debug\</state>
                 </option>
                 <option>
                     <name>PointerAuthentication</name>
@@ -264,19 +264,19 @@
                 </option>
                 <option>
                     <name>CCDiagSuppress</name>
-                    <state/>
+                    <state></state>
                 </option>
                 <option>
                     <name>CCDiagRemark</name>
-                    <state/>
+                    <state></state>
                 </option>
                 <option>
                     <name>CCDiagWarning</name>
-                    <state/>
+                    <state></state>
                 </option>
                 <option>
                     <name>CCDiagError</name>
-                    <state/>
+                    <state></state>
                 </option>
                 <option>
                     <name>CCObjPrefix</name>
@@ -305,7 +305,7 @@
                 </option>
                 <option>
                     <name>IExtraOptions</name>
-                    <state/>
+                    <state></state>
                 </option>
                 <option>
                     <name>CCLangConformance</name>
@@ -341,7 +341,7 @@
                 </option>
                 <option>
                     <name>PreInclude</name>
-                    <state/>
+                    <state></state>
                 </option>
                 <option>
                     <name>CCIncludePath2</name>
@@ -352,6 +352,8 @@
                     <state>$PROJ_DIR$\../../middlewares/freertos/source/include</state>
                     <state>$PROJ_DIR$\../../middlewares/freertos/source/portable/memmang</state>
                     <state>$PROJ_DIR$\../../middlewares/freertos/source/portable/IAR/ARM_CM4F</state>
+                    <state>$PROJ_DIR$\..\..\bsp\lib\inc</state>
+                    <state>$PROJ_DIR$\..\..\bsp\task\inc</state>
                 </option>
                 <option>
                     <name>CCStdIncCheck</name>
@@ -503,15 +505,15 @@
                 </option>
                 <option>
                     <name>AWarnOne</name>
-                    <state/>
+                    <state></state>
                 </option>
                 <option>
                     <name>AWarnRange1</name>
-                    <state/>
+                    <state></state>
                 </option>
                 <option>
                     <name>AWarnRange2</name>
-                    <state/>
+                    <state></state>
                 </option>
                 <option>
                     <name>ADebug</name>
@@ -523,7 +525,7 @@
                 </option>
                 <option>
                     <name>ADefines</name>
-                    <state/>
+                    <state></state>
                 </option>
                 <option>
                     <name>AList</name>
@@ -623,7 +625,7 @@
                 </option>
                 <option>
                     <name>AExtraOptionsV2</name>
-                    <state/>
+                    <state></state>
                 </option>
                 <option>
                     <name>AsmNoLiteralPool</name>
@@ -631,7 +633,7 @@
                 </option>
                 <option>
                     <name>PreInclude</name>
-                    <state/>
+                    <state></state>
                 </option>
             </data>
         </settings>
@@ -669,8 +671,8 @@
             <name>CUSTOM</name>
             <archiveVersion>3</archiveVersion>
             <data>
-                <extensions/>
-                <cmdline/>
+                <extensions></extensions>
+                <cmdline></cmdline>
                 <hasPrio>1</hasPrio>
                 <buildSequence>inputOutputBased</buildSequence>
             </data>
@@ -679,8 +681,8 @@
             <name>BUILDACTION</name>
             <archiveVersion>1</archiveVersion>
             <data>
-                <prebuild/>
-                <postbuild/>
+                <prebuild></prebuild>
+                <postbuild></postbuild>
             </data>
         </settings>
         <settings>
@@ -708,31 +710,31 @@
                 </option>
                 <option>
                     <name>IlinkKeepSymbols</name>
-                    <state/>
+                    <state></state>
                 </option>
                 <option>
                     <name>IlinkRawBinaryFile</name>
-                    <state/>
+                    <state></state>
                 </option>
                 <option>
                     <name>IlinkRawBinarySymbol</name>
-                    <state/>
+                    <state></state>
                 </option>
                 <option>
                     <name>IlinkRawBinarySegment</name>
-                    <state/>
+                    <state></state>
                 </option>
                 <option>
                     <name>IlinkRawBinaryAlign</name>
-                    <state/>
+                    <state></state>
                 </option>
                 <option>
                     <name>IlinkDefines</name>
-                    <state/>
+                    <state></state>
                 </option>
                 <option>
                     <name>IlinkConfigDefines</name>
-                    <state/>
+                    <state></state>
                 </option>
                 <option>
                     <name>IlinkMapFile</name>
@@ -768,7 +770,7 @@
                 </option>
                 <option>
                     <name>IlinkIcfFileSlave</name>
-                    <state/>
+                    <state></state>
                 </option>
                 <option>
                     <name>IlinkEnableRemarks</name>
@@ -776,19 +778,19 @@
                 </option>
                 <option>
                     <name>IlinkSuppressDiags</name>
-                    <state/>
+                    <state></state>
                 </option>
                 <option>
                     <name>IlinkTreatAsRem</name>
-                    <state/>
+                    <state></state>
                 </option>
                 <option>
                     <name>IlinkTreatAsWarn</name>
-                    <state/>
+                    <state></state>
                 </option>
                 <option>
                     <name>IlinkTreatAsErr</name>
-                    <state/>
+                    <state></state>
                 </option>
                 <option>
                     <name>IlinkWarningsAreErrors</name>
@@ -800,7 +802,7 @@
                 </option>
                 <option>
                     <name>IlinkExtraOptions</name>
-                    <state/>
+                    <state></state>
                 </option>
                 <option>
                     <name>IlinkLowLevelInterfaceSlave</name>
@@ -812,7 +814,7 @@
                 </option>
                 <option>
                     <name>IlinkAdditionalLibs</name>
-                    <state/>
+                    <state></state>
                 </option>
                 <option>
                     <name>IlinkOverrideProgramEntryLabel</name>
@@ -947,11 +949,11 @@
                 </option>
                 <option>
                     <name>IlinkStackControlFile</name>
-                    <state/>
+                    <state></state>
                 </option>
                 <option>
                     <name>IlinkStackCallGraphFile</name>
-                    <state/>
+                    <state></state>
                 </option>
                 <option>
                     <name>CrcAlgorithm</name>
@@ -973,7 +975,7 @@
                 </option>
                 <option>
                     <name>IlinkIcfFile_AltDefault</name>
-                    <state/>
+                    <state></state>
                 </option>
                 <option>
                     <name>IlinkEncInput</name>
@@ -1005,19 +1007,19 @@
                 </option>
                 <option>
                     <name>IlinkRawBinaryFile2</name>
-                    <state/>
+                    <state></state>
                 </option>
                 <option>
                     <name>IlinkRawBinarySymbol2</name>
-                    <state/>
+                    <state></state>
                 </option>
                 <option>
                     <name>IlinkRawBinarySegment2</name>
-                    <state/>
+                    <state></state>
                 </option>
                 <option>
                     <name>IlinkRawBinaryAlign2</name>
-                    <state/>
+                    <state></state>
                 </option>
                 <option>
                     <name>IlinkLogCrtRoutineSelection</name>
@@ -1045,7 +1047,7 @@
                 </option>
                 <option>
                     <name>IlinkWrapperFile</name>
-                    <state/>
+                    <state></state>
                 </option>
                 <option>
                     <name>IlinkProcessor</name>
@@ -1066,7 +1068,7 @@
                 <debug>1</debug>
                 <option>
                     <name>IarchiveInputs</name>
-                    <state/>
+                    <state></state>
                 </option>
                 <option>
                     <name>IarchiveOverride</name>
@@ -1091,31 +1093,88 @@
     <group>
         <name>firmware</name>
         <file>
-            <name>$PROJ_DIR$\..\..\libraries\drivers\src\at32f423_crm.c</name>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\..\libraries\drivers\src\at32f423_gpio.c</name>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\..\libraries\drivers\src\at32f423_pwc.c</name>
-        </file>
-        <file>
             <name>$PROJ_DIR$\..\..\libraries\drivers\src\at32f423_adc.c</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\libraries\drivers\src\at32f423_crm.c</name>
         </file>
         <file>
             <name>$PROJ_DIR$\..\..\libraries\drivers\src\at32f423_debug.c</name>
         </file>
         <file>
+            <name>$PROJ_DIR$\..\..\libraries\drivers\src\at32f423_exint.c</name>
+        </file>
+        <file>
             <name>$PROJ_DIR$\..\..\libraries\drivers\src\at32f423_flash.c</name>
         </file>
         <file>
-            <name>$PROJ_DIR$\..\..\libraries\drivers\src\at32f423_exint.c</name>
+            <name>$PROJ_DIR$\..\..\libraries\drivers\src\at32f423_gpio.c</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\libraries\drivers\src\at32f423_i2c.c</name>
         </file>
         <file>
             <name>$PROJ_DIR$\..\..\libraries\drivers\src\at32f423_misc.c</name>
         </file>
         <file>
+            <name>$PROJ_DIR$\..\..\libraries\drivers\src\at32f423_pwc.c</name>
+        </file>
+        <file>
             <name>$PROJ_DIR$\..\..\libraries\drivers\src\at32f423_scfg.c</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\libraries\drivers\src\at32f423_usart.c</name>
+        </file>
+    </group>
+    <group>
+        <name>lib</name>
+        <file>
+            <name>$PROJ_DIR$\..\..\bsp\lib\src\drv_rcc.c</name>
+        </file>
+    </group>
+    <group>
+        <name>middlewares/freertos</name>
+        <file>
+            <name>$PROJ_DIR$\..\..\middlewares\freertos\source\croutine.c</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\middlewares\freertos\source\event_groups.c</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\middlewares\freertos\source\portable\memmang\heap_4.c</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\middlewares\freertos\source\list.c</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\middlewares\freertos\source\portable\IAR\ARM_CM4F\port.c</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\middlewares\freertos\source\portable\IAR\ARM_CM4F\portasm.s</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\middlewares\freertos\source\queue.c</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\middlewares\freertos\source\stream_buffer.c</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\middlewares\freertos\source\tasks.c</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\middlewares\freertos\source\timers.c</name>
+        </file>
+    </group>
+    <group>
+        <name>task</name>
+        <file>
+            <name>$PROJ_DIR$\..\..\bsp\task\src\task_driver.c</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\bsp\task\src\task_state.c</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\bsp\task\src\task_uart.c</name>
         </file>
     </group>
     <group>
@@ -1127,58 +1186,10 @@
             <name>$PROJ_DIR$\..\src\at32f423_wk_config.c</name>
         </file>
         <file>
+            <name>$PROJ_DIR$\..\src\freertos_app.c</name>
+        </file>
+        <file>
             <name>$PROJ_DIR$\..\src\main.c</name>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\../src/freertos_app.c</name>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\src\wk_adc.c</name>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\src\wk_exint.c</name>
-        </file>
-    </group>
-    <group>
-        <name>middlewares/freertos</name>
-        <file>
-            <name>$PROJ_DIR$\../src/freertos_app.c</name>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\src\wk_adc.c</name>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\../../middlewares/freertos/source/croutine.c</name>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\../../middlewares/freertos/source/event_groups.c</name>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\../../middlewares/freertos/source/list.c</name>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\../../middlewares/freertos/source/queue.c</name>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\../../middlewares/freertos/source/tasks.c</name>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\../../middlewares/freertos/source/timers.c</name>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\../../middlewares/freertos/source/portable/IAR/ARM_CM4F/port.c</name>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\../../middlewares/freertos/source/portable/IAR/ARM_CM4F/portasm.s</name>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\../../middlewares/freertos/source/portable/memmang/heap_4.c</name>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\../../middlewares/freertos/source/stream_buffer.c</name>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\src\wk_exint.c</name>
         </file>
     </group>
 </project>

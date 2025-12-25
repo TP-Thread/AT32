@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Root>
     <WorkBenchVersion>
-        <Version>V1.2.00</Version>
+        <Version>V1.2.02</Version>
     </WorkBenchVersion>
     <MCUInfo>
         <MCUSerials>AT32F423</MCUSerials>
@@ -36,11 +36,52 @@
             <ParametersSub name="TriggerPolarity_15" value="EXINT_TRIGGER_BOTH_EDGE"/>
         </Parameters>
     </EXINT>
+    <I2C1>
+        <Mode>
+            <ModeSub name="I2C" value="I2C"/>
+        </Mode>
+        <Parameters>
+            <ParametersSub name="Timing_Configuration_Value" value="0x20E02D2D"/>
+            <ParametersSub name="DualAddressMode" value="DISABLE"/>
+        </Parameters>
+    </I2C1>
     <SYSTEM>
         <Mode>
             <ModeSub name="Time_Base" value=""/>
         </Mode>
     </SYSTEM>
+    <USART1>
+        <Mode>
+            <ModeSub name="Mode" value="Asynchronous"/>
+        </Mode>
+        <Parameters>
+            <ParametersSub name="RealBaudRate" value="115108"/>
+        </Parameters>
+    </USART1>
+    <USART2>
+        <Mode>
+            <ModeSub name="Mode" value="Asynchronous"/>
+        </Mode>
+        <Parameters>
+            <ParametersSub name="RealBaudRate" value="115108"/>
+        </Parameters>
+    </USART2>
+    <USART3>
+        <Mode>
+            <ModeSub name="Mode" value="Asynchronous"/>
+        </Mode>
+        <Parameters>
+            <ParametersSub name="RealBaudRate" value="115108"/>
+        </Parameters>
+    </USART3>
+    <USART5>
+        <Mode>
+            <ModeSub name="Mode" value="Asynchronous"/>
+        </Mode>
+        <Parameters>
+            <ParametersSub name="RealBaudRate" value="115108"/>
+        </Parameters>
+    </USART5>
     <FREERTOS>
         <Mode>
             <ModeSub name="Activated" value="TRUE"/>
@@ -52,17 +93,68 @@
         </Parameters>
         <Tasks>
             <ParametersGroup>
-                <ParametersSub name="TaskName" value="my_task01"/>
-                <ParametersSub name="TaskPriority" value="0"/>
-                <ParametersSub name="TaskStackSize" value="128"/>
-                <ParametersSub name="TaskEntryFunction" value="my_task01_func"/>
-                <ParametersSub name="TaskCodeGenerationOption" value="Default"/>
+                <ParametersSub name="TaskName" value="TASK_UART"/>
+                <ParametersSub name="TaskPriority" value="3"/>
+                <ParametersSub name="TaskStackSize" value="512"/>
+                <ParametersSub name="TaskEntryFunction" value="task_uart"/>
+                <ParametersSub name="TaskCodeGenerationOption" value="AsWeak"/>
+                <ParametersSub name="TaskParameters" value="NULL"/>
+                <ParametersSub name="TaskAllocation" value="Dynamic"/>
+                <ParametersSub name="TaskStackBuffer" value="NULL"/>
+                <ParametersSub name="TaskBuffer" value="NULL"/>
+            </ParametersGroup>
+            <ParametersGroup>
+                <ParametersSub name="TaskName" value="TASK_DRIVER"/>
+                <ParametersSub name="TaskPriority" value="2"/>
+                <ParametersSub name="TaskStackSize" value="256"/>
+                <ParametersSub name="TaskEntryFunction" value="task_driver"/>
+                <ParametersSub name="TaskCodeGenerationOption" value="AsWeak"/>
+                <ParametersSub name="TaskParameters" value="NULL"/>
+                <ParametersSub name="TaskAllocation" value="Dynamic"/>
+                <ParametersSub name="TaskStackBuffer" value="NULL"/>
+                <ParametersSub name="TaskBuffer" value="NULL"/>
+            </ParametersGroup>
+            <ParametersGroup>
+                <ParametersSub name="TaskName" value="TASK_STATE"/>
+                <ParametersSub name="TaskPriority" value="2"/>
+                <ParametersSub name="TaskStackSize" value="512"/>
+                <ParametersSub name="TaskEntryFunction" value="task_state"/>
+                <ParametersSub name="TaskCodeGenerationOption" value="AsWeak"/>
                 <ParametersSub name="TaskParameters" value="NULL"/>
                 <ParametersSub name="TaskAllocation" value="Dynamic"/>
                 <ParametersSub name="TaskStackBuffer" value="NULL"/>
                 <ParametersSub name="TaskBuffer" value="NULL"/>
             </ParametersGroup>
         </Tasks>
+        <Queues>
+            <ParametersGroup>
+                <ParametersSub name="QueueName" value="QUART"/>
+                <ParametersSub name="QueueSize" value="16"/>
+                <ParametersSub name="QueueItemSize" value="uint16_t"/>
+                <ParametersSub name="QueueAllocation" value="Dynamic"/>
+                <ParametersSub name="QueueBufferName" value="NULL"/>
+                <ParametersSub name="QueueBufferSize" value="n/a"/>
+                <ParametersSub name="QueueBuffer" value="NULL"/>
+            </ParametersGroup>
+            <ParametersGroup>
+                <ParametersSub name="QueueName" value="QDRIVER"/>
+                <ParametersSub name="QueueSize" value="32"/>
+                <ParametersSub name="QueueItemSize" value="uint16_t"/>
+                <ParametersSub name="QueueAllocation" value="Dynamic"/>
+                <ParametersSub name="QueueBufferName" value="NULL"/>
+                <ParametersSub name="QueueBufferSize" value="n/a"/>
+                <ParametersSub name="QueueBuffer" value="NULL"/>
+            </ParametersGroup>
+            <ParametersGroup>
+                <ParametersSub name="QueueName" value="QSTATE"/>
+                <ParametersSub name="QueueSize" value="32"/>
+                <ParametersSub name="QueueItemSize" value="uint16_t"/>
+                <ParametersSub name="QueueAllocation" value="Dynamic"/>
+                <ParametersSub name="QueueBufferName" value="NULL"/>
+                <ParametersSub name="QueueBufferSize" value="n/a"/>
+                <ParametersSub name="QueueBuffer" value="NULL"/>
+            </ParametersGroup>
+        </Queues>
     </FREERTOS>
     <NVIC>
         <PendSV_Handler>1;15;0;1;0</PendSV_Handler>
@@ -72,7 +164,13 @@
         <EXINT0_IRQHandler>1;14;0;1;0</EXINT0_IRQHandler>
         <ADC1_IRQHandler>0;5;0;1;0</ADC1_IRQHandler>
         <EXINT9_5_IRQHandler>1;14;0;1;0</EXINT9_5_IRQHandler>
+        <I2C1_EVT_IRQHandler>0;5;0;1;0</I2C1_EVT_IRQHandler>
+        <I2C1_ERR_IRQHandler>0;5;0;1;0</I2C1_ERR_IRQHandler>
+        <USART1_IRQHandler>1;15;0;1;0</USART1_IRQHandler>
+        <USART2_IRQHandler>0;5;0;1;0</USART2_IRQHandler>
+        <USART3_IRQHandler>0;5;0;1;0</USART3_IRQHandler>
         <EXINT15_10_IRQHandler>1;14;0;1;0</EXINT15_10_IRQHandler>
+        <USART5_IRQHandler>1;15;0;1;0</USART5_IRQHandler>
         <FPU_IRQHandler>0;5;0;1;0</FPU_IRQHandler>
     </NVIC>
     <ClockConfiguration>
@@ -106,10 +204,20 @@
     <PINInfo>
         <PinSub pinname="PC15" signalname="EXINT15" signaltype="3"/>
         <PinSub pinname="PA0" signalname="EXINT0" signaltype="3"/>
+        <PinSub pinname="PA2" signalname="USART2_TX" signaltype="3"/>
+        <PinSub pinname="PA3" signalname="USART2_RX" signaltype="3"/>
         <PinSub pinname="PB1" signalname="ADC1_IN9" signaltype="3"/>
         <PinSub pinname="PA8" signalname="EXINT8" signaltype="3"/>
+        <PinSub pinname="PA9" signalname="USART1_TX" signaltype="3"/>
+        <PinSub pinname="PA10" signalname="USART1_RX" signaltype="3"/>
         <PinSub pinname="PA13" signalname="DEBUG_JTMS_SWDIO" signaltype="2"/>
         <PinSub pinname="PA14" signalname="DEBUG_JTCK_SWCLK" signaltype="2"/>
+        <PinSub pinname="PC10" signalname="USART3_TX" signaltype="3"/>
+        <PinSub pinname="PC11" signalname="USART3_RX" signaltype="3"/>
+        <PinSub pinname="PC12" signalname="USART5_TX" signaltype="3"/>
+        <PinSub pinname="PD2" signalname="USART5_RX" signaltype="3"/>
+        <PinSub pinname="PB8" signalname="I2C1_SCL" signaltype="3"/>
+        <PinSub pinname="PB9" signalname="I2C1_SDA" signaltype="3"/>
     </PINInfo>
     <ProjectInfomation>
         <ProjectName>at32f423rc</ProjectName>
@@ -117,12 +225,12 @@
         <ToolchainIDE>IAR_V9.3</ToolchainIDE>
         <ARMCompiler>0</ARMCompiler>
         <KeepUserCode>true</KeepUserCode>
-        <NotUsedPinAnalog>false</NotUsedPinAnalog>
-        <CodeSplitIP>true</CodeSplitIP>
+        <NotUsedPinAnalog>true</NotUsedPinAnalog>
+        <CodeSplitIP>false</CodeSplitIP>
         <AddNecessaryFileFlag>true</AddNecessaryFileFlag>
         <MinHeapSize>0x200</MinHeapSize>
         <MinStackSize>0x400</MinStackSize>
         <UseFirmware>true</UseFirmware>
-        <PackageVersion>V2.0.8</PackageVersion>
+        <PackageVersion>V2.0.9</PackageVersion>
     </ProjectInfomation>
 </Root>

@@ -66,7 +66,9 @@ void SysTick_Handler(void);
 
 void EXINT0_IRQHandler(void);
 void EXINT9_5_IRQHandler(void);
+void USART1_IRQHandler(void);
 void EXINT15_10_IRQHandler(void);
+void USART5_IRQHandler(void);
 /* add user code begin exported functions */
 
 /* add user code end exported functions */

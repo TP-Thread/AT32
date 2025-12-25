@@ -3,7 +3,7 @@
   * @file     at32f423_conf.h
   * @brief    at32f423 config header file
   **************************************************************************
-  *                       Copyright notice & Disclaimer
+  * Copyright (c) 2025, Artery Technology, All rights reserved.
   *
   * The software Board Support Package (BSP) that is made available to
   * download from Artery official website is the copyrighted work of Artery.
@@ -55,8 +55,8 @@ extern "C" {
 /*#define TMR_MODULE_ENABLED----------------------*/
 /*#define ERTC_MODULE_ENABLED---------------------*/
 #define GPIO_MODULE_ENABLED
-/*#define I2C_MODULE_ENABLED----------------------*/
-/*#define USART_MODULE_ENABLED--------------------*/
+#define I2C_MODULE_ENABLED
+#define USART_MODULE_ENABLED
 #define PWC_MODULE_ENABLED
 /*#define CAN_MODULE_ENABLED----------------------*/
 #define ADC_MODULE_ENABLED

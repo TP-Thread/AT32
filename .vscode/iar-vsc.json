@@ -1,6 +1,6 @@
 {
   "workspace": {
-    "path": "${workspaceFolder}\\at32f421k8\\project\\IAR_V9.3\\at32f421k8.eww"
+    "path": "${workspaceFolder}\\at32f423rc\\project\\IAR_V9.3\\at32f423rc.eww"
   },
   "workspaces": {
     "${workspaceFolder}\\at32f421k8\\project\\IAR_V9.3\\at32f421k8.eww": {
@@ -9,6 +9,14 @@
       },
       "selected": {
         "path": "${workspaceFolder}\\at32f421k8\\project\\IAR_V9.3\\at32f421k8.ewp"
+      }
+    },
+    "${workspaceFolder}\\at32f423rc\\project\\IAR_V9.3\\at32f423rc.eww": {
+      "configs": {
+        "${workspaceFolder}\\at32f423rc\\project\\IAR_V9.3\\at32f423rc.ewp": "debug"
+      },
+      "selected": {
+        "path": "${workspaceFolder}\\at32f423rc\\project\\IAR_V9.3\\at32f423rc.ewp"
       }
     }
   },

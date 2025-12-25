@@ -1,0 +1,8 @@
+# IAR .dep files
+*.dep
+
+# IAR settings  
+**/settings/
+
+# IAR Debug
+**/IAR_V9.3/debug/

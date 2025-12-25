@@ -1,33 +1,31 @@
 /* add user code begin Header */
 /**
-  **************************************************************************
-  * @file     main.c
-  * @brief    main program
-  **************************************************************************
-  *                       Copyright notice & Disclaimer
-  *
-  * The software Board Support Package (BSP) that is made available to
-  * download from Artery official website is the copyrighted work of Artery.
-  * Artery authorizes customers to use, copy, and distribute the BSP
-  * software and its related documentation for the purpose of design and
-  * development in conjunction with Artery microcontrollers. Use of the
-  * software is governed by this copyright notice and the following disclaimer.
-  *
-  * THIS SOFTWARE IS PROVIDED ON "AS IS" BASIS WITHOUT WARRANTIES,
-  * GUARANTEES OR REPRESENTATIONS OF ANY KIND. ARTERY EXPRESSLY DISCLAIMS,
-  * TO THE FULLEST EXTENT PERMITTED BY LAW, ALL EXPRESS, IMPLIED OR
-  * STATUTORY OR OTHER WARRANTIES, GUARANTEES OR REPRESENTATIONS,
-  * INCLUDING BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY,
-  * FITNESS FOR A PARTICULAR PURPOSE, OR NON-INFRINGEMENT.
-  *
-  **************************************************************************
-  */
+ **************************************************************************
+ * @file     main.c
+ * @brief    main program
+ **************************************************************************
+ *                       Copyright notice & Disclaimer
+ *
+ * The software Board Support Package (BSP) that is made available to
+ * download from Artery official website is the copyrighted work of Artery.
+ * Artery authorizes customers to use, copy, and distribute the BSP
+ * software and its related documentation for the purpose of design and
+ * development in conjunction with Artery microcontrollers. Use of the
+ * software is governed by this copyright notice and the following disclaimer.
+ *
+ * THIS SOFTWARE IS PROVIDED ON "AS IS" BASIS WITHOUT WARRANTIES,
+ * GUARANTEES OR REPRESENTATIONS OF ANY KIND. ARTERY EXPRESSLY DISCLAIMS,
+ * TO THE FULLEST EXTENT PERMITTED BY LAW, ALL EXPRESS, IMPLIED OR
+ * STATUTORY OR OTHER WARRANTIES, GUARANTEES OR REPRESENTATIONS,
+ * INCLUDING BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE, OR NON-INFRINGEMENT.
+ *
+ **************************************************************************
+ */
 /* add user code end Header */
 
 /* Includes ------------------------------------------------------------------*/
 #include "at32f423_wk_config.h"
-#include "wk_adc.h"
-#include "wk_exint.h"
 #include "freertos_app.h"
 
 /* private includes ----------------------------------------------------------*/
@@ -86,7 +84,7 @@ int main(void)
 {
   /* add user code begin 1 */
 
-  /* add user code end 1 */
+    /* add user code end 1 */
 
   /* add a necessary delay to ensure that Vdd is higher than the operating
      voltage of battery powered domain (2.57V) when the battery powered 
@@ -102,27 +100,46 @@ int main(void)
   /* nvic config. */
   wk_nvic_config();
 
+  /* init gpio function. */
+  wk_gpio_config();
+
   /* init adc1 function. */
   wk_adc1_init();
+
+  /* init usart1 function. */
+  wk_usart1_init();
+
+  /* init usart2 function. */
+  wk_usart2_init();
+
+  /* init usart3 function. */
+  wk_usart3_init();
+
+  /* init usart5 function. */
+  wk_usart5_init();
+
+  /* init i2c1 function. */
+  wk_i2c1_init();
 
   /* init exint function. */
   wk_exint_config();
 
+  /* add user code begin 2 */
+    rcc_information_print();
+
+    /* add user code end 2 */
+
   /* init freertos function. */
   wk_freertos_init();
-
-  /* add user code begin 2 */
-
-  /* add user code end 2 */
 
   while(1)
   {
     /* add user code begin 3 */
 
-    /* add user code end 3 */
+        /* add user code end 3 */
   }
 }
 
   /* add user code begin 4 */
 
-  /* add user code end 4 */
+/* add user code end 4 */

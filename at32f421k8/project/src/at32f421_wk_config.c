@@ -151,14 +151,14 @@ void wk_periph_clock_config(void)
   /* enable gpiob periph clock */
   crm_periph_clock_enable(CRM_GPIOB_PERIPH_CLOCK, TRUE);
 
+  /* enable gpiof periph clock */
+  crm_periph_clock_enable(CRM_GPIOF_PERIPH_CLOCK, TRUE);
+
   /* enable scfg periph clock */
   crm_periph_clock_enable(CRM_SCFG_PERIPH_CLOCK, TRUE);
 
   /* enable adc1 periph clock */
   crm_periph_clock_enable(CRM_ADC1_PERIPH_CLOCK, TRUE);
-
-  /* enable tmr1 periph clock */
-  crm_periph_clock_enable(CRM_TMR1_PERIPH_CLOCK, TRUE);
 
   /* enable usart1 periph clock */
   crm_periph_clock_enable(CRM_USART1_PERIPH_CLOCK, TRUE);
@@ -193,8 +193,6 @@ void wk_nvic_config(void)
   NVIC_SetPriority(PendSV_IRQn, NVIC_EncodePriority(NVIC_GetPriorityGrouping(), 0, 0));
   NVIC_SetPriority(SysTick_IRQn, NVIC_EncodePriority(NVIC_GetPriorityGrouping(), 0, 0));
   nvic_irq_enable(DMA1_Channel3_2_IRQn, 3, 2);
-  nvic_irq_enable(TMR1_BRK_OVF_TRG_HALL_IRQn, 3, 2);
-  nvic_irq_enable(TMR1_CH_IRQn, 3, 2);
   nvic_irq_enable(TMR3_GLOBAL_IRQn, 3, 2);
   nvic_irq_enable(TMR6_GLOBAL_IRQn, 0, 0);
   nvic_irq_enable(USART1_IRQn, 2, 2);
@@ -237,6 +235,22 @@ void wk_gpio_config(void)
   gpio_init_struct.gpio_pull = GPIO_PULL_NONE;
   gpio_init(GPIOA, &gpio_init_struct);
 
+  /* gpio analog config */
+  gpio_init_struct.gpio_mode = GPIO_MODE_ANALOG;
+  gpio_init_struct.gpio_pins = GPIO_PINS_0 | GPIO_PINS_1;
+  gpio_init_struct.gpio_pull = GPIO_PULL_NONE;
+  gpio_init(GPIOF, &gpio_init_struct);
+
+  gpio_init_struct.gpio_mode = GPIO_MODE_ANALOG;
+  gpio_init_struct.gpio_pins = GPIO_PINS_0 | GPIO_PINS_8 | GPIO_PINS_15;
+  gpio_init_struct.gpio_pull = GPIO_PULL_NONE;
+  gpio_init(GPIOA, &gpio_init_struct);
+
+  gpio_init_struct.gpio_mode = GPIO_MODE_ANALOG;
+  gpio_init_struct.gpio_pins = GPIO_PINS_2 | GPIO_PINS_4 | GPIO_PINS_6 | GPIO_PINS_7 | GPIO_PINS_8;
+  gpio_init_struct.gpio_pull = GPIO_PULL_NONE;
+  gpio_init(GPIOB, &gpio_init_struct);
+
   /* add user code begin gpio_config 2 */
 
     /* add user code end gpio_config 2 */
@@ -275,7 +289,7 @@ void wk_exint_config(void)
   exint_init_struct.line_select = EXINT_LINE_12;
   exint_init_struct.line_polarity = EXINT_TRIGGER_RISING_EDGE;
   exint_init(&exint_init_struct);
-  
+
   /* add user code begin exint_config 2 */
 
     /* add user code end exint_config 2 */
@@ -345,6 +359,8 @@ void wk_adc1_init(void)
   adc_ordinary_channel_set(ADC1, ADC_CHANNEL_1, 4, ADC_SAMPLETIME_55_5);
   adc_ordinary_channel_set(ADC1, ADC_CHANNEL_6, 5, ADC_SAMPLETIME_55_5);
 
+  /* When "ADCx_ORDINARY_TRIG_SOFTWARE" is selected, user can only use software trigger. \
+  The software trigger function is adc_ordinary_software_trigger_enable(ADCx, TRUE); */
   adc_ordinary_conversion_trigger_set(ADC1, ADC12_ORDINARY_TRIG_SOFTWARE, TRUE);
 
   adc_ordinary_part_mode_enable(ADC1, FALSE);
@@ -369,104 +385,6 @@ void wk_adc1_init(void)
 }
 
 /**
-  * @brief  init tmr1 function.
-  * @param  none
-  * @retval none
-  */
-void wk_tmr1_init(void)
-{
-  /* add user code begin tmr1_init 0 */
-
-    /* add user code end tmr1_init 0 */
-
-  tmr_output_config_type tmr_output_struct;
-  tmr_brkdt_config_type tmr_brkdt_struct;
-
-  /* add user code begin tmr1_init 1 */
-
-    /* add user code end tmr1_init 1 */
-
-  /* configure counter settings */
-  tmr_cnt_dir_set(TMR1, TMR_COUNT_UP);
-  tmr_clock_source_div_set(TMR1, TMR_CLOCK_DIV1);
-  tmr_repetition_counter_set(TMR1, 0);
-  tmr_period_buffer_enable(TMR1, FALSE);
-  tmr_base_init(TMR1, 499, 7199);
-
-  /* configure primary mode settings */
-  tmr_sub_sync_mode_set(TMR1, FALSE);
-  tmr_primary_mode_select(TMR1, TMR_PRIMARY_SEL_OVERFLOW);
-
-  /* configure channel 1 output settings */
-  tmr_output_struct.oc_mode = TMR_OUTPUT_CONTROL_OFF;
-  tmr_output_struct.oc_output_state = TRUE;
-  tmr_output_struct.occ_output_state = FALSE;
-  tmr_output_struct.oc_polarity = TMR_OUTPUT_ACTIVE_HIGH;
-  tmr_output_struct.occ_polarity = TMR_OUTPUT_ACTIVE_HIGH;
-  tmr_output_struct.oc_idle_state = FALSE;
-  tmr_output_struct.occ_idle_state = FALSE;
-  tmr_output_channel_config(TMR1, TMR_SELECT_CHANNEL_1, &tmr_output_struct);
-  tmr_channel_value_set(TMR1, TMR_SELECT_CHANNEL_1, 10);
-  tmr_output_channel_buffer_enable(TMR1, TMR_SELECT_CHANNEL_1, FALSE);
-
-  /* configure channel 2 output settings */
-  tmr_output_struct.oc_mode = TMR_OUTPUT_CONTROL_OFF;
-  tmr_output_struct.oc_output_state = TRUE;
-  tmr_output_struct.occ_output_state = FALSE;
-  tmr_output_struct.oc_polarity = TMR_OUTPUT_ACTIVE_HIGH;
-  tmr_output_struct.occ_polarity = TMR_OUTPUT_ACTIVE_HIGH;
-  tmr_output_struct.oc_idle_state = FALSE;
-  tmr_output_struct.occ_idle_state = FALSE;
-  tmr_output_channel_config(TMR1, TMR_SELECT_CHANNEL_2, &tmr_output_struct);
-  tmr_channel_value_set(TMR1, TMR_SELECT_CHANNEL_2, 20);
-  tmr_output_channel_buffer_enable(TMR1, TMR_SELECT_CHANNEL_2, FALSE);
-
-  /* configure channel 3 output settings */
-  tmr_output_struct.oc_mode = TMR_OUTPUT_CONTROL_OFF;
-  tmr_output_struct.oc_output_state = TRUE;
-  tmr_output_struct.occ_output_state = FALSE;
-  tmr_output_struct.oc_polarity = TMR_OUTPUT_ACTIVE_HIGH;
-  tmr_output_struct.occ_polarity = TMR_OUTPUT_ACTIVE_HIGH;
-  tmr_output_struct.oc_idle_state = FALSE;
-  tmr_output_struct.occ_idle_state = FALSE;
-  tmr_output_channel_config(TMR1, TMR_SELECT_CHANNEL_3, &tmr_output_struct);
-  tmr_channel_value_set(TMR1, TMR_SELECT_CHANNEL_3, 40);
-  tmr_output_channel_buffer_enable(TMR1, TMR_SELECT_CHANNEL_3, FALSE);
-
-  /* configure break and dead-time settings */
-  tmr_brkdt_struct.brk_enable = FALSE;
-  tmr_brkdt_struct.auto_output_enable = FALSE;
-  tmr_brkdt_struct.brk_polarity = TMR_BRK_INPUT_ACTIVE_LOW;
-  tmr_brkdt_struct.fcsoen_state = FALSE;
-  tmr_brkdt_struct.fcsodis_state = FALSE;
-  tmr_brkdt_struct.wp_level = TMR_WP_OFF;
-  tmr_brkdt_struct.deadtime = 0;
-  tmr_brkdt_config(TMR1, &tmr_brkdt_struct);
-
-
-  tmr_output_enable(TMR1, TRUE);
-
-  tmr_counter_enable(TMR1, TRUE);
-
-  /**
-   * Users need to configure TMR1 interrupt functions according to the actual application.
-   * 1. Call the below function to enable the corresponding TMR1 interrupt.
-   *     --tmr_interrupt_enable(...)
-   * 2. Add the user's interrupt handler code into the below function in the at32f421_int.c file.
-   *     --void TMR1_BRK_OVF_TRG_HALL_IRQHandler(void)
-   *     --void TMR1_CH_IRQHandler(void)
-   */
-
-  /* add user code begin tmr1_init 2 */
-    tmr_interrupt_enable(TMR1, TMR_OVF_INT, TRUE);
-    tmr_interrupt_enable(TMR1, TMR_C1_INT, TRUE);
-    tmr_interrupt_enable(TMR1, TMR_C2_INT, TRUE);
-    tmr_interrupt_enable(TMR1, TMR_C3_INT, TRUE);
-
-    /* add user code end tmr1_init 2 */
-}
-
-/**
   * @brief  init tmr3 function.
   * @param  none
   * @retval none
@@ -486,21 +404,13 @@ void wk_tmr3_init(void)
   tmr_cnt_dir_set(TMR3, TMR_COUNT_UP);
   tmr_clock_source_div_set(TMR3, TMR_CLOCK_DIV1);
   tmr_period_buffer_enable(TMR3, FALSE);
-  tmr_base_init(TMR3, 199, 7199);
+  tmr_base_init(TMR3, 71, 999);
 
   /* configure primary mode settings */
   tmr_sub_sync_mode_set(TMR3, FALSE);
   tmr_primary_mode_select(TMR3, TMR_PRIMARY_SEL_RESET);
 
   tmr_counter_enable(TMR3, TRUE);
-
-  /**
-   * Users need to configure TMR3 interrupt functions according to the actual application.
-   * 1. Call the below function to enable the corresponding TMR3 interrupt.
-   *     --tmr_interrupt_enable(...)
-   * 2. Add the user's interrupt handler code into the below function in the at32f421_int.c file.
-   *     --void TMR3_GLOBAL_IRQHandler(void)
-   */
 
   /* add user code begin tmr3_init 2 */
     tmr_interrupt_enable(TMR3, TMR_OVF_INT, TRUE);
@@ -532,14 +442,6 @@ void wk_tmr6_init(void)
   tmr_primary_mode_select(TMR6, TMR_PRIMARY_SEL_RESET);
 
   tmr_counter_enable(TMR6, TRUE);
-
-  /**
-   * Users need to configure TMR6 interrupt functions according to the actual application.
-   * 1. Call the below function to enable the corresponding TMR6 interrupt.
-   *     --tmr_interrupt_enable(...)
-   * 2. Add the user's interrupt handler code into the below function in the at32f421_int.c file.
-   *     --void TMR6_GLOBAL_IRQHandler(void)
-   */
 
   /* add user code begin tmr6_init 2 */
     /* 开启定时器更新中断 */
@@ -653,14 +555,6 @@ void wk_usart1_init(void)
 
   usart_hardware_flow_control_set(USART1, USART_HARDWARE_FLOW_NONE);
 
-  /**
-   * Users need to configure USART1 interrupt functions according to the actual application.
-   * 1. Call the below function to enable the corresponding USART1 interrupt.
-   *     --usart_interrupt_enable(...)
-   * 2. Add the user's interrupt handler code into the below function in the at32f421_int.c file.
-   *     --void USART1_IRQHandler(void)
-   */
-
   /* add user code begin usart1_init 2 */
 
     /* add user code end usart1_init 2 */
@@ -717,14 +611,6 @@ void wk_usart2_init(void)
   usart_dma_receiver_enable(USART2, TRUE);
 
   usart_hardware_flow_control_set(USART2, USART_HARDWARE_FLOW_NONE);
-
-  /**
-   * Users need to configure USART2 interrupt functions according to the actual application.
-   * 1. Call the below function to enable the corresponding USART2 interrupt.
-   *     --usart_interrupt_enable(...)
-   * 2. Add the user's interrupt handler code into the below function in the at32f421_int.c file.
-   *     --void USART2_IRQHandler(void)
-   */
 
   /* add user code begin usart2_init 2 */
 
@@ -790,13 +676,6 @@ void wk_dma1_channel2_init(void)
   dma_init_struct.loop_mode_enable = FALSE;
   dma_init(DMA1_CHANNEL2, &dma_init_struct);
 
-  /**
-   * Users need to configure DMA1 interrupt functions according to the actual application.
-   * 1. Call the below function to enable the corresponding DMA1 interrupt.
-   *     --dma_interrupt_enable(...)
-   * 2. Add the user's interrupt handler code into the below function in the at32f421_int.c file.
-   *     --void DMA1_Channel3_2_IRQHandler(void)
-   */ 
   /* add user code begin dma1_channel2 1 */
 
     /* add user code end dma1_channel2 1 */
@@ -826,13 +705,6 @@ void wk_dma1_channel3_init(void)
   dma_init_struct.loop_mode_enable = FALSE;
   dma_init(DMA1_CHANNEL3, &dma_init_struct);
 
-  /**
-   * Users need to configure DMA1 interrupt functions according to the actual application.
-   * 1. Call the below function to enable the corresponding DMA1 interrupt.
-   *     --dma_interrupt_enable(...)
-   * 2. Add the user's interrupt handler code into the below function in the at32f421_int.c file.
-   *     --void DMA1_Channel3_2_IRQHandler(void)
-   */ 
   /* add user code begin dma1_channel3 1 */
 
     /* add user code end dma1_channel3 1 */

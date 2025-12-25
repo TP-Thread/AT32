@@ -21,21 +21,6 @@
 
 /* private define ------------------------------------------------------------*/
 /* add user code begin private define */
-typedef struct
-{
-    const char* const Name;
-    TaskHandle_t Handle;
-    TaskFunction_t Function;
-    const uint16_t uStackDepth;
-    UBaseType_t uPriority;
-} OSTask_st;
-
-static OSTask_st g_OSTaskList[] = {
-    {"TASK_UARTCOM",      NULL, task_uartCom,      512, 3},
-    {"TASK_DRIVER",       NULL, task_driver,       256, 2},
-    {"TASK_STATEMACHINE", NULL, task_stateMachine, 512, 2},
-    {"TASK_AUDIO",        NULL, task_audio,        512, 4},
-};
 
 /* add user code end private define */
 
@@ -60,7 +45,14 @@ static OSTask_st g_OSTaskList[] = {
 /* add user code end 0 */
 
 /* task handler */
-TaskHandle_t my_task01_handle;
+TaskHandle_t TASK_UART_handle;
+TaskHandle_t TASK_DRIVER_handle;
+TaskHandle_t TASK_STATE_handle;
+
+/* queue handler */
+QueueHandle_t QUART_handle;
+QueueHandle_t QDRIVER_handle;
+QueueHandle_t QSTATE_handle;
 
 /* Idle task control block and stack */
 static StackType_t idle_task_stack[configMINIMAL_STACK_SIZE];
@@ -105,13 +97,46 @@ void vApplicationGetTimerTaskMemory( StaticTask_t ** ppxTimerTaskTCBBuffer, Stac
   */
 void freertos_task_create(void)
 {
-  /* create my_task01 task */
-  xTaskCreate(my_task01_func,
-              "my_task01",
-              128,
+  /* create TASK_UART task */
+  xTaskCreate(task_uart,
+              "TASK_UART",
+              512,
               NULL,
-              0,
-              &my_task01_handle);
+              3,
+              &TASK_UART_handle);
+
+  /* create TASK_DRIVER task */
+  xTaskCreate(task_driver,
+              "TASK_DRIVER",
+              256,
+              NULL,
+              2,
+              &TASK_DRIVER_handle);
+
+  /* create TASK_STATE task */
+  xTaskCreate(task_state,
+              "TASK_STATE",
+              512,
+              NULL,
+              2,
+              &TASK_STATE_handle);
+}
+
+/**
+  * @brief  initializes all queue.
+  * @param  none
+  * @retval none
+  */
+void freertos_queue_create(void)
+{
+  /* Create the QUART, storing the returned handle in the xQueue variable. */
+  QUART_handle = xQueueCreate(16, sizeof(uint16_t));
+
+  /* Create the QDRIVER, storing the returned handle in the xQueue variable. */
+  QDRIVER_handle = xQueueCreate(32, sizeof(uint16_t));
+
+  /* Create the QSTATE, storing the returned handle in the xQueue variable. */
+  QSTATE_handle = xQueueCreate(32, sizeof(uint16_t));
 }
 
 /**
@@ -121,11 +146,20 @@ void freertos_task_create(void)
   */
 void wk_freertos_init(void)
 {
+  /* add user code begin freertos_init 0 */
+
+  /* add user code end freertos_init 0 */
+
   /* enter critical */
   taskENTER_CRITICAL();
 
+  freertos_queue_create();
   freertos_task_create();
 	
+  /* add user code begin freertos_init 1 */
+
+  /* add user code end freertos_init 1 */
+
   /* exit critical */
   taskEXIT_CRITICAL();
 
@@ -134,98 +168,84 @@ void wk_freertos_init(void)
 }
 
 /**
-  * @brief my_task01 function.
+  * @brief TASK_UART function.
   * @param  none
   * @retval none
   */
-void my_task01_func(void *pvParameters)
+__WEAK void task_uart(void *pvParameters)
 {
-  /* add user code begin my_task01_func 0 */
-    for(int i = 0; i < sizeof(g_OSTaskList) / sizeof(*g_OSTaskList); i++)
-    {
-        xTaskCreate(g_OSTaskList[i].Function,
-                    g_OSTaskList[i].Name,
-                    g_OSTaskList[i].uStackDepth,
-                    NULL,
-                    g_OSTaskList[i].uPriority,
-                    &g_OSTaskList[i].Handle);
-    }
-	
-  /* add user code end my_task01_func 0 */
+  /* add user code begin task_uart 0 */
 
-  /* add user code begin my_task01_func 2 */
+  /* add user code end task_uart 0 */
 
-  /* add user code end my_task01_func 2 */
+  /* add user code begin task_uart 2 */
+
+  /* add user code end task_uart 2 */
 
   /* Infinite loop */
   while(1)
   {
-  /* add user code begin my_task01_func 1 */
+  /* add user code begin task_uart 1 */
 
-     vTaskDelay(1000);
+     vTaskDelay(1);
 
-  /* add user code end my_task01_func 1 */
+  /* add user code end task_uart 1 */
   }
 }
 
+/**
+  * @brief TASK_DRIVER function.
+  * @param  none
+  * @retval none
+  */
+__WEAK void task_driver(void *pvParameters)
+{
+  /* add user code begin task_driver 0 */
+
+  /* add user code end task_driver 0 */
+
+  /* add user code begin task_driver 2 */
+
+  /* add user code end task_driver 2 */
+
+  /* Infinite loop */
+  while(1)
+  {
+  /* add user code begin task_driver 1 */
+
+     vTaskDelay(1);
+
+  /* add user code end task_driver 1 */
+  }
+}
+
+/**
+  * @brief TASK_STATE function.
+  * @param  none
+  * @retval none
+  */
+__WEAK void task_state(void *pvParameters)
+{
+  /* add user code begin task_state 0 */
+
+  /* add user code end task_state 0 */
+
+  /* add user code begin task_state 2 */
+
+  /* add user code end task_state 2 */
+
+  /* Infinite loop */
+  while(1)
+  {
+  /* add user code begin task_state 1 */
+
+     vTaskDelay(1);
+
+  /* add user code end task_state 1 */
+  }
+}
 
 /* add user code begin 2 */
-void task_uartCom(void *pvParameters)
-{
-
-  /* Infinite loop */
-  while(1)
-  {
-  /* add user code begin my_task01_func 1 */
-
-     vTaskDelay(1000);
-
-  /* add user code end my_task01_func 1 */
-  }
-}
-
-void task_driver(void *pvParameters)
-{
-
-  /* Infinite loop */
-  while(1)
-  {
-  /* add user code begin my_task01_func 1 */
-
-     vTaskDelay(1000);
-
-  /* add user code end my_task01_func 1 */
-  }
-}
-
-void task_stateMachine(void *pvParameters)
-{
-
-  /* Infinite loop */
-  while(1)
-  {
-  /* add user code begin my_task01_func 1 */
-
-     vTaskDelay(1000);
-
-  /* add user code end my_task01_func 1 */
-  }
-}
-
-void task_audio(void *pvParameters)
-{
-
-  /* Infinite loop */
-  while(1)
-  {
-  /* add user code begin my_task01_func 1 */
-
-     vTaskDelay(1000);
-
-  /* add user code end my_task01_func 1 */
-  }
-}
-
 
 /* add user code end 2 */
 

@@ -98,9 +98,6 @@ extern "C" {
   /* init adc1 function. */
   void wk_adc1_init(void);
 
-  /* init tmr1 function. */
-  void wk_tmr1_init(void);
-
   /* init tmr3 function. */
   void wk_tmr3_init(void);
 

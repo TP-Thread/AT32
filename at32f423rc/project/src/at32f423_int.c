@@ -26,6 +26,7 @@
 
 /* includes ------------------------------------------------------------------*/
 #include "at32f423_int.h"
+#include "freertos_app.h"
 
 /* private includes ----------------------------------------------------------*/
 /* add user code begin private includes */
@@ -188,7 +189,6 @@ void SysTick_Handler(void)
 
   /* add user code end SysTick_IRQ 0 */
 
-
 #if (INCLUDE_xTaskGetSchedulerState == 1 )
   if (xTaskGetSchedulerState() != taskSCHEDULER_NOT_STARTED)
   {
@@ -213,6 +213,15 @@ void EXINT0_IRQHandler(void)
   /* add user code begin EXINT0_IRQ 0 */
 
   /* add user code end EXINT0_IRQ 0 */
+
+  if(exint_interrupt_flag_get(EXINT_LINE_0) != RESET)
+  {
+    /* add user code begin EXINT_LINE_0 */
+    /* clear flag */
+    exint_flag_clear(EXINT_LINE_0);
+    /* add user code end EXINT_LINE_0 */ 
+  }
+
   /* add user code begin EXINT0_IRQ 1 */
 
   /* add user code end EXINT0_IRQ 1 */
@@ -228,9 +237,34 @@ void EXINT9_5_IRQHandler(void)
   /* add user code begin EXINT9_5_IRQ 0 */
 
   /* add user code end EXINT9_5_IRQ 0 */
+
+  if(exint_interrupt_flag_get(EXINT_LINE_8) != RESET)
+  {
+    /* add user code begin EXINT_LINE_8 */
+    /* clear flag */
+    exint_flag_clear(EXINT_LINE_8);
+    /* add user code end EXINT_LINE_8 */ 
+  }
+
   /* add user code begin EXINT9_5_IRQ 1 */
 
   /* add user code end EXINT9_5_IRQ 1 */
+}
+
+/**
+  * @brief  this function handles USART1 handler.
+  * @param  none
+  * @retval none
+  */
+void USART1_IRQHandler(void)
+{
+  /* add user code begin USART1_IRQ 0 */
+
+  /* add user code end USART1_IRQ 0 */
+
+  /* add user code begin USART1_IRQ 1 */
+
+  /* add user code end USART1_IRQ 1 */
 }
 
 /**
@@ -243,9 +277,34 @@ void EXINT15_10_IRQHandler(void)
   /* add user code begin EXINT15_10_IRQ 0 */
 
   /* add user code end EXINT15_10_IRQ 0 */
+
+  if(exint_interrupt_flag_get(EXINT_LINE_15) != RESET)
+  {
+    /* add user code begin EXINT_LINE_15 */
+    /* clear flag */
+    exint_flag_clear(EXINT_LINE_15);
+    /* add user code end EXINT_LINE_15 */ 
+  }
+
   /* add user code begin EXINT15_10_IRQ 1 */
 
   /* add user code end EXINT15_10_IRQ 1 */
+}
+
+/**
+  * @brief  this function handles USART5 handler.
+  * @param  none
+  * @retval none
+  */
+void USART5_IRQHandler(void)
+{
+  /* add user code begin USART5_IRQ 0 */
+
+  /* add user code end USART5_IRQ 0 */
+
+  /* add user code begin USART5_IRQ 1 */
+
+  /* add user code end USART5_IRQ 1 */
 }
 
 /* add user code begin 1 */

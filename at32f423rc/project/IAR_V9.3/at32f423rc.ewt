@@ -1435,31 +1435,13 @@
     <group>
         <name>firmware</name>
         <file>
-            <name>$PROJ_DIR$\..\..\libraries\drivers\src\at32f423_acc.c</name>
-        </file>
-        <file>
             <name>$PROJ_DIR$\..\..\libraries\drivers\src\at32f423_adc.c</name>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\..\libraries\drivers\src\at32f423_can.c</name>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\..\libraries\drivers\src\at32f423_crc.c</name>
         </file>
         <file>
             <name>$PROJ_DIR$\..\..\libraries\drivers\src\at32f423_crm.c</name>
         </file>
         <file>
-            <name>$PROJ_DIR$\..\..\libraries\drivers\src\at32f423_dac.c</name>
-        </file>
-        <file>
             <name>$PROJ_DIR$\..\..\libraries\drivers\src\at32f423_debug.c</name>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\..\libraries\drivers\src\at32f423_dma.c</name>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\..\libraries\drivers\src\at32f423_ertc.c</name>
         </file>
         <file>
             <name>$PROJ_DIR$\..\..\libraries\drivers\src\at32f423_exint.c</name>
@@ -1483,25 +1465,58 @@
             <name>$PROJ_DIR$\..\..\libraries\drivers\src\at32f423_scfg.c</name>
         </file>
         <file>
-            <name>$PROJ_DIR$\..\..\libraries\drivers\src\at32f423_spi.c</name>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\..\libraries\drivers\src\at32f423_tmr.c</name>
-        </file>
-        <file>
             <name>$PROJ_DIR$\..\..\libraries\drivers\src\at32f423_usart.c</name>
         </file>
+    </group>
+    <group>
+        <name>lib</name>
         <file>
-            <name>$PROJ_DIR$\..\..\libraries\drivers\src\at32f423_usb.c</name>
+            <name>$PROJ_DIR$\..\..\bsp\lib\src\drv_rcc.c</name>
+        </file>
+    </group>
+    <group>
+        <name>middlewares/freertos</name>
+        <file>
+            <name>$PROJ_DIR$\..\..\middlewares\freertos\source\croutine.c</name>
         </file>
         <file>
-            <name>$PROJ_DIR$\..\..\libraries\drivers\src\at32f423_wdt.c</name>
+            <name>$PROJ_DIR$\..\..\middlewares\freertos\source\event_groups.c</name>
         </file>
         <file>
-            <name>$PROJ_DIR$\..\..\libraries\drivers\src\at32f423_wwdt.c</name>
+            <name>$PROJ_DIR$\..\..\middlewares\freertos\source\portable\memmang\heap_4.c</name>
         </file>
         <file>
-            <name>$PROJ_DIR$\..\..\libraries\drivers\src\at32f423_xmc.c</name>
+            <name>$PROJ_DIR$\..\..\middlewares\freertos\source\list.c</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\middlewares\freertos\source\portable\IAR\ARM_CM4F\port.c</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\middlewares\freertos\source\portable\IAR\ARM_CM4F\portasm.s</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\middlewares\freertos\source\queue.c</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\middlewares\freertos\source\stream_buffer.c</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\middlewares\freertos\source\tasks.c</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\middlewares\freertos\source\timers.c</name>
+        </file>
+    </group>
+    <group>
+        <name>task</name>
+        <file>
+            <name>$PROJ_DIR$\..\..\bsp\task\src\task_driver.c</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\bsp\task\src\task_state.c</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\bsp\task\src\task_uart.c</name>
         </file>
     </group>
     <group>
@@ -1511,6 +1526,9 @@
         </file>
         <file>
             <name>$PROJ_DIR$\..\src\at32f423_wk_config.c</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\src\freertos_app.c</name>
         </file>
         <file>
             <name>$PROJ_DIR$\..\src\main.c</name>
