@@ -2,7 +2,7 @@
 <project>
     <fileVersion>3</fileVersion>
     <configuration>
-        <name>debug</name>
+        <name>at32f423rc</name>
         <toolchain>
             <name>ARM</name>
         </toolchain>
@@ -16,19 +16,19 @@
                 <debug>1</debug>
                 <option>
                     <name>ExePath</name>
-                    <state>debug\Exe</state>
+                    <state>at32f423rc\Exe</state>
                 </option>
                 <option>
                     <name>ObjPath</name>
-                    <state>debug\Obj</state>
+                    <state>at32f423rc\Obj</state>
                 </option>
                 <option>
                     <name>ListPath</name>
-                    <state>debug\List</state>
+                    <state>at32f423rc\List</state>
                 </option>
                 <option>
                     <name>BrowseInfoPath</name>
-                    <state>debug\BrowseInfo</state>
+                    <state>at32f423rc\BrowseInfo</state>
                 </option>
                 <option>
                     <name>GEndianMode</name>
@@ -201,7 +201,7 @@
                 </option>
                 <option>
                     <name>BuildFilesPath</name>
-                    <state>debug\</state>
+                    <state>at32f423rc\</state>
                 </option>
                 <option>
                     <name>PointerAuthentication</name>
@@ -1094,6 +1094,9 @@
         <name>firmware</name>
         <file>
             <name>$PROJ_DIR$\..\..\libraries\drivers\src\at32f423_adc.c</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\libraries\drivers\src\at32f423_crc.c</name>
         </file>
         <file>
             <name>$PROJ_DIR$\..\..\libraries\drivers\src\at32f423_crm.c</name>

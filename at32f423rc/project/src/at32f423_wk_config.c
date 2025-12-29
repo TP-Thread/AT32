@@ -4,7 +4,7 @@
   * @file     at32f423_wk_config.c
   * @brief    work bench config program
   **************************************************************************
-  *                       Copyright notice & Disclaimer
+  * Copyright (c) 2025, Artery Technology, All rights reserved.
   *
   * The software Board Support Package (BSP) that is made available to
   * download from Artery official website is the copyrighted work of Artery.
@@ -182,6 +182,9 @@ void wk_periph_clock_config(void)
 
   /* enable gpiof periph clock */
   crm_periph_clock_enable(CRM_GPIOF_PERIPH_CLOCK, TRUE);
+
+  /* enable crc periph clock */
+  crm_periph_clock_enable(CRM_CRC_PERIPH_CLOCK, TRUE);
 
   /* enable usart2 periph clock */
   crm_periph_clock_enable(CRM_USART2_PERIPH_CLOCK, TRUE);
@@ -709,19 +712,29 @@ void wk_adc1_init(void)
   /* add user code end adc1_init 3 */
 }
 
-/* add user code begin 1 */
-int __write(int fd, char *pbuffer, int size)
+/**
+  * @brief  init crc function.
+  * @param  none
+  * @retval none
+  */
+void wk_crc_init(void)
 {
-    for (int i = 0; i < size; i++)
-    {
-        while (usart_flag_get(USART5, USART_TDBE_FLAG) == RESET)
-            ;
-        usart_data_transmit(USART5, (uint16_t)(*pbuffer++));
-        while (usart_flag_get(USART5, USART_TDC_FLAG) == RESET)
-            ;
-    }
+  /* add user code begin crc_init 0 */
 
-    return size;
+  /* add user code end crc_init 0 */
+
+  crc_init_data_set(0xFFFFFFFF);
+  crc_poly_size_set(CRC_POLY_SIZE_32B);
+  crc_poly_value_set(0x04C11DB7);
+  crc_reverse_input_data_set(CRC_REVERSE_INPUT_NO_AFFECTE);
+  crc_reverse_output_data_set(CRC_REVERSE_OUTPUT_NO_AFFECTE);
+  crc_data_reset();
+
+  /* add user code begin crc_init 1 */
+
+  /* add user code end crc_init 1 */
 }
+
+/* add user code begin 1 */
 
 /* add user code end 1 */

@@ -1,0 +1,236 @@
+##IAR Ninja build file
+
+
+#Rules
+rule COMPILER_XCL
+  command = D$:\EIDE\IAR\common\bin\XclFileGenerator.exe $xclcommand -f "$rspfile_name"
+  description = IAR_NEW_TOOL+++COMPILER_XCL+++$in+++D$:\EIDE\IAR\common\bin\XclFileGenerator.exe $flags
+  rspfile = $rspfile_name
+  rspfile_content = $flags
+
+rule INDEXER
+  command = D$:\EIDE\IAR\common\bin\SourceIndexer.exe $flags
+  depfile = $out.dep
+  description = IAR_NEW_TOOL+++INDEXER+++$out+++D$:\EIDE\IAR\common\bin\SourceIndexer.exe $flags
+
+rule MAKEBROWSE
+  command = D$:\EIDE\IAR\common\bin\makeBrowseData.exe $flags
+  description = IAR_NEW_TOOL+++MAKEBROWSE+++$out+++D$:\EIDE\IAR\common\bin\makeBrowseData.exe $flags
+
+rule PDBLINK
+  command = D$:\EIDE\IAR\common\bin\PbdLink.exe $flags
+  description = IAR_NEW_TOOL+++PDBLINK+++$out+++D$:\EIDE\IAR\common\bin\PbdLink.exe $flags
+
+
+
+#Build steps
+build E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\bsp\ar_tim.xcl : COMPILER_XCL 
+  xclcommand = -source_file E$:\RTOS\AT32\at32f421k8\bsp\src\ar_tim.c -xcl_file E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\bsp\ar_tim.xcl -macro_file E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\bsp\ar_tim.tmp -icc_path D$:\EIDE\IAR\arm\bin\iccarm.exe
+  flags = E$:\RTOS\AT32\at32f421k8\bsp\src\ar_tim.c -D AT32F421K8U7 -D USE_STDPERIPH_DRIVER -D AT_START_F421_V1 -o E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\Obj\bsp --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=None --dlib_config D$:\EIDE\IAR\arm\inc\c\DLib_Config_Full.h -I E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\..\..\libraries\drivers\inc\ -I E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\..\..\libraries\cmsis\cm4\core_support\ -I E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\..\..\libraries\cmsis\cm4\device_support\ -I E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\..\inc\ -I E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\..\..\bsp\inc\ -Ol --predef_macros E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\bsp\ar_tim.tmp
+  rspfile_name = E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\bsp\ar_tim.xcl.rsp
+
+build E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\bsp\ar_water_det.xcl : COMPILER_XCL 
+  xclcommand = -source_file E$:\RTOS\AT32\at32f421k8\bsp\src\ar_water_det.c -xcl_file E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\bsp\ar_water_det.xcl -macro_file E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\bsp\ar_water_det.tmp -icc_path D$:\EIDE\IAR\arm\bin\iccarm.exe
+  flags = E$:\RTOS\AT32\at32f421k8\bsp\src\ar_water_det.c -D AT32F421K8U7 -D USE_STDPERIPH_DRIVER -D AT_START_F421_V1 -o E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\Obj\bsp --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=None --dlib_config D$:\EIDE\IAR\arm\inc\c\DLib_Config_Full.h -I E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\..\..\libraries\drivers\inc\ -I E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\..\..\libraries\cmsis\cm4\core_support\ -I E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\..\..\libraries\cmsis\cm4\device_support\ -I E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\..\inc\ -I E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\..\..\bsp\inc\ -Ol --predef_macros E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\bsp\ar_water_det.tmp
+  rspfile_name = E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\bsp\ar_water_det.xcl.rsp
+
+build E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\cmsis\system_at32f421.xcl : COMPILER_XCL 
+  xclcommand = -source_file E$:\RTOS\AT32\at32f421k8\libraries\cmsis\cm4\device_support\system_at32f421.c -xcl_file E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\cmsis\system_at32f421.xcl -macro_file E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\cmsis\system_at32f421.tmp -icc_path D$:\EIDE\IAR\arm\bin\iccarm.exe
+  flags = E$:\RTOS\AT32\at32f421k8\libraries\cmsis\cm4\device_support\system_at32f421.c -D AT32F421K8U7 -D USE_STDPERIPH_DRIVER -D AT_START_F421_V1 -o E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\Obj\cmsis --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=None --dlib_config D$:\EIDE\IAR\arm\inc\c\DLib_Config_Full.h -I E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\..\..\libraries\drivers\inc\ -I E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\..\..\libraries\cmsis\cm4\core_support\ -I E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\..\..\libraries\cmsis\cm4\device_support\ -I E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\..\inc\ -I E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\..\..\bsp\inc\ -Ol --predef_macros E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\cmsis\system_at32f421.tmp
+  rspfile_name = E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\cmsis\system_at32f421.xcl.rsp
+
+build E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\firmware\at32f421_adc.xcl : COMPILER_XCL 
+  xclcommand = -source_file E$:\RTOS\AT32\at32f421k8\libraries\drivers\src\at32f421_adc.c -xcl_file E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\firmware\at32f421_adc.xcl -macro_file E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\firmware\at32f421_adc.tmp -icc_path D$:\EIDE\IAR\arm\bin\iccarm.exe
+  flags = E$:\RTOS\AT32\at32f421k8\libraries\drivers\src\at32f421_adc.c -D AT32F421K8U7 -D USE_STDPERIPH_DRIVER -D AT_START_F421_V1 -o E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\Obj\firmware --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=None --dlib_config D$:\EIDE\IAR\arm\inc\c\DLib_Config_Full.h -I E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\..\..\libraries\drivers\inc\ -I E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\..\..\libraries\cmsis\cm4\core_support\ -I E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\..\..\libraries\cmsis\cm4\device_support\ -I E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\..\inc\ -I E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\..\..\bsp\inc\ -Ol --predef_macros E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\firmware\at32f421_adc.tmp
+  rspfile_name = E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\firmware\at32f421_adc.xcl.rsp
+
+build E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\firmware\at32f421_crm.xcl : COMPILER_XCL 
+  xclcommand = -source_file E$:\RTOS\AT32\at32f421k8\libraries\drivers\src\at32f421_crm.c -xcl_file E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\firmware\at32f421_crm.xcl -macro_file E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\firmware\at32f421_crm.tmp -icc_path D$:\EIDE\IAR\arm\bin\iccarm.exe
+  flags = E$:\RTOS\AT32\at32f421k8\libraries\drivers\src\at32f421_crm.c -D AT32F421K8U7 -D USE_STDPERIPH_DRIVER -D AT_START_F421_V1 -o E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\Obj\firmware --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=None --dlib_config D$:\EIDE\IAR\arm\inc\c\DLib_Config_Full.h -I E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\..\..\libraries\drivers\inc\ -I E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\..\..\libraries\cmsis\cm4\core_support\ -I E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\..\..\libraries\cmsis\cm4\device_support\ -I E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\..\inc\ -I E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\..\..\bsp\inc\ -Ol --predef_macros E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\firmware\at32f421_crm.tmp
+  rspfile_name = E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\firmware\at32f421_crm.xcl.rsp
+
+build E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\firmware\at32f421_debug.xcl : COMPILER_XCL 
+  xclcommand = -source_file E$:\RTOS\AT32\at32f421k8\libraries\drivers\src\at32f421_debug.c -xcl_file E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\firmware\at32f421_debug.xcl -macro_file E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\firmware\at32f421_debug.tmp -icc_path D$:\EIDE\IAR\arm\bin\iccarm.exe
+  flags = E$:\RTOS\AT32\at32f421k8\libraries\drivers\src\at32f421_debug.c -D AT32F421K8U7 -D USE_STDPERIPH_DRIVER -D AT_START_F421_V1 -o E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\Obj\firmware --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=None --dlib_config D$:\EIDE\IAR\arm\inc\c\DLib_Config_Full.h -I E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\..\..\libraries\drivers\inc\ -I E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\..\..\libraries\cmsis\cm4\core_support\ -I E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\..\..\libraries\cmsis\cm4\device_support\ -I E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\..\inc\ -I E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\..\..\bsp\inc\ -Ol --predef_macros E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\firmware\at32f421_debug.tmp
+  rspfile_name = E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\firmware\at32f421_debug.xcl.rsp
+
+build E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\firmware\at32f421_dma.xcl : COMPILER_XCL 
+  xclcommand = -source_file E$:\RTOS\AT32\at32f421k8\libraries\drivers\src\at32f421_dma.c -xcl_file E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\firmware\at32f421_dma.xcl -macro_file E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\firmware\at32f421_dma.tmp -icc_path D$:\EIDE\IAR\arm\bin\iccarm.exe
+  flags = E$:\RTOS\AT32\at32f421k8\libraries\drivers\src\at32f421_dma.c -D AT32F421K8U7 -D USE_STDPERIPH_DRIVER -D AT_START_F421_V1 -o E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\Obj\firmware --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=None --dlib_config D$:\EIDE\IAR\arm\inc\c\DLib_Config_Full.h -I E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\..\..\libraries\drivers\inc\ -I E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\..\..\libraries\cmsis\cm4\core_support\ -I E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\..\..\libraries\cmsis\cm4\device_support\ -I E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\..\inc\ -I E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\..\..\bsp\inc\ -Ol --predef_macros E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\firmware\at32f421_dma.tmp
+  rspfile_name = E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\firmware\at32f421_dma.xcl.rsp
+
+build E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\firmware\at32f421_exint.xcl : COMPILER_XCL 
+  xclcommand = -source_file E$:\RTOS\AT32\at32f421k8\libraries\drivers\src\at32f421_exint.c -xcl_file E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\firmware\at32f421_exint.xcl -macro_file E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\firmware\at32f421_exint.tmp -icc_path D$:\EIDE\IAR\arm\bin\iccarm.exe
+  flags = E$:\RTOS\AT32\at32f421k8\libraries\drivers\src\at32f421_exint.c -D AT32F421K8U7 -D USE_STDPERIPH_DRIVER -D AT_START_F421_V1 -o E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\Obj\firmware --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=None --dlib_config D$:\EIDE\IAR\arm\inc\c\DLib_Config_Full.h -I E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\..\..\libraries\drivers\inc\ -I E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\..\..\libraries\cmsis\cm4\core_support\ -I E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\..\..\libraries\cmsis\cm4\device_support\ -I E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\..\inc\ -I E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\..\..\bsp\inc\ -Ol --predef_macros E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\firmware\at32f421_exint.tmp
+  rspfile_name = E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\firmware\at32f421_exint.xcl.rsp
+
+build E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\firmware\at32f421_flash.xcl : COMPILER_XCL 
+  xclcommand = -source_file E$:\RTOS\AT32\at32f421k8\libraries\drivers\src\at32f421_flash.c -xcl_file E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\firmware\at32f421_flash.xcl -macro_file E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\firmware\at32f421_flash.tmp -icc_path D$:\EIDE\IAR\arm\bin\iccarm.exe
+  flags = E$:\RTOS\AT32\at32f421k8\libraries\drivers\src\at32f421_flash.c -D AT32F421K8U7 -D USE_STDPERIPH_DRIVER -D AT_START_F421_V1 -o E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\Obj\firmware --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=None --dlib_config D$:\EIDE\IAR\arm\inc\c\DLib_Config_Full.h -I E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\..\..\libraries\drivers\inc\ -I E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\..\..\libraries\cmsis\cm4\core_support\ -I E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\..\..\libraries\cmsis\cm4\device_support\ -I E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\..\inc\ -I E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\..\..\bsp\inc\ -Ol --predef_macros E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\firmware\at32f421_flash.tmp
+  rspfile_name = E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\firmware\at32f421_flash.xcl.rsp
+
+build E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\firmware\at32f421_gpio.xcl : COMPILER_XCL 
+  xclcommand = -source_file E$:\RTOS\AT32\at32f421k8\libraries\drivers\src\at32f421_gpio.c -xcl_file E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\firmware\at32f421_gpio.xcl -macro_file E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\firmware\at32f421_gpio.tmp -icc_path D$:\EIDE\IAR\arm\bin\iccarm.exe
+  flags = E$:\RTOS\AT32\at32f421k8\libraries\drivers\src\at32f421_gpio.c -D AT32F421K8U7 -D USE_STDPERIPH_DRIVER -D AT_START_F421_V1 -o E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\Obj\firmware --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=None --dlib_config D$:\EIDE\IAR\arm\inc\c\DLib_Config_Full.h -I E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\..\..\libraries\drivers\inc\ -I E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\..\..\libraries\cmsis\cm4\core_support\ -I E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\..\..\libraries\cmsis\cm4\device_support\ -I E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\..\inc\ -I E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\..\..\bsp\inc\ -Ol --predef_macros E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\firmware\at32f421_gpio.tmp
+  rspfile_name = E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\firmware\at32f421_gpio.xcl.rsp
+
+build E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\firmware\at32f421_misc.xcl : COMPILER_XCL 
+  xclcommand = -source_file E$:\RTOS\AT32\at32f421k8\libraries\drivers\src\at32f421_misc.c -xcl_file E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\firmware\at32f421_misc.xcl -macro_file E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\firmware\at32f421_misc.tmp -icc_path D$:\EIDE\IAR\arm\bin\iccarm.exe
+  flags = E$:\RTOS\AT32\at32f421k8\libraries\drivers\src\at32f421_misc.c -D AT32F421K8U7 -D USE_STDPERIPH_DRIVER -D AT_START_F421_V1 -o E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\Obj\firmware --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=None --dlib_config D$:\EIDE\IAR\arm\inc\c\DLib_Config_Full.h -I E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\..\..\libraries\drivers\inc\ -I E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\..\..\libraries\cmsis\cm4\core_support\ -I E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\..\..\libraries\cmsis\cm4\device_support\ -I E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\..\inc\ -I E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\..\..\bsp\inc\ -Ol --predef_macros E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\firmware\at32f421_misc.tmp
+  rspfile_name = E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\firmware\at32f421_misc.xcl.rsp
+
+build E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\firmware\at32f421_pwc.xcl : COMPILER_XCL 
+  xclcommand = -source_file E$:\RTOS\AT32\at32f421k8\libraries\drivers\src\at32f421_pwc.c -xcl_file E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\firmware\at32f421_pwc.xcl -macro_file E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\firmware\at32f421_pwc.tmp -icc_path D$:\EIDE\IAR\arm\bin\iccarm.exe
+  flags = E$:\RTOS\AT32\at32f421k8\libraries\drivers\src\at32f421_pwc.c -D AT32F421K8U7 -D USE_STDPERIPH_DRIVER -D AT_START_F421_V1 -o E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\Obj\firmware --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=None --dlib_config D$:\EIDE\IAR\arm\inc\c\DLib_Config_Full.h -I E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\..\..\libraries\drivers\inc\ -I E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\..\..\libraries\cmsis\cm4\core_support\ -I E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\..\..\libraries\cmsis\cm4\device_support\ -I E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\..\inc\ -I E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\..\..\bsp\inc\ -Ol --predef_macros E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\firmware\at32f421_pwc.tmp
+  rspfile_name = E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\firmware\at32f421_pwc.xcl.rsp
+
+build E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\firmware\at32f421_scfg.xcl : COMPILER_XCL 
+  xclcommand = -source_file E$:\RTOS\AT32\at32f421k8\libraries\drivers\src\at32f421_scfg.c -xcl_file E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\firmware\at32f421_scfg.xcl -macro_file E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\firmware\at32f421_scfg.tmp -icc_path D$:\EIDE\IAR\arm\bin\iccarm.exe
+  flags = E$:\RTOS\AT32\at32f421k8\libraries\drivers\src\at32f421_scfg.c -D AT32F421K8U7 -D USE_STDPERIPH_DRIVER -D AT_START_F421_V1 -o E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\Obj\firmware --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=None --dlib_config D$:\EIDE\IAR\arm\inc\c\DLib_Config_Full.h -I E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\..\..\libraries\drivers\inc\ -I E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\..\..\libraries\cmsis\cm4\core_support\ -I E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\..\..\libraries\cmsis\cm4\device_support\ -I E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\..\inc\ -I E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\..\..\bsp\inc\ -Ol --predef_macros E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\firmware\at32f421_scfg.tmp
+  rspfile_name = E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\firmware\at32f421_scfg.xcl.rsp
+
+build E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\firmware\at32f421_tmr.xcl : COMPILER_XCL 
+  xclcommand = -source_file E$:\RTOS\AT32\at32f421k8\libraries\drivers\src\at32f421_tmr.c -xcl_file E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\firmware\at32f421_tmr.xcl -macro_file E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\firmware\at32f421_tmr.tmp -icc_path D$:\EIDE\IAR\arm\bin\iccarm.exe
+  flags = E$:\RTOS\AT32\at32f421k8\libraries\drivers\src\at32f421_tmr.c -D AT32F421K8U7 -D USE_STDPERIPH_DRIVER -D AT_START_F421_V1 -o E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\Obj\firmware --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=None --dlib_config D$:\EIDE\IAR\arm\inc\c\DLib_Config_Full.h -I E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\..\..\libraries\drivers\inc\ -I E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\..\..\libraries\cmsis\cm4\core_support\ -I E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\..\..\libraries\cmsis\cm4\device_support\ -I E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\..\inc\ -I E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\..\..\bsp\inc\ -Ol --predef_macros E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\firmware\at32f421_tmr.tmp
+  rspfile_name = E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\firmware\at32f421_tmr.xcl.rsp
+
+build E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\firmware\at32f421_usart.xcl : COMPILER_XCL 
+  xclcommand = -source_file E$:\RTOS\AT32\at32f421k8\libraries\drivers\src\at32f421_usart.c -xcl_file E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\firmware\at32f421_usart.xcl -macro_file E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\firmware\at32f421_usart.tmp -icc_path D$:\EIDE\IAR\arm\bin\iccarm.exe
+  flags = E$:\RTOS\AT32\at32f421k8\libraries\drivers\src\at32f421_usart.c -D AT32F421K8U7 -D USE_STDPERIPH_DRIVER -D AT_START_F421_V1 -o E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\Obj\firmware --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=None --dlib_config D$:\EIDE\IAR\arm\inc\c\DLib_Config_Full.h -I E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\..\..\libraries\drivers\inc\ -I E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\..\..\libraries\cmsis\cm4\core_support\ -I E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\..\..\libraries\cmsis\cm4\device_support\ -I E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\..\inc\ -I E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\..\..\bsp\inc\ -Ol --predef_macros E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\firmware\at32f421_usart.tmp
+  rspfile_name = E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\firmware\at32f421_usart.xcl.rsp
+
+build E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\user\at32f421_int.xcl : COMPILER_XCL 
+  xclcommand = -source_file E$:\RTOS\AT32\at32f421k8\project\src\at32f421_int.c -xcl_file E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\user\at32f421_int.xcl -macro_file E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\user\at32f421_int.tmp -icc_path D$:\EIDE\IAR\arm\bin\iccarm.exe
+  flags = E$:\RTOS\AT32\at32f421k8\project\src\at32f421_int.c -D AT32F421K8U7 -D USE_STDPERIPH_DRIVER -D AT_START_F421_V1 -o E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\Obj\user --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=None --dlib_config D$:\EIDE\IAR\arm\inc\c\DLib_Config_Full.h -I E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\..\..\libraries\drivers\inc\ -I E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\..\..\libraries\cmsis\cm4\core_support\ -I E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\..\..\libraries\cmsis\cm4\device_support\ -I E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\..\inc\ -I E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\..\..\bsp\inc\ -Ol --predef_macros E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\user\at32f421_int.tmp
+  rspfile_name = E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\user\at32f421_int.xcl.rsp
+
+build E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\user\at32f421_wk_config.xcl : COMPILER_XCL 
+  xclcommand = -source_file E$:\RTOS\AT32\at32f421k8\project\src\at32f421_wk_config.c -xcl_file E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\user\at32f421_wk_config.xcl -macro_file E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\user\at32f421_wk_config.tmp -icc_path D$:\EIDE\IAR\arm\bin\iccarm.exe
+  flags = E$:\RTOS\AT32\at32f421k8\project\src\at32f421_wk_config.c -D AT32F421K8U7 -D USE_STDPERIPH_DRIVER -D AT_START_F421_V1 -o E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\Obj\user --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=None --dlib_config D$:\EIDE\IAR\arm\inc\c\DLib_Config_Full.h -I E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\..\..\libraries\drivers\inc\ -I E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\..\..\libraries\cmsis\cm4\core_support\ -I E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\..\..\libraries\cmsis\cm4\device_support\ -I E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\..\inc\ -I E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\..\..\bsp\inc\ -Ol --predef_macros E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\user\at32f421_wk_config.tmp
+  rspfile_name = E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\user\at32f421_wk_config.xcl.rsp
+
+build E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\user\main.xcl : COMPILER_XCL 
+  xclcommand = -source_file E$:\RTOS\AT32\at32f421k8\project\src\main.c -xcl_file E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\user\main.xcl -macro_file E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\user\main.tmp -icc_path D$:\EIDE\IAR\arm\bin\iccarm.exe
+  flags = E$:\RTOS\AT32\at32f421k8\project\src\main.c -D AT32F421K8U7 -D USE_STDPERIPH_DRIVER -D AT_START_F421_V1 -o E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\Obj\user --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=None --dlib_config D$:\EIDE\IAR\arm\inc\c\DLib_Config_Full.h -I E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\..\..\libraries\drivers\inc\ -I E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\..\..\libraries\cmsis\cm4\core_support\ -I E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\..\..\libraries\cmsis\cm4\device_support\ -I E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\..\inc\ -I E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\..\..\bsp\inc\ -Ol --predef_macros E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\user\main.tmp
+  rspfile_name = E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\user\main.xcl.rsp
+
+build E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\user\wk_system.xcl : COMPILER_XCL 
+  xclcommand = -source_file E$:\RTOS\AT32\at32f421k8\project\src\wk_system.c -xcl_file E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\user\wk_system.xcl -macro_file E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\user\wk_system.tmp -icc_path D$:\EIDE\IAR\arm\bin\iccarm.exe
+  flags = E$:\RTOS\AT32\at32f421k8\project\src\wk_system.c -D AT32F421K8U7 -D USE_STDPERIPH_DRIVER -D AT_START_F421_V1 -o E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\Obj\user --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=None --dlib_config D$:\EIDE\IAR\arm\inc\c\DLib_Config_Full.h -I E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\..\..\libraries\drivers\inc\ -I E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\..\..\libraries\cmsis\cm4\core_support\ -I E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\..\..\libraries\cmsis\cm4\device_support\ -I E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\..\inc\ -I E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\..\..\bsp\inc\ -Ol --predef_macros E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\user\wk_system.tmp
+  rspfile_name = E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\user\wk_system.xcl.rsp
+
+build E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\bsp\ar_tim.pbi : INDEXER E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\bsp\ar_tim.xcl |  $
+E$:\RTOS\AT32\at32f421k8\bsp\src\ar_tim.c
+  flags = -out=E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\bsp\ar_tim.pbi -f E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\bsp\ar_tim.xcl
+
+build E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\bsp\ar_water_det.pbi : INDEXER E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\bsp\ar_water_det.xcl |  $
+E$:\RTOS\AT32\at32f421k8\bsp\src\ar_water_det.c
+  flags = -out=E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\bsp\ar_water_det.pbi -f E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\bsp\ar_water_det.xcl
+
+build E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\cmsis\system_at32f421.pbi : INDEXER E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\cmsis\system_at32f421.xcl |  $
+E$:\RTOS\AT32\at32f421k8\libraries\cmsis\cm4\device_support\system_at32f421.c
+  flags = -out=E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\cmsis\system_at32f421.pbi -f E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\cmsis\system_at32f421.xcl
+
+build E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\firmware\at32f421_adc.pbi : INDEXER E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\firmware\at32f421_adc.xcl |  $
+E$:\RTOS\AT32\at32f421k8\libraries\drivers\src\at32f421_adc.c
+  flags = -out=E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\firmware\at32f421_adc.pbi -f E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\firmware\at32f421_adc.xcl
+
+build E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\firmware\at32f421_crm.pbi : INDEXER E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\firmware\at32f421_crm.xcl |  $
+E$:\RTOS\AT32\at32f421k8\libraries\drivers\src\at32f421_crm.c
+  flags = -out=E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\firmware\at32f421_crm.pbi -f E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\firmware\at32f421_crm.xcl
+
+build E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\firmware\at32f421_debug.pbi : INDEXER E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\firmware\at32f421_debug.xcl |  $
+E$:\RTOS\AT32\at32f421k8\libraries\drivers\src\at32f421_debug.c
+  flags = -out=E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\firmware\at32f421_debug.pbi -f E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\firmware\at32f421_debug.xcl
+
+build E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\firmware\at32f421_dma.pbi : INDEXER E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\firmware\at32f421_dma.xcl |  $
+E$:\RTOS\AT32\at32f421k8\libraries\drivers\src\at32f421_dma.c
+  flags = -out=E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\firmware\at32f421_dma.pbi -f E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\firmware\at32f421_dma.xcl
+
+build E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\firmware\at32f421_exint.pbi : INDEXER E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\firmware\at32f421_exint.xcl |  $
+E$:\RTOS\AT32\at32f421k8\libraries\drivers\src\at32f421_exint.c
+  flags = -out=E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\firmware\at32f421_exint.pbi -f E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\firmware\at32f421_exint.xcl
+
+build E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\firmware\at32f421_flash.pbi : INDEXER E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\firmware\at32f421_flash.xcl |  $
+E$:\RTOS\AT32\at32f421k8\libraries\drivers\src\at32f421_flash.c
+  flags = -out=E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\firmware\at32f421_flash.pbi -f E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\firmware\at32f421_flash.xcl
+
+build E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\firmware\at32f421_gpio.pbi : INDEXER E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\firmware\at32f421_gpio.xcl |  $
+E$:\RTOS\AT32\at32f421k8\libraries\drivers\src\at32f421_gpio.c
+  flags = -out=E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\firmware\at32f421_gpio.pbi -f E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\firmware\at32f421_gpio.xcl
+
+build E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\firmware\at32f421_misc.pbi : INDEXER E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\firmware\at32f421_misc.xcl |  $
+E$:\RTOS\AT32\at32f421k8\libraries\drivers\src\at32f421_misc.c
+  flags = -out=E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\firmware\at32f421_misc.pbi -f E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\firmware\at32f421_misc.xcl
+
+build E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\firmware\at32f421_pwc.pbi : INDEXER E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\firmware\at32f421_pwc.xcl |  $
+E$:\RTOS\AT32\at32f421k8\libraries\drivers\src\at32f421_pwc.c
+  flags = -out=E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\firmware\at32f421_pwc.pbi -f E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\firmware\at32f421_pwc.xcl
+
+build E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\firmware\at32f421_scfg.pbi : INDEXER E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\firmware\at32f421_scfg.xcl |  $
+E$:\RTOS\AT32\at32f421k8\libraries\drivers\src\at32f421_scfg.c
+  flags = -out=E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\firmware\at32f421_scfg.pbi -f E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\firmware\at32f421_scfg.xcl
+
+build E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\firmware\at32f421_tmr.pbi : INDEXER E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\firmware\at32f421_tmr.xcl |  $
+E$:\RTOS\AT32\at32f421k8\libraries\drivers\src\at32f421_tmr.c
+  flags = -out=E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\firmware\at32f421_tmr.pbi -f E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\firmware\at32f421_tmr.xcl
+
+build E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\firmware\at32f421_usart.pbi : INDEXER E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\firmware\at32f421_usart.xcl |  $
+E$:\RTOS\AT32\at32f421k8\libraries\drivers\src\at32f421_usart.c
+  flags = -out=E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\firmware\at32f421_usart.pbi -f E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\firmware\at32f421_usart.xcl
+
+build E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\user\at32f421_int.pbi : INDEXER E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\user\at32f421_int.xcl |  $
+E$:\RTOS\AT32\at32f421k8\project\src\at32f421_int.c
+  flags = -out=E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\user\at32f421_int.pbi -f E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\user\at32f421_int.xcl
+
+build E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\user\at32f421_wk_config.pbi : INDEXER E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\user\at32f421_wk_config.xcl |  $
+E$:\RTOS\AT32\at32f421k8\project\src\at32f421_wk_config.c
+  flags = -out=E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\user\at32f421_wk_config.pbi -f E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\user\at32f421_wk_config.xcl
+
+build E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\user\main.pbi : INDEXER E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\user\main.xcl |  $
+E$:\RTOS\AT32\at32f421k8\project\src\main.c
+  flags = -out=E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\user\main.pbi -f E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\user\main.xcl
+
+build E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\user\wk_system.pbi : INDEXER E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\user\wk_system.xcl |  $
+E$:\RTOS\AT32\at32f421k8\project\src\wk_system.c
+  flags = -out=E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\user\wk_system.pbi -f E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\user\wk_system.xcl
+
+build E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\at32f421k8.pbw : MAKEBROWSE E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\at32f421k8.pbd
+  flags = E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\at32f421k8.pbd -output E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\at32f421k8.pbw
+
+build E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\at32f421k8_part0.pbi : PDBLINK E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\bsp\ar_tim.pbi |  $
+E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\bsp\ar_water_det.pbi $
+E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\cmsis\system_at32f421.pbi $
+E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\firmware\at32f421_adc.pbi
+  flags = -M E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\at32f421k8_part0.pbi E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\bsp\ar_tim.pbi E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\bsp\ar_water_det.pbi E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\cmsis\system_at32f421.pbi E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\firmware\at32f421_adc.pbi
+
+build E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\at32f421k8_part1.pbi : PDBLINK E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\firmware\at32f421_crm.pbi |  $
+E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\firmware\at32f421_debug.pbi $
+E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\firmware\at32f421_dma.pbi $
+E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\firmware\at32f421_exint.pbi
+  flags = -M E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\at32f421k8_part1.pbi E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\firmware\at32f421_crm.pbi E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\firmware\at32f421_debug.pbi E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\firmware\at32f421_dma.pbi E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\firmware\at32f421_exint.pbi
+
+build E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\at32f421k8_part2.pbi : PDBLINK E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\firmware\at32f421_flash.pbi |  $
+E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\firmware\at32f421_gpio.pbi $
+E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\firmware\at32f421_misc.pbi $
+E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\firmware\at32f421_pwc.pbi
+  flags = -M E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\at32f421k8_part2.pbi E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\firmware\at32f421_flash.pbi E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\firmware\at32f421_gpio.pbi E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\firmware\at32f421_misc.pbi E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\firmware\at32f421_pwc.pbi
+
+build E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\at32f421k8_part3.pbi : PDBLINK E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\firmware\at32f421_scfg.pbi |  $
+E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\firmware\at32f421_tmr.pbi $
+E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\firmware\at32f421_usart.pbi $
+E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\user\at32f421_int.pbi
+  flags = -M E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\at32f421k8_part3.pbi E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\firmware\at32f421_scfg.pbi E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\firmware\at32f421_tmr.pbi E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\firmware\at32f421_usart.pbi E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\user\at32f421_int.pbi
+
+build E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\at32f421k8_part4.pbi : PDBLINK E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\user\at32f421_wk_config.pbi |  $
+E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\user\main.pbi $
+E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\user\wk_system.pbi
+  flags = -M E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\at32f421k8_part4.pbi E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\user\at32f421_wk_config.pbi E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\user\main.pbi E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\user\wk_system.pbi
+
+build E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\at32f421k8.pbd : PDBLINK E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\at32f421k8_part0.pbi |  $
+E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\at32f421k8_part1.pbi $
+E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\at32f421k8_part2.pbi $
+E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\at32f421k8_part3.pbi $
+E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\at32f421k8_part4.pbi
+  flags = -M E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\at32f421k8.pbd E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\at32f421k8_part0.pbi E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\at32f421k8_part1.pbi E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\at32f421k8_part2.pbi E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\at32f421k8_part3.pbi E$:\RTOS\AT32\at32f421k8\project\IAR_V9.3\debug\BrowseInfo\at32f421k8_part4.pbi
+

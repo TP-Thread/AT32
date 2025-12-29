@@ -19,6 +19,11 @@
             <ParametersSub name="SamplingRate_OrdinarySequence_1" value="1.684"/>
         </Parameters>
     </ADC1>
+    <CRC>
+        <Mode>
+            <ModeSub name="CRC_State" value="TRUE"/>
+        </Mode>
+    </CRC>
     <DEBUG>
         <Mode>
             <ModeSub name="Debug interface" value="SWD"/>
@@ -221,7 +226,7 @@
     </PINInfo>
     <ProjectInfomation>
         <ProjectName>at32f423rc</ProjectName>
-        <ProjectLocation>E:/RTOS/AT32</ProjectLocation>
+        <ProjectLocation>E:/RTOS/temp</ProjectLocation>
         <ToolchainIDE>IAR_V9.3</ToolchainIDE>
         <ARMCompiler>0</ARMCompiler>
         <KeepUserCode>true</KeepUserCode>

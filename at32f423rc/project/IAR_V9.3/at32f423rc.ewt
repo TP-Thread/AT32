@@ -1438,6 +1438,9 @@
             <name>$PROJ_DIR$\..\..\libraries\drivers\src\at32f423_adc.c</name>
         </file>
         <file>
+            <name>$PROJ_DIR$\..\..\libraries\drivers\src\at32f423_crc.c</name>
+        </file>
+        <file>
             <name>$PROJ_DIR$\..\..\libraries\drivers\src\at32f423_crm.c</name>
         </file>
         <file>
