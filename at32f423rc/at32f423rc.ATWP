@@ -226,7 +226,7 @@
     </PINInfo>
     <ProjectInfomation>
         <ProjectName>at32f423rc</ProjectName>
-        <ProjectLocation>E:/RTOS/temp</ProjectLocation>
+        <ProjectLocation>E:/RTOS/AT32</ProjectLocation>
         <ToolchainIDE>IAR_V9.3</ToolchainIDE>
         <ARMCompiler>0</ARMCompiler>
         <KeepUserCode>true</KeepUserCode>

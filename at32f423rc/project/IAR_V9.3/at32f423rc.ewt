@@ -1474,6 +1474,9 @@
     <group>
         <name>lib</name>
         <file>
+            <name>$PROJ_DIR$\..\..\bsp\lib\src\algo_crc.c</name>
+        </file>
+        <file>
             <name>$PROJ_DIR$\..\..\bsp\lib\src\drv_rcc.c</name>
         </file>
     </group>

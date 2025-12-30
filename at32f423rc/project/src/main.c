@@ -31,6 +31,7 @@
 /* private includes ----------------------------------------------------------*/
 /* add user code begin private includes */
 #include <stdio.h>
+#include "algo_crc.h"
 /* add user code end private includes */
 
 /* private typedef -----------------------------------------------------------*/
@@ -55,12 +56,42 @@
 
 /* private function prototypes --------------------------------------------*/
 /* add user code begin function prototypes */
-void crc_calculate_example(void);
 
 /* add user code end function prototypes */
 
 /* private user code ---------------------------------------------------------*/
 /* add user code begin 0 */
+void crc_calculate_example(void)
+{
+    uint32_t dataBuffer[] = {0x12345678, 0x9ABCDEF0, 0x13579BDF, 0x2468ACE0};
+    uint32_t crc_hw = 0;
+    uint32_t crc_sw_byte = 0xFFFFFFFF;
+    uint32_t crc_sw_word = 0xFFFFFFFF;
+
+    /* 硬件 CRC 按 32 位字处理 */
+    crc_data_reset(); /* 复位 CRC 计算单元 */
+    crc_hw = crc_block_calculate(dataBuffer, 4);
+    printf("\r\n1. 硬件 CRC: 0x%08X\r\n", crc_hw);
+
+    /* 软件 CRC 按字节流处理 */
+    crc32_table_init(CRC_DEFAULT_POLYNOMIAL, 0, 0);
+    crc_sw_byte = crc32_calculate(crc_sw_byte, (const uint8_t *)dataBuffer, 16);
+    printf("2. 软件 CRC: 0x%08X\r\n", crc_sw_byte);
+
+    /* 软件 CRC 按 32 位字处理 */
+    crc_sw_word = 0xFFFFFFFF;
+    for (int i = 0; i < 4; i++)
+    {
+        /* 将 32 位数据拆分为 4 个字节，按大端序处理*/
+        uint8_t bytes[4];
+        bytes[0] = (dataBuffer[i] >> 24) & 0xFF;
+        bytes[1] = (dataBuffer[i] >> 16) & 0xFF;
+        bytes[2] = (dataBuffer[i] >> 8) & 0xFF;
+        bytes[3] = (dataBuffer[i] >> 0) & 0xFF;
+        crc_sw_word = crc32_calculate(crc_sw_word, bytes, 4);
+    }
+    printf("3. 软件 CRC: 0x%08X\r\n", crc_sw_word);
+}
 
 /* add user code end 0 */
 
@@ -148,39 +179,5 @@ int main(void)
 }
 
 /* add user code begin 4 */
-
-/**
- * @brief  CRC 计算示例函数
- * @param  none
- * @retval none
- */
-void crc_calculate_example(void)
-{
-    /* 要计算 CRC 的数据数组 */
-    uint32_t dataBuffer[] = {0x12345678, 0x9ABCDEF0, 0x13579BDF, 0x2468ACE0};
-    uint32_t dataLength = sizeof(dataBuffer) / sizeof(dataBuffer[0]);
-    uint32_t crc_result = 0;
-
-    /* 重置 CRC 计算单元 */
-    crc_data_reset();
-
-    /* 计算数据块的 CRC 值 */
-    crc_result = crc_block_calculate(dataBuffer, dataLength);
-
-    /* 打印 CRC 计算结果 */
-    printf("CRC Calculation Example:\r\n");
-    printf("Data: 0x%08X 0x%08X 0x%08X 0x%08X\r\n",
-           dataBuffer[0], dataBuffer[1], dataBuffer[2], dataBuffer[3]);
-    printf("CRC Result: 0x%08X\r\n\r\n", crc_result);
-
-    /* 示例：逐个字计算 CRC */
-    crc_data_reset();
-    for (uint32_t i = 0; i < dataLength; i++)
-    {
-        crc_result = crc_one_word_calculate(dataBuffer[i]);
-        printf("After data[%d]: CRC = 0x%08X\r\n", i, crc_result);
-    }
-    printf("\r\n");
-}
 
 /* add user code end 4 */
